@@ -8,6 +8,8 @@
 
 import type { PostMeta } from "../types";
 
+export const POSTS_PER_PAGE = 9;
+
 export const allPosts: PostMeta[] = [
   {
     slug: "gorilla-trekking-tips",

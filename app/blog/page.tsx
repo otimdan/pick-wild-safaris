@@ -1,5 +1,6 @@
 // app/blog/page.tsx
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BlogFeatured from "./BlogFeatured";
@@ -74,10 +75,26 @@ export default function BlogPage() {
       </div>
       <BlogFeatured />
       <section className="blog-main">
-        <div className="blog-main-inner">
-          <BlogFilter />
+        <div id="blog-grid-anchor" className="blog-main-inner">
+          <Suspense fallback={null}>
+            <BlogFilter />
+          </Suspense>
           <div>
-            <BlogGrid />
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    padding: "2rem",
+                    color: "#888",
+                    fontFamily: "var(--serif)",
+                  }}
+                >
+                  Loading posts...
+                </div>
+              }
+            >
+              <BlogGrid />
+            </Suspense>
             <BlogPagination />
           </div>
         </div>
