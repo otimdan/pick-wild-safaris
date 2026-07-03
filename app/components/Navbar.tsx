@@ -189,7 +189,7 @@ export default function Navbar() {
             </li>
 
             <li>
-              <a href="#">Blog</a>
+              <a href="/blog">Blog</a>
             </li>
           </ul>
 
@@ -288,7 +288,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a href="#" className="mobile-toggle">
+            <a href="/blog" className="mobile-toggle">
               Blog
             </a>
           </li>
