@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const safaris = [
   {
-    href: "#",
+    href: "/safaris/east-africa-mara-serengeti-migration",
     img: "https://goodearthtours.com/wp-content/uploads/2026/05/great-migration.jpg",
     fallback: "linear-gradient(160deg, #5a7a3a, #2a4010)",
     country: "Combo, Kenya, Tanzania",
@@ -48,7 +48,7 @@ const safaris = [
     badge: null,
   },
   {
-    href: "#",
+    href: "/safaris/uganda-gorilla-wildlife-safari",
     img: "https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg",
     fallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
     country: "Uganda",

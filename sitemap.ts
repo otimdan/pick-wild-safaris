@@ -1,6 +1,7 @@
 // app/sitemap.ts
 import type { MetadataRoute } from "next";
 import { allPosts } from "@/content/posts/index";
+import { allItineraries } from "@/content/itineraries/index";
 
 const BASE_URL = "https://pickwildsafaris.com";
 
@@ -30,6 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${BASE_URL}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const postRoutes: MetadataRoute.Sitemap = allPosts.map((post) => ({
@@ -39,5 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  const itineraryRoutes: MetadataRoute.Sitemap = allItineraries.map((it) => ({
+    url: `${BASE_URL}/safaris/${it.slug}`,
+    lastModified: it.date ? new Date(it.date) : new Date(),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...postRoutes, ...itineraryRoutes];
 }

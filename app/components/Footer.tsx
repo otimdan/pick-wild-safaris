@@ -76,8 +76,8 @@ export default function Footer() {
             <li><a href="#">Sustainability Policy</a></li>
             <li><a href="#">Safaris</a></li>
             <li><a href="#">Trekking</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms</a></li>
           </ul>
         </div>
       </div>
