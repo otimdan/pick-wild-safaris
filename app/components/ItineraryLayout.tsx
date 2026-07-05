@@ -176,7 +176,10 @@ export default function ItineraryLayout({ itinerary }: { itinerary: Itinerary })
                   <p className="itin-enquire-note">{itinerary.pricingNote}</p>
                 )}
                 <div className="itin-enquire-actions">
-                  <Link href="/contact" className="itin-enquire-btn">
+                  <Link
+                    href={`/contact?trip=${encodeURIComponent(itinerary.title)}`}
+                    className="itin-enquire-btn"
+                  >
                     Speak With a Planner
                   </Link>
                   {itinerary.priceFrom && (
