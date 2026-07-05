@@ -11,6 +11,7 @@ function PostImage({
   alt: string;
   caption?: string;
 }) {
+  if (!src) return null;
   return (
     <>
       <Image
@@ -63,7 +64,7 @@ export default function Post() {
       </ul>
 
       <PostImage
-        src="https://goodearthtours.com/wp-content/uploads/2026/04/home-about-2.jpg"
+        src=""
         alt="Queen Elizabeth National Park, Uganda"
         caption="Queen Elizabeth National Park — best visited in the dry season"
       />

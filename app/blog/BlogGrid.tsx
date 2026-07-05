@@ -75,13 +75,15 @@ export default function BlogGrid() {
                     zIndex: 0,
                   }}
                 />
-                <Image
-                  src={post.coverImage}
-                  alt={post.title}
-                  fill
-                  style={{ objectFit: "cover", zIndex: 1 }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                {post.coverImage && (
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    fill
+                    style={{ objectFit: "cover", zIndex: 1 }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                )}
               </div>
               <div className="blog-post-body">
                 <h3>{post.title}</h3>

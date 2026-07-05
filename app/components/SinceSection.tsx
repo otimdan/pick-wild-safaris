@@ -4,6 +4,11 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Drop local photo paths here (e.g. "/since-left.jpg") to replace the
+// gradient placeholders. Empty string = show the gradient only.
+const LEFT_PHOTO = "";
+const RIGHT_PHOTO = "";
+
 export default function SinceSection() {
   const imgLeftRef = useRef<HTMLDivElement>(null);
   const imgRightRef = useRef<HTMLDivElement>(null);
@@ -42,23 +47,35 @@ export default function SinceSection() {
       {/* Left: images */}
       <div className="since-images">
         <div className="img-track">
-          <div className="img-card img-card--left" ref={imgLeftRef}>
-            <Image
-              src="https://goodearthtours.com/wp-content/uploads/2026/05/DSC07387.jpg"
-              alt="Safari guide and guest smiling by a vehicle"
-              width={400}
-              height={520}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
+          <div
+            className="img-card img-card--left"
+            ref={imgLeftRef}
+            style={{ background: "linear-gradient(160deg, #3a6a2a, #1a3a0e)" }}
+          >
+            {LEFT_PHOTO && (
+              <Image
+                src={LEFT_PHOTO}
+                alt="Safari guide and guest smiling by a vehicle"
+                width={400}
+                height={520}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            )}
           </div>
-          <div className="img-card img-card--right" ref={imgRightRef}>
-            <Image
-              src="https://goodearthtours.com/wp-content/uploads/2026/04/home-about-2.jpg"
-              alt="Guests watching elephant from safari vehicle"
-              width={400}
-              height={420}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
+          <div
+            className="img-card img-card--right"
+            ref={imgRightRef}
+            style={{ background: "linear-gradient(160deg, #9a6a3a, #4a2a10)" }}
+          >
+            {RIGHT_PHOTO && (
+              <Image
+                src={RIGHT_PHOTO}
+                alt="Guests watching elephant from safari vehicle"
+                width={400}
+                height={420}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            )}
           </div>
         </div>
       </div>

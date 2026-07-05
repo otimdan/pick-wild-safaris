@@ -14,13 +14,15 @@ export default function BlogFeatured() {
           {featuredPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-featured-card">
               <div style={{ position: "absolute", inset: 0, background: post.coverFallback }} />
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+              {post.coverImage && (
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              )}
               <div className="blog-featured-content">
                 <h3>{post.title}</h3>
                 <span className="blog-read-link">Read Blog</span>

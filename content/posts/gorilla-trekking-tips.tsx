@@ -20,6 +20,7 @@ function PostImage({
   alt: string;
   caption?: string;
 }) {
+  if (!src) return null;
   return (
     <>
       <Image
@@ -73,7 +74,7 @@ export default function Post() {
       </p>
 
       <PostImage
-        src="https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg"
+        src=""
         alt="Dense forest in Bwindi, Uganda"
         caption="Bwindi Impenetrable Forest — UNESCO World Heritage Site"
       />

@@ -20,7 +20,7 @@ export const itineraries: Itinerary[] = [
     duration: "9 Days",
     priceFrom: "From $6,480 per person sharing",
     heroImage:
-      "https://goodearthtours.com/wp-content/uploads/2026/05/great-migration.jpg",
+      "",
     heroFallback: "linear-gradient(160deg, #5a7a3a, #2a4010)",
     badge: "Fan Favorite",
     date: "2026-07-01",
@@ -66,7 +66,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Hemingways Nairobi",
         meals: "Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/home-about-2.jpg",
+          "",
         imageAlt: "Skyline and lush surrounds of Nairobi at dusk",
       },
       {
@@ -81,7 +81,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Governors' Camp",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/05/DSC07387.jpg",
+          "",
         imageAlt: "Wildebeest herds on the plains of the Masai Mara",
       },
       {
@@ -96,7 +96,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Serengeti Serena Safari Lodge",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2025/09/serengeti-sunset.jpg",
+          "",
         imageAlt: "A lone acacia tree against a Serengeti sunset",
       },
       {
@@ -121,7 +121,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Ngorongoro Serena Safari Lodge",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/kenya-eland.jpg",
+          "",
         imageAlt: "The rim of the Ngorongoro Crater",
       },
       {
@@ -184,21 +184,21 @@ export const itineraries: Itinerary[] = [
         location: "Masai Mara, Kenya",
         nights: "2 nights",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/05/DSC07387.jpg",
+          "",
       },
       {
         name: "Serengeti Serena Safari Lodge",
         location: "Serengeti, Tanzania",
         nights: "2 nights",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2025/09/serengeti-sunset.jpg",
+          "",
       },
       {
         name: "Ngorongoro Serena Safari Lodge",
         location: "Ngorongoro Crater, Tanzania",
         nights: "1 night",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/kenya-eland.jpg",
+          "",
       },
     ],
 
@@ -261,7 +261,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Protea Hotel Entebbe",
         meals: "Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/home-about-2.jpg",
+          "",
         imageAlt: "Lake Victoria shoreline near Entebbe",
       },
       {
@@ -276,7 +276,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Primates Lodge Kibale",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg",
+          "",
         imageAlt: "Dense rainforest canopy in Kibale Forest",
       },
       {
@@ -291,7 +291,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "Mweya Safari Lodge",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/kenya-eland.jpg",
+          "",
         imageAlt: "Elephants on the savannah of Queen Elizabeth National Park",
       },
       {
@@ -340,7 +340,7 @@ export const itineraries: Itinerary[] = [
         accommodation: "BirdNest Resort",
         meals: "Breakfast, Lunch, Dinner",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/05/beach.jpg",
+          "",
         imageAlt: "Calm island-dotted waters of Lake Bunyonyi",
       },
       {
@@ -380,14 +380,14 @@ export const itineraries: Itinerary[] = [
         location: "Kibale Forest, Uganda",
         nights: "2 nights",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg",
+          "",
       },
       {
         name: "Mweya Safari Lodge",
         location: "Queen Elizabeth NP, Uganda",
         nights: "2 nights",
         image:
-          "https://goodearthtours.com/wp-content/uploads/2026/04/kenya-eland.jpg",
+          "",
       },
       {
         name: "Buhoma Lodge",

@@ -5,6 +5,15 @@ import { allPosts, getPostMeta } from "@/content/posts/index";
 
 const BASE_URL = "https://pickwildsafaris.com";
 
+// Absolute image URL for social/SEO metadata, falling back to the site
+// hero when a post has no cover image of its own.
+const ogImageFor = (src?: string) =>
+  src
+    ? src.startsWith("http")
+      ? src
+      : `${BASE_URL}${src}`
+    : `${BASE_URL}/hero-gorilla.jpg`;
+
 export function generateStaticParams() {
   return allPosts.map((post) => ({ slug: post.slug }));
 }
@@ -36,7 +45,7 @@ export async function generateMetadata({
       authors: ["Pick Wild Safaris"],
       images: [
         {
-          url: meta.coverImage,
+          url: ogImageFor(meta.coverImage),
           width: 1200,
           height: 630,
           alt: meta.title,
@@ -47,7 +56,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: meta.title,
       description: meta.excerpt,
-      images: [meta.coverImage],
+      images: [ogImageFor(meta.coverImage)],
     },
   };
 }
@@ -65,7 +74,7 @@ function BlogPostingSchema({
     "@type": "BlogPosting",
     headline: meta.title,
     description: meta.excerpt,
-    image: meta.coverImage,
+    image: ogImageFor(meta.coverImage),
     datePublished: meta.date,
     dateModified: meta.date,
     author: {

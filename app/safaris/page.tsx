@@ -51,13 +51,15 @@ export default function SafarisPage() {
                   className="safari-img-fallback"
                   style={{ background: it.heroFallback }}
                 />
-                <Image
-                  src={it.heroImage}
-                  alt={it.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+                {it.heroImage && (
+                  <Image
+                    src={it.heroImage}
+                    alt={it.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                )}
               </div>
               <div className="safari-info">
                 <span className="safari-country">{it.country}</span>

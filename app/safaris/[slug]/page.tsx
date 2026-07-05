@@ -6,6 +6,15 @@ import ItineraryLayout from "@/app/components/ItineraryLayout";
 
 const BASE_URL = "https://pickwildsafaris.com";
 
+// Absolute image URL for social/SEO metadata, falling back to the site
+// hero when an itinerary has no image of its own.
+const ogImageFor = (src?: string) =>
+  src
+    ? src.startsWith("http")
+      ? src
+      : `${BASE_URL}${src}`
+    : `${BASE_URL}/hero-gorilla.jpg`;
+
 export function generateStaticParams() {
   return allItineraries.map((it) => ({ slug: it.slug }));
 }
@@ -32,14 +41,14 @@ export async function generateMetadata({
       description: it.excerpt,
       siteName: "Pick Wild Safaris",
       images: [
-        { url: it.heroImage, width: 1200, height: 630, alt: it.title },
+        { url: ogImageFor(it.heroImage), width: 1200, height: 630, alt: it.title },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: it.title,
       description: it.excerpt,
-      images: [it.heroImage],
+      images: [ogImageFor(it.heroImage)],
     },
   };
 }
@@ -57,7 +66,7 @@ function TouristTripSchema({
     "@type": "TouristTrip",
     name: it.title,
     description: it.excerpt,
-    image: it.heroImage,
+    image: ogImageFor(it.heroImage),
     url: `${BASE_URL}/safaris/${slug}`,
     touristType: "Safari",
     provider: {

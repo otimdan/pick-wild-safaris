@@ -18,7 +18,7 @@ export const allPosts: PostMeta[] = [
       "Mountain gorillas are one of Africa's most awe-inspiring encounters. Here's how to prepare physically, mentally, and logistically for the trek of a lifetime.",
     category: "Uganda",
     coverImage:
-      "https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg",
+      "",
     coverFallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
     date: "2026-06-10",
     readTime: "9 min read",
@@ -30,7 +30,7 @@ export const allPosts: PostMeta[] = [
       "Uganda's wildlife shines year-round, but timing your trip around the dry seasons makes a real difference. A month-by-month breakdown.",
     category: "Uganda",
     coverImage:
-      "https://goodearthtours.com/wp-content/uploads/2026/04/home-about-2.jpg",
+      "",
     coverFallback: "linear-gradient(160deg, #5a7a3a, #2a4010)",
     date: "2026-05-22",
     readTime: "6 min read",
@@ -42,7 +42,7 @@ export const allPosts: PostMeta[] = [
       "Overpacking is the number one rookie mistake. This list covers everything you actually need — and what to leave at home.",
     category: "Planning Tips",
     coverImage:
-      "https://goodearthtours.com/wp-content/uploads/2026/05/great-migration.jpg",
+      "",
     coverFallback: "linear-gradient(160deg, #8a7a2a, #4a4010)",
     date: "2026-05-05",
     readTime: "7 min read",

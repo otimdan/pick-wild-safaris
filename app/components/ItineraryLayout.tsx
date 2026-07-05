@@ -23,15 +23,17 @@ export default function ItineraryLayout({ itinerary }: { itinerary: Itinerary })
         <div
           style={{ position: "absolute", inset: 0, background: itinerary.heroFallback }}
         />
-        <Image
-          src={itinerary.heroImage}
-          alt={itinerary.title}
-          fill
-          className="itin-hero-img"
-          style={{ objectFit: "cover" }}
-          priority
-          sizes="100vw"
-        />
+        {itinerary.heroImage && (
+          <Image
+            src={itinerary.heroImage}
+            alt={itinerary.title}
+            fill
+            className="itin-hero-img"
+            style={{ objectFit: "cover" }}
+            priority
+            sizes="100vw"
+          />
+        )}
         <div className="itin-hero-overlay" />
         <div className="itin-hero-content">
           {itinerary.badge && (
@@ -228,13 +230,15 @@ export default function ItineraryLayout({ itinerary }: { itinerary: Itinerary })
                     <div
                       style={{ position: "absolute", inset: 0, background: it.heroFallback }}
                     />
-                    <Image
-                      src={it.heroImage}
-                      alt={it.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
+                    {it.heroImage && (
+                      <Image
+                        src={it.heroImage}
+                        alt={it.title}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    )}
                   </div>
                   <div className="itin-related-body">
                     <span className="itin-related-country">{it.country}</span>

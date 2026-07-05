@@ -46,15 +46,17 @@ export default function BlogPostLayout({ meta, children }: Props) {
             background: meta.coverFallback,
           }}
         />
-        <Image
-          src={meta.coverImage}
-          alt={meta.title}
-          fill
-          className="post-hero-img"
-          style={{ objectFit: "cover" }}
-          priority
-          sizes="100vw"
-        />
+        {meta.coverImage && (
+          <Image
+            src={meta.coverImage}
+            alt={meta.title}
+            fill
+            className="post-hero-img"
+            style={{ objectFit: "cover" }}
+            priority
+            sizes="100vw"
+          />
+        )}
         <div className="post-hero-overlay" />
         <div className="post-hero-content">
           <span className="post-hero-category">{meta.category}</span>
@@ -111,13 +113,15 @@ export default function BlogPostLayout({ meta, children }: Props) {
                             background: post.coverFallback,
                           }}
                         />
-                        <Image
-                          src={post.coverImage}
-                          alt={post.title}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="64px"
-                        />
+                        {post.coverImage && (
+                          <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            fill
+                            style={{ objectFit: "cover" }}
+                            sizes="64px"
+                          />
+                        )}
                       </div>
                       <div className="post-related-meta">
                         <span className="post-related-cat">

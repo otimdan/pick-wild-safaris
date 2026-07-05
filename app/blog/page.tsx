@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Pick Wild Safaris",
     images: [
       {
-        url: "https://goodearthtours.com/wp-content/uploads/2025/08/uganda-buffalo.jpg",
+        url: "https://pickwildsafaris.com/hero-gorilla.jpg",
         width: 1200,
         height: 630,
         alt: "Uganda safari — Pick Wild Safaris blog",
