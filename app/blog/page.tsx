@@ -95,7 +95,9 @@ export default function BlogPage() {
             >
               <BlogGrid />
             </Suspense>
-            <BlogPagination />
+            <Suspense fallback={null}>
+              <BlogPagination />
+            </Suspense>
           </div>
         </div>
       </section>
