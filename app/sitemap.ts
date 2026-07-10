@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { allPosts } from "@/content/posts/index";
 import { allItineraries } from "@/content/itineraries/index";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

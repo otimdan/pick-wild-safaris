@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://pickwildsafaris.com/sitemap.xml",
+    sitemap: "https://wildsafarisuganda.com/sitemap.xml",
   };
 }
