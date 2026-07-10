@@ -1,8 +1,13 @@
 // app/layout.tsx
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+import { PostHogProvider } from "./providers";
 
 const BASE_URL = "https://pickwildsafaris.com";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// Only load analytics in production so local dev traffic stays out of the stats.
+const ANALYTICS_ENABLED = process.env.NODE_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -99,7 +104,10 @@ export default function RootLayout({
         />
         <OrganizationSchema />
       </head>
-      <body>{children}</body>
+      <body>
+        <PostHogProvider>{children}</PostHogProvider>
+      </body>
+      {ANALYTICS_ENABLED && GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
     </html>
   );
 }
