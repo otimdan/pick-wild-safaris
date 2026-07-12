@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { allPosts, getPostMeta } from "@/content/posts/index";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 // Absolute image URL for social/SEO metadata, falling back to the site
 // hero when a post has no cover image of its own.

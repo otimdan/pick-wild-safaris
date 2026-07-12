@@ -9,7 +9,7 @@ import BlogGrid from "./BlogGrid";
 import BlogPagination from "./BlogPagination";
 import BlogNewsletter from "./BlogNewsletter";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
   title: "Safari Travel Blog | Uganda & East Africa Tips, Stories & Guides",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Pick Wild Safaris",
     images: [
       {
-        url: "https://pickwildsafaris.com/hero-gorilla.jpg",
+        url: "https://wildsafarisuganda.com/hero-gorilla.jpg",
         width: 1200,
         height: 630,
         alt: "Uganda safari — Pick Wild Safaris blog",

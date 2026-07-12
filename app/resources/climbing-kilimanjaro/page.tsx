@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
   title: "Climbing Mount Kilimanjaro: The Complete Guide | Pick Wild Safaris",

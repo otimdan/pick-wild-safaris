@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 // Only load analytics in production so local dev traffic stays out of the stats.
 const ANALYTICS_ENABLED = process.env.NODE_ENV === "production";
@@ -58,7 +58,7 @@ function OrganizationSchema() {
       addressCountry: "UG",
     },
     telephone: ["+256393000813", "+256742441148"],
-    email: "info@pickwildsafaris.com",
+    email: "info@wildsafarisuganda.com",
     sameAs: [
       "https://www.facebook.com/pickwildsafaris",
       "https://www.instagram.com/pickwildsafaris",

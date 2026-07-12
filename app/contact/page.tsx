@@ -4,7 +4,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import ContactForm from "@/app/components/ContactForm";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
   title: "Contact Us | Pick Wild Safaris",
@@ -41,8 +41,8 @@ export default function ContactPage() {
             <ul className="contact-details">
               <li>
                 <span className="contact-details-label">Email</span>
-                <a href="mailto:info@pickwildsafaris.com">
-                  info@pickwildsafaris.com
+                <a href="mailto:info@wildsafarisuganda.com">
+                  info@wildsafarisuganda.com
                 </a>
               </li>
               <li>

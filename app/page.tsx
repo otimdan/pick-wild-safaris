@@ -14,18 +14,18 @@ export const metadata: Metadata = {
   description:
     "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided. Since 1995.",
   alternates: {
-    canonical: "https://pickwildsafaris.com",
+    canonical: "https://wildsafarisuganda.com",
   },
   openGraph: {
     type: "website",
-    url: "https://pickwildsafaris.com",
+    url: "https://wildsafarisuganda.com",
     title: "Pick Wild Safaris | Private Uganda & East Africa Safaris",
     description:
       "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided. Since 1995.",
     siteName: "Pick Wild Safaris",
     images: [
       {
-        url: "https://pickwildsafaris.com/hero-gorilla.jpg",
+        url: "https://wildsafarisuganda.com/hero-gorilla.jpg",
         width: 1200,
         height: 630,
         alt: "Wildlife safari in Uganda — Pick Wild Safaris",

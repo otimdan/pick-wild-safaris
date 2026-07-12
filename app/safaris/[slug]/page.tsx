@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { allItineraries, getItinerary } from "@/content/itineraries/index";
 import ItineraryLayout from "@/app/components/ItineraryLayout";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 // Absolute image URL for social/SEO metadata, falling back to the site
 // hero when an itinerary has no image of its own.

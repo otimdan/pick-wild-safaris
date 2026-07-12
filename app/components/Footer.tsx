@@ -15,7 +15,7 @@ export default function Footer() {
           </div>
           <div className="contact-item">
             <span className="icon">✉</span>
-            <span>info@pickwildsafaris.com</span>
+            <span>info@wildsafarisuganda.com</span>
           </div>
           <div className="contact-item">
             <span className="icon">📍</span>

@@ -5,14 +5,14 @@
 //    CONTACT_EMAIL    where enquiries are delivered (the "to")
 //    RESEND_FROM      the verified "from" address (must be a domain
 //                     verified in your Resend account)
-//  The "to" address (info@pickwildsafaris.com) is delivered to your
+//  The "to" address (info@wildsafarisuganda.com) is delivered to your
 //  inbox by Cloudflare Email Routing → Gmail — Resend only sends.
 // ─────────────────────────────────────────────────────────────
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
-const DEFAULT_FROM = "Pick Wild Safaris <noreply@pickwildsafaris.com>";
-const DEFAULT_TO = "info@pickwildsafaris.com";
+const DEFAULT_FROM = "Pick Wild Safaris <noreply@wildsafarisuganda.com>";
+const DEFAULT_TO = "info@wildsafarisuganda.com";
 
 export type SendResult = { ok: true; id: string } | { ok: false; error: string };
 

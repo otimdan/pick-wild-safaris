@@ -6,7 +6,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { allItineraries } from "@/content/itineraries/index";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
   title: "Safaris & Itineraries | Private Uganda & East Africa Tours",

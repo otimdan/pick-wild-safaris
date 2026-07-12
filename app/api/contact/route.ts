@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       <h3 style="margin:0 0 8px;">Message</h3>
       <p style="white-space:pre-wrap; line-height:1.6;">${escapeHtml(message)}</p>
       <hr style="border:none; border-top:1px solid #e0dccc; margin:24px 0;" />
-      <p style="font-size:12px; color:#888;">Sent from the pickwildsafaris.com contact form. Reply directly to respond to ${escapeHtml(name)}.</p>
+      <p style="font-size:12px; color:#888;">Sent from the wildsafarisuganda.com contact form. Reply directly to respond to ${escapeHtml(name)}.</p>
     </div>`;
 
   const result = await sendEmail({
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         error:
-          "Sorry — something went wrong sending your message. Please email us directly at info@pickwildsafaris.com.",
+          "Sorry — something went wrong sending your message. Please email us directly at info@wildsafarisuganda.com.",
       },
       { status: 502 },
     );

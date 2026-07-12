@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
-const BASE_URL = "https://pickwildsafaris.com";
+const BASE_URL = "https://wildsafarisuganda.com";
 const UPDATED = "5 July 2026";
 
 export const metadata: Metadata = {
@@ -220,7 +220,7 @@ export default function TermsPage() {
         <p>Plot 6 Portal Road / 19 Hill Road, HMJ Building, 2nd Floor, Entebbe, Uganda</p>
         <p>
           Email:{" "}
-          <a href="mailto:info@pickwildsafaris.com">info@pickwildsafaris.com</a>
+          <a href="mailto:info@wildsafarisuganda.com">info@wildsafarisuganda.com</a>
         </p>
         <p>Phone: +256 393 000813 · +256 742 441148</p>
       </div>

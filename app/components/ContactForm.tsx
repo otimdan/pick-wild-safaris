@@ -56,7 +56,7 @@ export default function ContactForm() {
         <p>
           One of our safari planners will be in touch shortly. For anything
           urgent, email us directly at{" "}
-          <a href="mailto:info@pickwildsafaris.com">info@pickwildsafaris.com</a>.
+          <a href="mailto:info@wildsafarisuganda.com">info@wildsafarisuganda.com</a>.
         </p>
       </div>
     );
