@@ -119,8 +119,16 @@ export default function Post() {
 
       <p>
         Our take: if value and a full safari matter most, choose Uganda. If you
-        are short on time and want the quickest possible gorilla encounter,
-        Rwanda is hard to beat.
+        are short on time and want the quickest possible gorilla encounter, our{" "}
+        <Link href="/safaris/rwanda-gorilla-trekking-safari">
+          Rwanda Gorilla Trekking Safari
+        </Link>{" "}
+        is hard to beat. And if you genuinely cannot decide, you don&apos;t have
+        to — our{" "}
+        <Link href="/safaris/uganda-rwanda-gorilla-safari">
+          Uganda &amp; Rwanda Double Gorilla Safari
+        </Link>{" "}
+        treks a family in each country on one cross-border trip.
       </p>
 
       <h2>When to Go: The Best Time to Trek</h2>

@@ -2778,6 +2778,293 @@ export const itineraries: Itinerary[] = [
       { name: "Nkuringo Bwindi Gorilla Lodge", location: "Nkuringo, Bwindi (Luxury)" },
     ],
   },
+
+  {
+    // ── Meta ──────────────────────────────────────────────────
+    slug: "rwanda-gorilla-trekking-safari",
+    title: "Rwanda Gorilla Trekking Safari",
+    subtitle: "The classic short break to the mountain gorillas of the Virungas",
+    excerpt:
+      "A focused four-day journey to the mountain gorillas of Volcanoes National Park — Rwanda's flagship experience, just a scenic drive from Kigali, with golden monkeys, the Dian Fossey legacy, and a moving day in the capital.",
+    country: "Rwanda",
+    duration: "4 Days",
+    priceFrom: "From $3,450 per person sharing",
+    heroImage: "",
+    heroFallback: "linear-gradient(160deg, #2f6a3a, #123a1e)",
+    date: "2026-07-12",
+
+    // ── Overview ──────────────────────────────────────────────
+    overview: [
+      "For travellers short on time, Rwanda offers the most accessible gorilla trek in Africa. Volcanoes National Park — the Rwandan flank of the Virunga Massif, where Dian Fossey did her landmark research — sits just two to three hours' drive from Kigali International Airport, making a long-weekend gorilla safari genuinely possible.",
+      "Over four days you'll trek a habituated mountain gorilla family for one unforgettable hour, track the playful golden monkeys found only in these bamboo forests, and spend time in Kigali, one of Africa's cleanest and safest capitals, whose Genocide Memorial gives essential context to the country's remarkable recovery.",
+      "Every departure is private and led by an expert guide, with accommodation hand-picked at the foot of the volcanoes. It is a short trip, but an extraordinarily rich one.",
+    ],
+
+    // ── At a glance ───────────────────────────────────────────
+    facts: [
+      { label: "Duration", value: "4 Days / 3 Nights" },
+      { label: "Country", value: "Rwanda" },
+      { label: "Park", value: "Volcanoes National Park" },
+      { label: "Best Time", value: "Jun – Sep & Dec – Feb" },
+      { label: "Nearest Airport", value: "Kigali (KGL)" },
+      { label: "Style", value: "Private guided · Lodge" },
+    ],
+
+    // ── Highlights ────────────────────────────────────────────
+    highlights: [
+      "A gorilla-trekking permit and one hour with a habituated family in Volcanoes National Park",
+      "Golden monkey tracking in the bamboo forests of the Virungas",
+      "Walk in the footsteps of Dian Fossey on the edge of the Karisoke research area",
+      "A guided tour of Kigali and its moving Genocide Memorial",
+      "Dramatic scenery beneath a chain of five volcanoes",
+      "Short transfers — the least travel time of any gorilla safari",
+    ],
+
+    // ── Day by day ────────────────────────────────────────────
+    days: [
+      {
+        label: "Day 1",
+        title: "Arrive in Kigali",
+        location: "Kigali, Rwanda",
+        nights: "1 night",
+        body: [
+          "Land at Kigali International Airport, where your guide meets you for a tour of one of Africa's tidiest and most welcoming capitals.",
+          "Visit the Kigali Genocide Memorial, a powerful and essential introduction to Rwanda's history and its extraordinary recovery, before settling into your hotel for the evening.",
+        ],
+        accommodation: "Kigali Serena Hotel",
+        meals: "Dinner",
+      },
+      {
+        label: "Day 2",
+        title: "To Volcanoes National Park",
+        location: "Musanze, Rwanda",
+        nights: "2 nights",
+        body: [
+          "Drive north through Rwanda's beautiful terraced hills — the 'land of a thousand hills' — to Musanze, at the foot of the Virunga volcanoes. The journey takes around two to three hours on good tarmac.",
+          "Spend the afternoon relaxing at your lodge with the volcanoes as a backdrop, or add an optional visit to the twin lakes of Burera and Ruhondo or a local community experience.",
+        ],
+        accommodation: "Five Volcanoes Boutique Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 3",
+        title: "Gorilla Trekking in the Virungas",
+        location: "Volcanoes National Park, Rwanda",
+        body: [
+          "After an early briefing at park headquarters in Kinigi, set off with rangers and trackers in search of a habituated gorilla family. Treks range from one to several hours through bamboo and mountain forest, depending on where the gorillas have moved overnight.",
+          "When you reach them, you have one magical hour in their presence — silverbacks, mothers, and youngsters going about their day at close range. Porters are available to carry your pack and help on the trail. Return to the lodge in the afternoon to celebrate.",
+        ],
+        accommodation: "Five Volcanoes Boutique Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 4",
+        title: "Golden Monkeys & Return to Kigali",
+        location: "Volcanoes NP → Kigali, Rwanda",
+        body: [
+          "Start with an optional golden monkey trek — a lively, photogenic encounter with a species found only in these bamboo forests — or a hike toward Dian Fossey's Karisoke research site for the more energetic.",
+          "Afterwards, drive back to Kigali for last-minute shopping at a craft cooperative before your departure flight home, or continue on to a wider East Africa add-on.",
+        ],
+        meals: "Breakfast",
+      },
+    ],
+
+    // ── Included / Excluded ───────────────────────────────────
+    included: [
+      "3 nights' accommodation in hand-picked lodges and hotels",
+      "All meals as indicated in the itinerary (B/L/D)",
+      "Rwanda gorilla trekking permit (1 per person)",
+      "Private expert English-speaking guide throughout",
+      "Guided Kigali city tour and Genocide Memorial visit",
+      "All park and conservation fees for the gorilla trek",
+      "Airport transfers and bottled water in the vehicle",
+    ],
+    excluded: [
+      "International flights to and from Kigali",
+      "Rwanda entry visa",
+      "Travel and medical insurance",
+      "Golden monkey permit and optional activities",
+      "Porter fees, gratuities, and personal expenses",
+      "Drinks and items of a personal nature",
+    ],
+
+    // ── Accommodation showcase ────────────────────────────────
+    stays: [
+      { name: "Kinigi Guest House", location: "Kinigi, Volcanoes NP (Budget)" },
+      { name: "Le Bambou Gorilla Lodge", location: "Kinigi, Volcanoes NP (Mid-Range)" },
+      { name: "Five Volcanoes Boutique Hotel", location: "Musanze, Volcanoes NP (Mid-Range)" },
+      { name: "Bisate Lodge", location: "Volcanoes NP (Luxury)" },
+    ],
+
+    pricingNote:
+      "Rwanda gorilla permits are US$1,500 per person and strictly limited each day — we secure yours as soon as your trip is confirmed. Prices are based on two people sharing; contact us for current rates and single-supplement pricing.",
+  },
+
+  {
+    // ── Meta ──────────────────────────────────────────────────
+    slug: "uganda-rwanda-gorilla-safari",
+    title: "Uganda & Rwanda Double Gorilla Safari",
+    subtitle: "Two countries, two gorilla families, golden monkeys and the Virungas",
+    excerpt:
+      "The ultimate primate journey — trek mountain gorillas in both Uganda's Bwindi and Rwanda's Volcanoes National Park on a single cross-border safari, with golden monkeys, the Kazinga Channel, Lake Bunyonyi, and Kigali along the way.",
+    country: "Uganda & Rwanda",
+    duration: "8 Days",
+    priceFrom: "From $7,250 per person sharing",
+    heroImage: "",
+    heroFallback: "linear-gradient(160deg, #3a6a2a, #123a1e)",
+    badge: "Two-Country Combo",
+    date: "2026-07-12",
+
+    // ── Overview ──────────────────────────────────────────────
+    overview: [
+      "Why choose between Uganda and Rwanda when you can trek gorillas in both? This eight-day cross-border journey links the region's two great gorilla destinations — Uganda's Bwindi Impenetrable Forest and Rwanda's Volcanoes National Park — into one seamless safari, with two separate gorilla families in two very different forests.",
+      "Beginning in Uganda, you'll trek Bwindi's gorillas, cruise the wildlife-rich Kazinga Channel, and cross overland into Rwanda through the Virunga foothills. In Rwanda you'll track golden monkeys, meet a second gorilla family beneath the volcanoes, and finish in Kigali with its moving history and easy international connections.",
+      "The trip flies in to Entebbe and out of Kigali, so no time is wasted backtracking. Every departure is private and expertly guided on both sides of the border.",
+    ],
+
+    // ── At a glance ───────────────────────────────────────────
+    facts: [
+      { label: "Duration", value: "8 Days / 7 Nights" },
+      { label: "Countries", value: "Uganda & Rwanda" },
+      { label: "Parks", value: "Bwindi · Volcanoes" },
+      { label: "Gorilla Treks", value: "Two (one per country)" },
+      { label: "Best Time", value: "Jun – Sep & Dec – Feb" },
+      { label: "Airports", value: "Entebbe (EBB) in · Kigali (KGL) out" },
+    ],
+
+    // ── Highlights ────────────────────────────────────────────
+    highlights: [
+      "Two gorilla treks — one in Uganda's Bwindi and one in Rwanda's Volcanoes National Park",
+      "Golden monkey tracking in the bamboo forests of the Virungas",
+      "Boat cruise on the Kazinga Channel past hippos, elephants, and birdlife",
+      "A scenic overland border crossing through the Virunga volcanoes",
+      "Time on the terraced shores of Lake Bunyonyi",
+      "A guided tour of Kigali and its Genocide Memorial",
+    ],
+
+    // ── Day by day ────────────────────────────────────────────
+    days: [
+      {
+        label: "Day 1",
+        title: "Arrive in Entebbe",
+        location: "Entebbe, Uganda",
+        nights: "1 night",
+        body: [
+          "Land at Entebbe International Airport, where your guide meets you and transfers you to a comfortable hotel on the shores of Lake Victoria for a welcome dinner and trip briefing.",
+        ],
+        accommodation: "Protea Hotel Entebbe",
+        meals: "Dinner",
+      },
+      {
+        label: "Day 2",
+        title: "Fly to Bwindi",
+        location: "Bwindi, Uganda",
+        nights: "2 nights",
+        body: [
+          "Take a scheduled light-aircraft flight from Entebbe to the airstrip near Bwindi, trading a long drive for a spectacular aerial view of Uganda's lakes and hills.",
+          "Arrive in time to settle into your forest lodge, with an optional afternoon Batwa community walk to learn about the forest's first people.",
+        ],
+        accommodation: "Buhoma Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 3",
+        title: "Gorilla Trekking in Bwindi",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        body: [
+          "After an early briefing, set off on foot with rangers and trackers into one of Africa's oldest rainforests in search of a habituated gorilla family. The trek can take anywhere from one to several hours over steep, forested terrain.",
+          "You have one unforgettable hour with the gorillas at close range before returning to your lodge. Porters are available to carry your pack and assist on the climbs.",
+        ],
+        accommodation: "Buhoma Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+        image: "/hero-gorilla.jpg",
+        imageAlt: "A mountain gorilla in Bwindi Impenetrable Forest",
+      },
+      {
+        label: "Day 4",
+        title: "Lake Bunyonyi & Across the Border",
+        location: "Bwindi → Musanze, Rwanda",
+        nights: "3 nights",
+        body: [
+          "Drive south with a stop at the beautiful, island-dotted Lake Bunyonyi, then continue to the Cyanika border and cross overland into Rwanda.",
+          "Wind up through terraced hills to Musanze, at the foot of the Virunga volcanoes and the gateway to Volcanoes National Park, where you'll spend the next three nights.",
+        ],
+        accommodation: "Five Volcanoes Boutique Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 5",
+        title: "Golden Monkeys & the Fossey Legacy",
+        location: "Volcanoes National Park, Rwanda",
+        body: [
+          "Track the lively golden monkeys found only in these bamboo forests — an easier and highly photogenic trek. In the afternoon, choose an optional hike toward Dian Fossey's Karisoke research site or a cultural visit to a local community.",
+        ],
+        accommodation: "Five Volcanoes Boutique Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 6",
+        title: "Gorilla Trekking in the Virungas",
+        location: "Volcanoes National Park, Rwanda",
+        body: [
+          "Your second gorilla trek, this time on the Rwandan side of the Virungas. After the briefing at Kinigi, head out to meet a different habituated family in a strikingly different landscape of bamboo and open volcanic slopes.",
+          "Enjoy another hour in their company before returning to the lodge to celebrate a rare achievement — gorilla trekking in two countries on a single trip.",
+        ],
+        accommodation: "Five Volcanoes Boutique Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 7",
+        title: "To Kigali",
+        location: "Kigali, Rwanda",
+        nights: "1 night",
+        body: [
+          "Drive to Kigali for a guided city tour and a visit to the moving Genocide Memorial, with time for a craft cooperative before checking into your hotel.",
+        ],
+        accommodation: "Kigali Serena Hotel",
+        meals: "Breakfast, Dinner",
+      },
+      {
+        label: "Day 8",
+        title: "Departure from Kigali",
+        location: "Kigali, Rwanda",
+        body: [
+          "Transfer to Kigali International Airport for your international departure — or continue on to a wider East Africa extension, which we're happy to arrange.",
+        ],
+        meals: "Breakfast",
+      },
+    ],
+
+    // ── Included / Excluded ───────────────────────────────────
+    included: [
+      "7 nights' accommodation in hand-picked lodges and hotels",
+      "All meals as indicated in the itinerary (B/L/D)",
+      "Two gorilla trekking permits — one in Uganda and one in Rwanda",
+      "Scheduled light-aircraft flight Entebbe–Bwindi",
+      "Private expert English-speaking guides in Uganda and Rwanda",
+      "All park and conservation fees, and the overland border transfer",
+      "Guided Kigali city tour and Genocide Memorial visit",
+      "Airport transfers and bottled water in the vehicle",
+    ],
+    excluded: [
+      "International flights (into Entebbe, out of Kigali)",
+      "Visas — the East Africa Tourist Visa is recommended for this route",
+      "Travel and medical insurance",
+      "Golden monkey permit and optional activities",
+      "Porter fees, gratuities, and personal expenses",
+      "Drinks and items of a personal nature",
+    ],
+
+    // ── Accommodation showcase ────────────────────────────────
+    stays: [
+      { name: "Buhoma Lodge", location: "Bwindi Impenetrable NP, Uganda", nights: "2 nights" },
+      { name: "Five Volcanoes Boutique Hotel", location: "Musanze, Volcanoes NP, Rwanda", nights: "3 nights" },
+      { name: "Kigali Serena Hotel", location: "Kigali, Rwanda", nights: "1 night" },
+    ],
+
+    pricingNote:
+      "This route includes two gorilla permits (US$800 in Uganda and US$1,500 in Rwanda) — both are strictly limited and sell out early, so book well ahead. The East Africa Tourist Visa covers both countries. Prices are based on two people sharing; contact us for current rates.",
+  },
 ];
 
 // ── Helpers used by the route + listings ────────────────────
