@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node /private/tmp/claude-503/-Users-otimdan-Downloads-pick-wild-safaris/91d213ad-5938-4102-947c-9a68e8ed3abe/scratchpad/check_itineraries.mjs)"
+      "Bash(node /private/tmp/claude-503/-Users-otimdan-Downloads-pick-wild-safaris/91d213ad-5938-4102-947c-9a68e8ed3abe/scratchpad/check_itineraries.mjs)",
+      "WebSearch"
     ]
   }
 }

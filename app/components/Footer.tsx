@@ -30,7 +30,6 @@ export default function Footer() {
             <h4>Follow Us</h4>
             <div className="social-icons">
               {[
-                { icon: "fab fa-tripadvisor", label: "TripAdvisor" },
                 { icon: "fab fa-facebook-f", label: "Facebook" },
                 { icon: "fab fa-instagram", label: "Instagram" },
                 { icon: "fab fa-linkedin-in", label: "LinkedIn" },

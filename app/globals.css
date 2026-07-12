@@ -901,22 +901,31 @@ html {
   padding: 2rem 3rem 0;
 }
 .exp-btn {
-  width: 64px;
-  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid #c9c2b8;
+  border: 2px solid var(--gold);
   background: transparent;
   cursor: pointer;
-  font-size: 2rem;
-  color: #aaa;
+  color: var(--gold);
   transition: all 0.25s ease;
 }
-.exp-btn:hover {
-  background: white;
+.exp-btn svg {
+  width: 20px;
+  height: 20px;
 }
-.exp-btn.active {
-  border-color: #56566a;
-  color: #1a1a1a;
+.exp-btn:hover:not(:disabled) {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--cream);
+}
+.exp-btn:disabled {
+  border-color: #d8d0c2;
+  color: #cbc3b5;
+  cursor: default;
 }
 @media (max-width: 768px) {
   .experiences-section {
@@ -938,8 +947,8 @@ html {
     padding: 2rem 1rem 0;
   }
   .exp-btn {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
   }
 }
 

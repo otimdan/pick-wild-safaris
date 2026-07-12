@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const experiences = [
@@ -43,6 +43,30 @@ const experiences = [
 
 export default function ExperiencesSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  // Reflect real scroll position so the arrows can dim at each end.
+  const updateEdges = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    setAtStart(el.scrollLeft <= 1);
+    // maxScroll <= 0 means everything fits — treat as "at end" too.
+    setAtEnd(maxScroll <= 1 || el.scrollLeft >= maxScroll - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    updateEdges();
+    el.addEventListener("scroll", updateEdges, { passive: true });
+    window.addEventListener("resize", updateEdges);
+    return () => {
+      el.removeEventListener("scroll", updateEdges);
+      window.removeEventListener("resize", updateEdges);
+    };
+  }, [updateEdges]);
 
   const getScrollAmount = () => {
     const card = carouselRef.current?.querySelector(".experience-card") as HTMLElement | null;
@@ -86,8 +110,16 @@ export default function ExperiencesSection() {
         </div>
 
         <div className="experience-controls">
-          <button className="exp-btn" onClick={scrollPrev} aria-label="Previous">&#8249;</button>
-          <button className="exp-btn active" onClick={scrollNext} aria-label="Next">&#8250;</button>
+          <button className="exp-btn" onClick={scrollPrev} aria-label="Previous" disabled={atStart}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button className="exp-btn" onClick={scrollNext} aria-label="Next" disabled={atEnd}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
