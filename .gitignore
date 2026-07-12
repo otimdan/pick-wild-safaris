@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal working notes — never commit
+NEEDS-INPUT.md
+
+# claude code — personal/local settings (shared settings.json is committed)
+.claude/settings.local.json

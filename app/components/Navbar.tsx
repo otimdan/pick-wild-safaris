@@ -148,19 +148,27 @@ export default function Navbar() {
               </a>
               <ul className="dropdown" role="list">
                 <li>
-                  <a href="#">How to Prepare for Safari</a>
+                  <Link href="/resources/how-to-prepare-for-safari">
+                    How to Prepare for Safari
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Visas &amp; E-Resources</a>
+                  <Link href="/resources/visas-and-e-resources">
+                    Visas &amp; E-Resources
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Climbing Mount Kilimanjaro</a>
+                  <Link href="/resources/climbing-kilimanjaro">
+                    Climbing Mount Kilimanjaro
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Gorilla Trekking Tips</a>
+                  <Link href="/blog/gorilla-trekking-tips">
+                    Gorilla Trekking Tips
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Frequently Asked Questions</a>
+                  <Link href="/resources/faq">Frequently Asked Questions</Link>
                 </li>
               </ul>
             </li>
@@ -248,23 +256,44 @@ export default function Navbar() {
                 "Botswana",
                 "Uganda",
                 "Rwanda",
-              ],
+              ].map((label) => ({ label })),
             },
             {
               label: "Trekking",
-              links: ["Climb Kilimanjaro", "Gorilla Trekking"],
+              links: ["Climb Kilimanjaro", "Gorilla Trekking"].map((label) => ({
+                label,
+              })),
             },
             {
               label: "Resources",
               links: [
-                "How to Prepare for Safari",
-                "Visas & E-Resources",
-                "FAQ",
+                {
+                  label: "How to Prepare for Safari",
+                  href: "/resources/how-to-prepare-for-safari",
+                },
+                {
+                  label: "Visas & E-Resources",
+                  href: "/resources/visas-and-e-resources",
+                },
+                {
+                  label: "Climbing Mount Kilimanjaro",
+                  href: "/resources/climbing-kilimanjaro",
+                },
+                {
+                  label: "Gorilla Trekking Tips",
+                  href: "/blog/gorilla-trekking-tips",
+                },
+                {
+                  label: "Frequently Asked Questions",
+                  href: "/resources/faq",
+                },
               ],
             },
             {
               label: "More",
-              links: ["About Us", "Our Impact", "Meet the Team"],
+              links: ["About Us", "Our Impact", "Meet the Team"].map(
+                (label) => ({ label })
+              ),
             },
           ].map(({ label, links }) => (
             <li key={label} className={openMobileItem === label ? "open" : ""}>
@@ -280,8 +309,14 @@ export default function Navbar() {
               </a>
               <ul className="mobile-sub">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#">{link}</a>
+                  <li key={link.label}>
+                    {"href" in link && link.href ? (
+                      <Link href={link.href} onClick={toggleMenu}>
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a href="#">{link.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>

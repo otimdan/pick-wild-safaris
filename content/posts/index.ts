@@ -12,6 +12,17 @@ export const POSTS_PER_PAGE = 9;
 
 export const allPosts: PostMeta[] = [
   {
+    slug: "is-the-shoebill-stork-a-dinosaur",
+    title: "Is the Shoebill Stork a Dinosaur? Meet Uganda's Living-Dinosaur Bird",
+    excerpt:
+      "The shoebill looks like it walked out of the Cretaceous — a five-foot swamp giant with a clog-shaped bill and an unblinking stare. Is it actually a dinosaur? Here's the honest answer, plus where to see one in Uganda.",
+    category: "Wildlife",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #3a4a4a, #12201c)",
+    date: "2026-07-12",
+    readTime: "11 min read",
+  },
+  {
     slug: "gorilla-trekking-tips",
     title: "Gorilla Trekking Tips: Everything You Need to Know Before You Go",
     excerpt:
@@ -21,7 +32,7 @@ export const allPosts: PostMeta[] = [
       "",
     coverFallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
     date: "2026-06-10",
-    readTime: "9 min read",
+    readTime: "13 min read",
   },
   {
     slug: "best-time-to-visit-uganda",
