@@ -25,10 +25,28 @@ Pick Wild Safaris is a licensed Ugandan tour operator registered with the Uganda
 
 ## Key Pages
 
-- Home: https://wildsafarisuganda.com
-- Safaris: https://wildsafarisuganda.com/safaris
-- Blog: https://wildsafarisuganda.com/blog
-- Contact: https://wildsafarisuganda.com/contact
+- [Home](https://wildsafarisuganda.com): Overview of Pick Wild Safaris and our private safari offering
+- [Safaris](https://wildsafarisuganda.com/safaris): Full catalogue of private safari itineraries across Uganda and East Africa
+- [Blog](https://wildsafarisuganda.com/blog): Safari planning advice, destination guides, and wildlife information
+- [Contact](https://wildsafarisuganda.com/contact): Enquire about a private, tailor-made safari
+
+## Safari Styles
+
+- [Luxury Safaris](https://wildsafarisuganda.com/safari-types/luxury-safaris): Private guides, boutique lodges, and a slower, fully-arranged pace
+- [Family-Friendly Safaris](https://wildsafarisuganda.com/safari-types/family-friendly-safaris): Shorter drives and itineraries paced for multi-generational groups
+- [Bird Watching Safaris](https://wildsafarisuganda.com/safari-types/bird-watching-safaris): Specialist-guided birding across Uganda's forests and wetlands
+- [Beach Safaris](https://wildsafarisuganda.com/safari-types/beach-safaris): Lake and coastal extensions to close out a wildlife itinerary
+- [Fly-In Safaris](https://wildsafarisuganda.com/safari-types/fly-in-safaris): Light-aircraft transfers between parks in place of long road drives
+- [Honeymoon Safaris](https://wildsafarisuganda.com/safari-types/honeymoon-safaris): Private, romantic itineraries for couples
+- [Photography Safaris](https://wildsafarisuganda.com/safari-types/photography-safaris): Golden-hour drives and extended stops built around getting the shot
+- [Female Travel Safaris](https://wildsafarisuganda.com/safari-types/female-travel-safaris): Vetted guides and itineraries designed for women travelling solo or in groups
+
+## Resources
+
+- [How to Prepare for Safari](https://wildsafarisuganda.com/resources/how-to-prepare-for-safari): Practical planning guidance for first-time safari travellers
+- [Visas & E-Resources](https://wildsafarisuganda.com/resources/visas-and-e-resources): Entry requirements and travel documentation for East Africa
+- [Climbing Mount Kilimanjaro](https://wildsafarisuganda.com/resources/climbing-kilimanjaro): Route options and guidance for climbing Africa's highest peak
+- [Frequently Asked Questions](https://wildsafarisuganda.com/resources/faq): Common questions about booking and travelling with us
 
 ## Blog Topics
 
@@ -36,9 +54,7 @@ Our blog covers practical safari planning advice, destination guides, gorilla tr
 
 ## Contact
 
-Email: info@wildsafarisuganda.com
-Phone: +256 393 000813 / +256 742 441148
-Address: Plot 6 Portal Road / 19 Hill Road, HMJ Building, 2nd Floor, Entebbe, Uganda
+- [Contact Us](https://wildsafarisuganda.com/contact): info@wildsafarisuganda.com · +256 393 000813 / +256 742 441148 · Plot 6 Portal Road / 19 Hill Road, HMJ Building, 2nd Floor, Entebbe, Uganda
 
 ## AI Usage Policy
 
