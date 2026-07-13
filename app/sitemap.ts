@@ -2,6 +2,7 @@
 import type { MetadataRoute } from "next";
 import { allPosts } from "@/content/posts/index";
 import { allItineraries } from "@/content/itineraries/index";
+import { safariTypes } from "@/content/safari-types/index";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -83,5 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...postRoutes, ...itineraryRoutes];
+  const safariTypeRoutes: MetadataRoute.Sitemap = safariTypes.map((t) => ({
+    url: `${BASE_URL}/safari-types/${t.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...postRoutes, ...itineraryRoutes, ...safariTypeRoutes];
 }
