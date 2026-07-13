@@ -29,17 +29,23 @@ export async function generateMetadata({
 
   const url = `${BASE_URL}/blog/${slug}`;
 
+  // SEO title/description with optional per-post overrides. `seoTitle` is a
+  // plain string so the root layout's title template brands it exactly once
+  // (" | Pick Wild Safaris") — do NOT re-append the brand here or it doubles.
+  const seoTitle = meta.metaTitle ?? meta.title;
+  const description = meta.metaDescription ?? meta.excerpt;
+
   return {
-    title: `${meta.title} | Pick Wild Safaris Blog`,
-    description: meta.excerpt,
+    title: seoTitle,
+    description,
     alternates: {
       canonical: url,
     },
     openGraph: {
       type: "article",
       url,
-      title: meta.title,
-      description: meta.excerpt,
+      title: seoTitle,
+      description,
       siteName: "Pick Wild Safaris",
       publishedTime: meta.date,
       authors: ["Pick Wild Safaris"],
@@ -54,8 +60,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: meta.title,
-      description: meta.excerpt,
+      title: seoTitle,
+      description,
       images: [ogImageFor(meta.coverImage)],
     },
   };
@@ -73,7 +79,7 @@ function BlogPostingSchema({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: meta.title,
-    description: meta.excerpt,
+    description: meta.metaDescription ?? meta.excerpt,
     image: ogImageFor(meta.coverImage),
     datePublished: meta.date,
     dateModified: meta.date,
