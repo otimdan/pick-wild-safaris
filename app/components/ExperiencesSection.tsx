@@ -2,44 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { safariTypes } from "@/content/safari-types/index";
 
-const experiences = [
-  {
-    img: "",
-    fallback: "linear-gradient(160deg, #2a7a8a, #0a3a4a)",
-    alt: "Beach holidays",
-    title: "Beach holidays",
-    desc: "Discover Africa's coast and tropical islands.",
-  },
-  {
-    img: "",
-    fallback: "linear-gradient(160deg, #6a7a2a, #2a3a10)",
-    alt: "Birdwatching",
-    title: "Birdwatching safaris",
-    desc: "",
-  },
-  {
-    img: "",
-    fallback: "linear-gradient(160deg, #9a6a3a, #4a2a10)",
-    alt: "Cultural",
-    title: "Cultural Experiences",
-    desc: "Get authentic insight into Africa's cultures, communities and history.",
-  },
-  {
-    img: "",
-    fallback: "linear-gradient(160deg, #1a7a7a, #0a3a4a)",
-    alt: "Snorkelling",
-    title: "Diving & snorkelling holidays",
-    desc: "",
-  },
-  {
-    img: "",
-    fallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
-    alt: "Family Safaris",
-    title: "Family safaris",
-    desc: "",
-  },
-];
+const experiences = safariTypes.map((t) => ({
+  href: `/safari-types/${t.slug}`,
+  img: t.heroImage ?? "",
+  fallback: t.heroFallback,
+  alt: t.title,
+  title: t.title,
+  desc: t.cardDesc,
+}));
 
 export default function ExperiencesSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -86,7 +59,7 @@ export default function ExperiencesSection() {
       <div className="experiences-carousel-wrapper">
         <div className="experiences-carousel" ref={carouselRef} id="experiencesCarousel">
           {experiences.map((exp) => (
-            <a key={exp.title} href="#" className="experience-card">
+            <Link key={exp.title} href={exp.href} className="experience-card">
               <span
                 aria-hidden
                 style={{ position: "absolute", inset: 0, background: exp.fallback }}
@@ -105,7 +78,7 @@ export default function ExperiencesSection() {
                 <h3>{exp.title}</h3>
                 {exp.desc && <p>{exp.desc}</p>}
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
