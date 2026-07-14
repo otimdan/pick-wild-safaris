@@ -93,22 +93,28 @@ export default function Post() {
         label="Split composition — a leopard's rosettes beside a cheetah's tear-marked face"
       />
 
-      <h2>The Easiest Tell: Spots and Tear Marks</h2>
+      <h2>Cheetah Spots vs Leopard Spots</h2>
 
       <p>
-        If you remember only one thing, remember the <strong>tear marks</strong>.
-        A cheetah has two distinct black lines running down from the inner corner
-        of each eye to the sides of its mouth &mdash; unmistakable once you spot
-        them, and thought to cut glare and help it focus on prey in bright sun. A
-        leopard&rsquo;s face is clean of these lines.
+        The coat pattern is the fastest tell of all, once you know what
+        you&rsquo;re looking for. A cheetah&rsquo;s spots are <em>solid</em>{" "}
+        round dots, like ink pressed onto the fur &mdash; small, evenly spaced,
+        and uniformly black. A leopard&rsquo;s spots are{" "}
+        <strong>rosettes</strong> &mdash; irregular rings of dark spots
+        enclosing a slightly darker centre, a bit like a paw print or a small
+        rose. Solid dots mean cheetah; ringed rosettes mean leopard &mdash; no
+        exceptions, and it works at any distance a pair of binoculars can
+        cover.
       </p>
 
       <p>
-        Then look at the coat. A cheetah&rsquo;s spots are <em>solid</em> round
-        dots, like ink pressed onto the fur. A leopard&rsquo;s are{" "}
-        <strong>rosettes</strong> &mdash; irregular rings of dark spots enclosing
-        a slightly darker centre, a bit like a paw print or a small rose. Solid
-        dots mean cheetah; ringed rosettes mean leopard.
+        If you remember only one other thing, remember the{" "}
+        <strong>tear marks</strong>. A cheetah has two distinct black lines
+        running down from the inner corner of each eye to the sides of its
+        mouth &mdash; unmistakable once you spot them, and thought to cut
+        glare and help it focus on prey in bright sun. A leopard&rsquo;s face
+        is clean of these lines, which makes the two easy to separate even
+        when the spot pattern is hard to see clearly at range.
       </p>
 
       <h2>Body and Build</h2>
@@ -172,6 +178,14 @@ export default function Post() {
       </p>
 
       <h2>Leopard vs Cheetah FAQ</h2>
+
+      <p>
+        <strong>What&rsquo;s the difference between cheetah spots and
+        leopard spots?</strong> Cheetah spots are small, solid, evenly
+        round dots. Leopard spots are rosettes &mdash; irregular rings of
+        spots around a darker centre. It&rsquo;s the single most reliable
+        way to tell the two apart from a photo.
+      </p>
 
       <p>
         <strong>What&rsquo;s the easiest way to tell them apart?</strong> The

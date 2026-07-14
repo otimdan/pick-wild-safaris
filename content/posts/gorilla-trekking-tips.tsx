@@ -56,7 +56,12 @@ export default function Post() {
         But it takes planning. This guide covers everything you need to know
         before you book your permit — where to go, when to trek, what it costs,
         how to prepare, and what that hour with a gorilla family is actually
-        like.
+        like. For the broader picture — every country, cost, and decision in
+        one place — see{" "}
+        <Link href="/blog/gorilla-trekking-in-africa">
+          gorilla trekking in Africa: the complete guide
+        </Link>
+        .
       </p>
 
       <h2>Where to Go: Bwindi vs. Mgahinga</h2>

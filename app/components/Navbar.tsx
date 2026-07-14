@@ -134,10 +134,12 @@ export default function Navbar() {
               </a>
               <ul className="dropdown" role="list">
                 <li>
-                  <a href="#">Climb Kilimanjaro</a>
+                  <Link href="/resources/climbing-kilimanjaro">
+                    Climb Kilimanjaro
+                  </Link>
                 </li>
                 <li>
-                  <a href="#">Gorilla Trekking</a>
+                  <Link href="/gorilla-trekking">Gorilla Trekking</Link>
                 </li>
               </ul>
             </li>
@@ -260,9 +262,13 @@ export default function Navbar() {
             },
             {
               label: "Trekking",
-              links: ["Climb Kilimanjaro", "Gorilla Trekking"].map((label) => ({
-                label,
-              })),
+              links: [
+                {
+                  label: "Climb Kilimanjaro",
+                  href: "/resources/climbing-kilimanjaro",
+                },
+                { label: "Gorilla Trekking", href: "/gorilla-trekking" },
+              ],
             },
             {
               label: "Resources",

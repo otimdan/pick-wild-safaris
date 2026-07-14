@@ -57,7 +57,12 @@ export default function Post() {
         As a Uganda-based operator we&rsquo;ll be upfront about our home turf, but
         the honest answer really does depend on you &mdash; your budget, your time,
         your fitness, and what else you want from the trip. Here&rsquo;s a
-        straight comparison to help you decide.
+        straight comparison to help you decide. (If DR Congo is also in the
+        mix, our{" "}
+        <Link href="/blog/gorilla-trekking-uganda-vs-rwanda-vs-congo">
+          three-way Uganda vs Rwanda vs DR Congo comparison
+        </Link>{" "}
+        covers all three.)
       </p>
 
       <h2>Uganda vs Rwanda Gorilla Trekking at a Glance</h2>

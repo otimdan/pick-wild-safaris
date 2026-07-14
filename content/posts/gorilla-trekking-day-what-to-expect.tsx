@@ -48,7 +48,12 @@ export default function Post() {
         preparation guide &mdash; but what does gorilla trekking day actually
         feel like, hour by hour? Here&rsquo;s a realistic walk-through of how
         the day unfolds, from the early wake-up to the moment you&rsquo;re
-        standing in front of a silverback.
+        standing in front of a silverback. If you&rsquo;re still deciding
+        where and how to book, start with{" "}
+        <Link href="/blog/gorilla-trekking-in-africa">
+          gorilla trekking in Africa: the complete guide
+        </Link>
+        .
       </p>
 
       <h2>6:00&ndash;7:00am: Early Start</h2>

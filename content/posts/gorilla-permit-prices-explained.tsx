@@ -55,7 +55,11 @@ export default function Post() {
       <p>
         Here&rsquo;s a clear breakdown of gorilla permit prices in Uganda,
         Rwanda, and DR Congo &mdash; what each includes, and why they differ so
-        much.
+        much. For the full country-by-country picture beyond just price, see{" "}
+        <Link href="/blog/gorilla-trekking-uganda-vs-rwanda-vs-congo">
+          Uganda vs Rwanda vs DR Congo
+        </Link>
+        .
       </p>
 
       <h2>Gorilla Permit Prices at a Glance</h2>

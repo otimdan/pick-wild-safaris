@@ -595,7 +595,7 @@ export const allPosts: PostMeta[] = [
       "Two tawny, spotted cats — one an all-power ambush hunter, the other the fastest land animal alive. Here's how to tell a leopard from a cheetah at a glance, and where to see both in East Africa.",
     metaTitle: "Leopard vs Cheetah: Key Differences",
     metaDescription:
-      "Leopard vs cheetah — how to tell them apart at a glance: spots, tear marks, build, and behaviour, plus where to see both in East Africa.",
+      "Cheetah spots vs leopard spots, tear marks, build, and behaviour — how to tell a leopard from a cheetah at a glance, and where to see both in East Africa.",
     category: "Wildlife",
     coverImage: "",
     coverFallback: "linear-gradient(160deg, #6a5230, #241a0c)",
@@ -853,6 +853,104 @@ export const allPosts: PostMeta[] = [
       "",
     coverFallback: "linear-gradient(160deg, #8a7a2a, #4a4010)",
     date: "2026-05-05",
+    readTime: "7 min read",
+  },
+  {
+    slug: "tigers-in-africa",
+    title: "Are There Tigers in Africa?",
+    excerpt:
+      "A common mix-up, cleared up: tigers are native to Asia and have never lived wild in Africa. Here's why people confuse them with lions, and the real big cats you'll see on safari.",
+    metaTitle: "Are There Tigers in Africa?",
+    metaDescription:
+      "Are there tigers in Africa? No — tigers are native to Asia. Here's why the mix-up happens, and the real big cats you'll see on an African safari.",
+    category: "Wildlife",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #7a4a1a, #241408)",
+    date: "2026-07-14",
+    readTime: "6 min read",
+  },
+  {
+    slug: "christmas-in-africa",
+    title: "Christmas in Africa: Spending the Holidays on Safari",
+    excerpt:
+      "No snow, no turkey — just warm December days, a country in full festive spirit, and mornings that might start with a gorilla trek. What Christmas looks like in Uganda, and how to plan around it.",
+    metaTitle: "Christmas in Africa: A Safari Holiday",
+    metaDescription:
+      "What Christmas in Uganda looks like, why December is a genuinely good time to visit, and how to plan a festive-season safari around the holidays.",
+    category: "Culture",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #6a2a2a, #200a0a)",
+    date: "2026-07-14",
+    readTime: "7 min read",
+  },
+  {
+    slug: "how-much-does-an-african-safari-cost",
+    title: "How Much Does an African Safari Cost?",
+    excerpt:
+      "There's no single answer — a budget camping trip and a private fly-in circuit can differ tenfold. The real cost drivers, ballpark ranges, and how to budget for the safari you actually want.",
+    metaTitle: "How Much Does an African Safari Cost?",
+    metaDescription:
+      "What actually drives the cost of an African safari — country, permits, accommodation tier, and season — plus ballpark ranges to help you budget.",
+    category: "Planning Tips",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #7a6a2a, #241e08)",
+    date: "2026-07-14",
+    readTime: "8 min read",
+  },
+  {
+    slug: "romantic-honeymoon-safari",
+    title: "Romantic Honeymoon Safari: A Planning Guide",
+    excerpt:
+      "A safari trades the predictable beach-resort script for something you'll still be talking about at your tenth anniversary. Where to go, how to plan it, and the romantic touches worth arranging in advance.",
+    metaTitle: "Romantic Honeymoon Safari Guide",
+    metaDescription:
+      "How to plan a romantic honeymoon safari in Uganda and Rwanda — the best settings, planning tips, and romantic touches worth arranging ahead.",
+    category: "Planning Tips",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #7a3a4a, #241014)",
+    date: "2026-07-14",
+    readTime: "7 min read",
+  },
+  {
+    slug: "big-cats-of-africa",
+    title: "Big Cats of Africa: A Complete Guide",
+    excerpt:
+      "Lion, leopard, cheetah, serval, and caracal — five distinct wild cats share the continent's savannas and forests. What makes each one unique, and where to see them in Uganda.",
+    metaTitle: "Big Cats of Africa: Complete Guide",
+    metaDescription:
+      "A complete guide to Africa's big cats — lion, leopard, cheetah, serval, and caracal — what makes each unique, and where to see them in Uganda.",
+    category: "Wildlife",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #7a6020, #241c08)",
+    date: "2026-07-14",
+    readTime: "8 min read",
+  },
+  {
+    slug: "gorilla-trekking-in-africa",
+    title: "Gorilla Trekking in Africa: The Complete Guide",
+    excerpt:
+      "Africa's single most sought-after wildlife experience, explained end to end — what it involves, where to go, what it costs, and how to decide, with links to every deeper guide you'll need.",
+    metaTitle: "Gorilla Trekking in Africa: Complete Guide",
+    metaDescription:
+      "The complete guide to gorilla trekking in Africa — where to go, permit costs, difficulty, and what to expect, across Uganda, Rwanda, and DR Congo.",
+    category: "Planning Tips",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #2a4a3a, #0a1c14)",
+    date: "2026-07-14",
+    readTime: "9 min read",
+  },
+  {
+    slug: "gorilla-trekking-uganda-vs-rwanda-vs-congo",
+    title: "Gorilla Trekking: Uganda vs Rwanda vs DR Congo",
+    excerpt:
+      "Three countries, three very different trips. A head-to-head comparison of cost, access, and the trek itself, to help you decide where to go gorilla trekking in Africa.",
+    metaTitle: "Uganda vs Rwanda vs DR Congo Gorillas",
+    metaDescription:
+      "Gorilla trekking in Uganda vs Rwanda vs DR Congo — permit cost, trek length, and access compared head-to-head, with a clear guide to choosing.",
+    category: "Planning Tips",
+    coverImage: "",
+    coverFallback: "linear-gradient(160deg, #2a5a3a, #0a2014)",
+    date: "2026-07-14",
     readTime: "7 min read",
   },
 ];
