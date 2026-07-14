@@ -22,9 +22,7 @@ export default function ContactPage() {
 
       <header className="legal-hero">
         <h1>Speak With a Planner</h1>
-        <p className="legal-updated">
-          Private safaris, tailored around you
-        </p>
+        <p className="legal-updated">Private safaris, tailored around you</p>
       </header>
 
       <div className="contact-body">
@@ -47,8 +45,8 @@ export default function ContactPage() {
               </li>
               <li>
                 <span className="contact-details-label">Phone</span>
-                <span>+256 393 000813</span>
-                <span>+256 742 441148</span>
+                <span>+256 782914245</span>
+                <span>+256 760686013</span>
               </li>
               <li>
                 <span className="contact-details-label">Office</span>
