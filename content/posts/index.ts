@@ -583,7 +583,7 @@ export const allPosts: PostMeta[] = [
     metaDescription:
       "Do lions eat leopards, cheetahs, and hyenas? They kill them but rarely eat them — Africa's big-predator rivalries explained, and where to see them.",
     category: "Wildlife",
-    coverImage: "",
+    coverImage: "/blog/do-lions-eat-leopards-cheetahs-and-hyenas/cover.jpg",
     coverFallback: "linear-gradient(160deg, #7a5a2a, #2a1c08)",
     date: "2026-07-13",
     readTime: "10 min read",

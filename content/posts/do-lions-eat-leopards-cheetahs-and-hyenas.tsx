@@ -4,39 +4,39 @@
 //  "do lions eat cheetahs/leopards/hyenas" + "do cheetahs eat
 //  lions/hyenas" cluster (competitor: wildtravelsafaris.com).
 //  Bridges to Uganda/East Africa game-drive safaris.
-//  Images added later — <ImagePlaceholder> marks each photo slot.
+//  Real photos live in public/blog/do-lions-eat-leopards-cheetahs-and-hyenas/
 // ─────────────────────────────────────────────────────────────
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
 import { getPostMeta } from "@/content/posts/index";
+import Image from "next/image";
 
-function ImagePlaceholder({
-  gradient,
-  label,
+// A tiny helper for inline images — matches the pattern used in
+// gorilla-trekking-tips.tsx. Renders nothing if src is empty.
+function PostImage({
+  src,
+  alt,
+  caption,
 }: {
-  gradient: string;
-  label: string;
+  src: string;
+  alt: string;
+  caption?: string;
 }) {
+  if (!src) return null;
   return (
-    <span
-      style={{
-        display: "flex",
-        alignItems: "flex-end",
-        minHeight: 260,
-        margin: "2rem 0",
-        padding: "1rem 1.25rem",
-        borderRadius: 12,
-        background: gradient,
-        color: "rgba(255,255,255,0.92)",
-        fontSize: "0.85rem",
-        fontStyle: "italic",
-        letterSpacing: "0.01em",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      Image: {label}
-    </span>
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        width={820}
+        height={480}
+        className="post-img"
+        style={{ width: "100%", height: "auto" }}
+        sizes="(max-width: 1024px) 100vw, 820px"
+      />
+      {caption && <span className="post-img-caption">{caption}</span>}
+    </>
   );
 }
 
@@ -87,9 +87,10 @@ export default function Post() {
         a rival predator isn&rsquo;t food &mdash; it&rsquo;s competition.
       </p>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #7a5a2a, #2a1c08)"
-        label="A lion pride on the open savanna at golden hour — Queen Elizabeth or Kidepo"
+      <PostImage
+        src="/blog/do-lions-eat-leopards-cheetahs-and-hyenas/lion-pride.jpg"
+        alt="A lion pride on the open savanna at golden hour"
+        caption="A lion pride on the open savanna — Queen Elizabeth National Park"
       />
 
       <h2>Killing the Competition, Not the Meal</h2>
@@ -139,9 +140,10 @@ export default function Post() {
         <Link href="/blog/how-fast-is-a-cheetah">how fast is a cheetah</Link>.)
       </p>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #8a6a2a, #322208)"
-        label="A cheetah scanning the horizon, alert for lions and hyenas"
+      <PostImage
+        src="/blog/do-lions-eat-leopards-cheetahs-and-hyenas/cheetah-scanning.jpg"
+        alt="A cheetah scanning the horizon, alert for lions and hyenas"
+        caption="A cheetah stays alert — lions and hyenas are its biggest threats"
       />
 
       <h2>Lions vs Hyenas: The Oldest Feud</h2>
