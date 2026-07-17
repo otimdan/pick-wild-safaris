@@ -4,39 +4,39 @@
 //  sprinter animal" cluster (competitor:
 //  wildtravelsafaris.com/the-worlds-fastest-sprinter-animal...).
 //  Bridges to Kidepo (Uganda cheetah country) + migration safaris.
-//  Images added later — <ImagePlaceholder> marks each photo slot.
+//  Real photos live in public/blog/how-fast-is-a-cheetah/
 // ─────────────────────────────────────────────────────────────
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
 import { getPostMeta } from "@/content/posts/index";
+import Image from "next/image";
 
-function ImagePlaceholder({
-  gradient,
-  label,
+// A tiny helper for inline images — matches the pattern used in
+// gorilla-trekking-tips.tsx. Renders nothing if src is empty.
+function PostImage({
+  src,
+  alt,
+  caption,
 }: {
-  gradient: string;
-  label: string;
+  src: string;
+  alt: string;
+  caption?: string;
 }) {
+  if (!src) return null;
   return (
-    <span
-      style={{
-        display: "flex",
-        alignItems: "flex-end",
-        minHeight: 260,
-        margin: "2rem 0",
-        padding: "1rem 1.25rem",
-        borderRadius: 12,
-        background: gradient,
-        color: "rgba(255,255,255,0.92)",
-        fontSize: "0.85rem",
-        fontStyle: "italic",
-        letterSpacing: "0.01em",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      Image: {label}
-    </span>
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        width={820}
+        height={480}
+        className="post-img"
+        style={{ width: "100%", height: "auto" }}
+        sizes="(max-width: 1024px) 100vw, 820px"
+      />
+      {caption && <span className="post-img-caption">{caption}</span>}
+    </>
   );
 }
 
@@ -79,9 +79,10 @@ export default function Post() {
         &mdash; and if the chase runs long, the antelope usually wins.
       </p>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #8a6a2a, #322208)"
-        label="A cheetah at full sprint, all four feet off the ground, dust flying"
+      <PostImage
+        src="/blog/how-fast-is-a-cheetah/cheetah-full-sprint.jpg"
+        alt="A cheetah at full sprint, all four feet off the ground, dust flying"
+        caption="A cheetah at full sprint — the fastest land animal on earth"
       />
 
       <h2>What Makes a Cheetah So Fast?</h2>

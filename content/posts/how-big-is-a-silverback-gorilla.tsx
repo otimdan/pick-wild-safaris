@@ -2,39 +2,39 @@
 //  POST: How Big Is a Silverback Gorilla?
 //  Informational post targeting the "how big / tall / heavy /
 //  strong is a silverback gorilla" cluster, bridging to trips.
-//  Images added later — <ImagePlaceholder> marks each photo slot.
+//  Real photos live in public/blog/how-big-is-a-silverback-gorilla/
 // ─────────────────────────────────────────────────────────────
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
 import { getPostMeta } from "@/content/posts/index";
+import Image from "next/image";
 
-function ImagePlaceholder({
-  gradient,
-  label,
+// A tiny helper for inline images — matches the pattern used in
+// gorilla-trekking-tips.tsx. Renders nothing if src is empty.
+function PostImage({
+  src,
+  alt,
+  caption,
 }: {
-  gradient: string;
-  label: string;
+  src: string;
+  alt: string;
+  caption?: string;
 }) {
+  if (!src) return null;
   return (
-    <span
-      style={{
-        display: "flex",
-        alignItems: "flex-end",
-        minHeight: 260,
-        margin: "2rem 0",
-        padding: "1rem 1.25rem",
-        borderRadius: 12,
-        background: gradient,
-        color: "rgba(255,255,255,0.92)",
-        fontSize: "0.85rem",
-        fontStyle: "italic",
-        letterSpacing: "0.01em",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      Image: {label}
-    </span>
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        width={820}
+        height={480}
+        className="post-img"
+        style={{ width: "100%", height: "auto" }}
+        sizes="(max-width: 1024px) 100vw, 820px"
+      />
+      {caption && <span className="post-img-caption">{caption}</span>}
+    </>
   );
 }
 
@@ -69,9 +69,10 @@ export default function Post() {
         about his size is built for that job.
       </p>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #3a4030, #14180e)"
-        label="Full-body silverback gorilla in Bwindi, showing the silver saddle and scale"
+      <PostImage
+        src="/blog/how-big-is-a-silverback-gorilla/silverback-full-body.jpg"
+        alt="Full-body silverback gorilla in Bwindi, showing the silver saddle and scale"
+        caption="A silverback's silver saddle marks him as the mature leader of his family"
       />
 
       <h2>How Tall Is a Silverback Gorilla?</h2>

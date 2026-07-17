@@ -2,40 +2,40 @@
 //  POST: Are There Tigers in Africa?
 //  Myth-busting search-intent post targeting "tigers in africa".
 //  Redirects intent toward Africa's real big cats and bridges to
-//  Uganda's big-cat parks. Images added later — <ImagePlaceholder>
-//  marks each photo slot.
+//  Uganda's big-cat parks.
+//  Real photos live in public/blog/tigers-in-africa/
 // ─────────────────────────────────────────────────────────────
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
 import { getPostMeta } from "@/content/posts/index";
+import Image from "next/image";
 
-function ImagePlaceholder({
-  gradient,
-  label,
+// A tiny helper for inline images — matches the pattern used in
+// gorilla-trekking-tips.tsx. Renders nothing if src is empty.
+function PostImage({
+  src,
+  alt,
+  caption,
 }: {
-  gradient: string;
-  label: string;
+  src: string;
+  alt: string;
+  caption?: string;
 }) {
+  if (!src) return null;
   return (
-    <span
-      style={{
-        display: "flex",
-        alignItems: "flex-end",
-        minHeight: 260,
-        margin: "2rem 0",
-        padding: "1rem 1.25rem",
-        borderRadius: 12,
-        background: gradient,
-        color: "rgba(255,255,255,0.92)",
-        fontSize: "0.85rem",
-        fontStyle: "italic",
-        letterSpacing: "0.01em",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      Image: {label}
-    </span>
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        width={820}
+        height={480}
+        className="post-img"
+        style={{ width: "100%", height: "auto" }}
+        sizes="(max-width: 1024px) 100vw, 820px"
+      />
+      {caption && <span className="post-img-caption">{caption}</span>}
+    </>
   );
 }
 
@@ -91,9 +91,10 @@ export default function Post() {
         </li>
       </ul>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #7a4a1a, #241408)"
-        label="A lion in golden savanna grass — Africa's actual big cat"
+      <PostImage
+        src="/blog/tigers-in-africa/lion-savanna.jpg"
+        alt="A lion in golden savanna grass — Africa's actual big cat"
+        caption="No tigers — but Africa has the lion, its own iconic big cat"
       />
 
       <h2>Tigers vs Lions: The Easy Way to Tell Them Apart</h2>
@@ -187,9 +188,10 @@ export default function Post() {
         north, is the best bet for the rarer cheetah.
       </p>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #4a5a2a, #10160a)"
-        label="A tree-climbing lion resting in a fig tree, Ishasha sector, Queen Elizabeth National Park"
+      <PostImage
+        src="/blog/tigers-in-africa/tree-climbing-lion-ishasha.jpg"
+        alt="A tree-climbing lion resting in a fig tree, Ishasha sector, Queen Elizabeth National Park"
+        caption="A tree-climbing lion in the Ishasha sector, Queen Elizabeth National Park"
       />
 
       <h2>Tigers in Africa FAQ</h2>

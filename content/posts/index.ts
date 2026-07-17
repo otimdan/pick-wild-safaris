@@ -263,7 +263,7 @@ export const allPosts: PostMeta[] = [
     metaDescription:
       "Uganda kob facts — the national animal, its unusual lek mating grounds, how to tell it from an impala, and where to see huge herds in Uganda.",
     category: "Wildlife",
-    coverImage: "",
+    coverImage: "/blog/uganda-kob-facts/cover.jpg",
     coverFallback: "linear-gradient(160deg, #7a5a2a, #241c08)",
     date: "2026-07-13",
     readTime: "7 min read",
@@ -624,7 +624,7 @@ export const allPosts: PostMeta[] = [
     metaDescription:
       "How fast is a cheetah? Around 70 mph, and 0–60 in three seconds — but only for 20 seconds. What makes it the fastest land animal, and where to see one.",
     category: "Wildlife",
-    coverImage: "",
+    coverImage: "/blog/how-fast-is-a-cheetah/cover.jpg",
     coverFallback: "linear-gradient(160deg, #8a6a2a, #322208)",
     date: "2026-07-13",
     readTime: "8 min read",
@@ -778,7 +778,7 @@ export const allPosts: PostMeta[] = [
     metaDescription:
       "How big is a silverback gorilla? Nearly six feet tall and as heavy as three men, yet it lives on leaves. Gorilla size, weight, and strength.",
     category: "Wildlife",
-    coverImage: "",
+    coverImage: "/blog/how-big-is-a-silverback-gorilla/cover.jpg",
     coverFallback: "linear-gradient(160deg, #3a4030, #14180e)",
     date: "2026-07-12",
     readTime: "9 min read",
@@ -864,7 +864,7 @@ export const allPosts: PostMeta[] = [
     metaDescription:
       "Are there tigers in Africa? No — tigers are native to Asia. Here's why the mix-up happens, and the real big cats you'll see on an African safari.",
     category: "Wildlife",
-    coverImage: "",
+    coverImage: "/blog/tigers-in-africa/cover.jpg",
     coverFallback: "linear-gradient(160deg, #7a4a1a, #241408)",
     date: "2026-07-14",
     readTime: "6 min read",

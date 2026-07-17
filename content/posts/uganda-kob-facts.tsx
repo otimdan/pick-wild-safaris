@@ -1,39 +1,39 @@
 // ─────────────────────────────────────────────────────────────
 //  POST: Uganda Kob Facts — The National Animal
 //  Wildlife-facts cluster post; targets "uganda kob facts".
-//  Images added later — <ImagePlaceholder> marks each photo slot.
+//  Real photos live in public/blog/uganda-kob-facts/
 // ─────────────────────────────────────────────────────────────
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
 import { getPostMeta } from "@/content/posts/index";
+import Image from "next/image";
 
-function ImagePlaceholder({
-  gradient,
-  label,
+// A tiny helper for inline images — matches the pattern used in
+// gorilla-trekking-tips.tsx. Renders nothing if src is empty.
+function PostImage({
+  src,
+  alt,
+  caption,
 }: {
-  gradient: string;
-  label: string;
+  src: string;
+  alt: string;
+  caption?: string;
 }) {
+  if (!src) return null;
   return (
-    <span
-      style={{
-        display: "flex",
-        alignItems: "flex-end",
-        minHeight: 260,
-        margin: "2rem 0",
-        padding: "1rem 1.25rem",
-        borderRadius: 12,
-        background: gradient,
-        color: "rgba(255,255,255,0.92)",
-        fontSize: "0.85rem",
-        fontStyle: "italic",
-        letterSpacing: "0.01em",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)",
-      }}
-    >
-      Image: {label}
-    </span>
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        width={820}
+        height={480}
+        className="post-img"
+        style={{ width: "100%", height: "auto" }}
+        sizes="(max-width: 1024px) 100vw, 820px"
+      />
+      {caption && <span className="post-img-caption">{caption}</span>}
+    </>
   );
 }
 
@@ -80,9 +80,10 @@ export default function Post() {
         </li>
       </ul>
 
-      <ImagePlaceholder
-        gradient="linear-gradient(160deg, #7a5a2a, #241c08)"
-        label="A herd of Uganda kob on open grassland, a male's lyre-shaped horns catching the light"
+      <PostImage
+        src="/blog/uganda-kob-facts/kob-herd.jpg"
+        alt="A herd of Uganda kob on open grassland, a male's lyre-shaped horns catching the light"
+        caption="A herd of Uganda kob — the antelope on the national coat of arms"
       />
 
       <h2>How to Recognise a Uganda Kob</h2>
