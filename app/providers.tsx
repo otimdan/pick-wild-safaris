@@ -18,8 +18,12 @@ export function PostHogProvider({
     if (!key) return;
 
     posthog.init(key, {
+      // Reverse proxy that forwards to us.i.posthog.com — set via env.
       api_host:
         process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com",
+      // With a proxy, api_host is no longer the app URL, so point the toolbar
+      // and "view in PostHog" links back at the real PostHog app.
+      ui_host: "https://us.posthog.com",
       // Opt into PostHog's recommended defaults, which enable automatic
       // pageview + pageleave capture for client-side (SPA) navigations.
       defaults: "2026-06-25",
