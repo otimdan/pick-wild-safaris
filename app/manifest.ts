@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Pick Wild Safaris",
     short_name: "Pick Wild",
     description:
-      "Private African safaris designed for you — gorilla trekking, wildlife, and adventure across Uganda and East Africa since 1995.",
+      "Private African safaris designed for you — gorilla trekking, wildlife, and adventure across Uganda and East Africa.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

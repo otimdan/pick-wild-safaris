@@ -17,14 +17,14 @@ const BASE_URL = "https://wildsafarisuganda.com";
 export const metadata: Metadata = {
   title: "Gorilla Trekking in Africa",
   description:
-    "Private, permit-secured gorilla trekking safaris across Uganda, Rwanda, and DR Congo — expertly planned, personally guided, since 1995.",
+    "Private, permit-secured gorilla trekking safaris across Uganda, Rwanda, and DR Congo — expertly planned, personally guided.",
   alternates: { canonical: `${BASE_URL}/gorilla-trekking` },
   openGraph: {
     type: "website",
     url: `${BASE_URL}/gorilla-trekking`,
     title: "Gorilla Trekking in Africa | Pick Wild Safaris",
     description:
-      "Private, permit-secured gorilla trekking safaris across Uganda, Rwanda, and DR Congo — expertly planned, personally guided, since 1995.",
+      "Private, permit-secured gorilla trekking safaris across Uganda, Rwanda, and DR Congo — expertly planned, personally guided.",
     siteName: "Pick Wild Safaris",
   },
   twitter: {
@@ -156,11 +156,11 @@ export default function GorillaTrekkingPage() {
                   and unlike anything else on a safari itinerary.
                 </p>
                 <p>
-                  We&rsquo;ve run gorilla trekking trips since 1995, across
-                  all three countries where wild mountain gorillas remain:
-                  Uganda, Rwanda, and DR Congo. Every trek is private,
-                  permit-secured in advance, and built into a wider
-                  itinerary that suits how you actually want to travel.
+                  We run gorilla trekking trips across all three countries
+                  where wild mountain gorillas remain: Uganda, Rwanda, and DR
+                  Congo. Every trek is private, permit-secured in advance,
+                  and built into a wider itinerary that suits how you
+                  actually want to travel.
                 </p>
               </div>
             </section>

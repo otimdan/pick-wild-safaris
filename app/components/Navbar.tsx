@@ -71,9 +71,7 @@ export default function Navbar() {
               </a>
               <ul className="dropdown" role="list">
                 <li>
-                  <a href="https://goodearthtours.com/tour-type/safaris/">
-                    All Safaris
-                  </a>
+                  <Link href="/safaris">All Safaris</Link>
                 </li>
                 <li>
                   <a href="#">
@@ -81,19 +79,44 @@ export default function Navbar() {
                   </a>
                   <ul className="sub-dropdown" role="list">
                     <li>
-                      <a href="#">All-Inclusive African Safaris</a>
+                      <Link href="/safari-types/luxury-safaris">
+                        Luxury Safaris
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Family African Safari</a>
+                      <Link href="/safari-types/family-friendly-safaris">
+                        Family-Friendly Safaris
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Romantic Getaways</a>
+                      <Link href="/safari-types/honeymoon-safaris">
+                        Honeymoon Safaris
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Safaris for Seniors</a>
+                      <Link href="/safari-types/bird-watching-safaris">
+                        Bird Watching Safaris
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Small Group Safaris</a>
+                      <Link href="/safari-types/beach-safaris">
+                        Beach Safaris
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/safari-types/fly-in-safaris">
+                        Fly-In Safaris
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/safari-types/photography-safaris">
+                        Photography Safaris
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/safari-types/female-travel-safaris">
+                        Female Travel Safaris
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -103,25 +126,16 @@ export default function Navbar() {
                   </a>
                   <ul className="sub-dropdown" role="list">
                     <li>
-                      <a href="#">Tanzania</a>
+                      <Link href="/safaris?country=Uganda">Uganda</Link>
                     </li>
                     <li>
-                      <a href="#">South Africa</a>
+                      <Link href="/safaris?country=Rwanda">Rwanda</Link>
                     </li>
                     <li>
-                      <a href="#">Botswana</a>
+                      <Link href="/safaris?country=Kenya">Kenya</Link>
                     </li>
                     <li>
-                      <a href="#">Uganda</a>
-                    </li>
-                    <li>
-                      <a href="#">Rwanda</a>
-                    </li>
-                    <li>
-                      <a href="#">Kenya</a>
-                    </li>
-                    <li>
-                      <a href="#">Namibia</a>
+                      <Link href="/safaris?country=Tanzania">Tanzania</Link>
                     </li>
                   </ul>
                 </li>
@@ -134,8 +148,8 @@ export default function Navbar() {
               </a>
               <ul className="dropdown" role="list">
                 <li>
-                  <Link href="/resources/climbing-kilimanjaro">
-                    Climb Kilimanjaro
+                  <Link href="/blog/rwenzori-mountains-trekking-guide">
+                    Climb Rwenzori
                   </Link>
                 </li>
                 <li>
@@ -181,25 +195,19 @@ export default function Navbar() {
               </a>
               <ul className="dropdown" role="list">
                 <li>
-                  <a href="#">About Us</a>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <a href="#">Our Impact</a>
+                  <Link href="/lodging">Lodging &amp; Accommodation</Link>
                 </li>
                 <li>
-                  <a href="#">Meet the Team</a>
-                </li>
-                <li>
-                  <a href="#">Lodging &amp; Accommodation</a>
-                </li>
-                <li>
-                  <a href="#">Custom Safari Builder Tool</a>
+                  <Link href="/contact">Custom Safari Builder Tool</Link>
                 </li>
               </ul>
             </li>
 
             <li>
-              <a href="/blog">Blog</a>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
 
@@ -216,9 +224,9 @@ export default function Navbar() {
                 <line x1="16.5" y1="16.5" x2="22" y2="22" />
               </svg>
             </button>
-            <a href="/contact" className="cta-btn">
+            <Link href="/contact" className="cta-btn">
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger */}
@@ -248,24 +256,51 @@ export default function Navbar() {
             {
               label: "Safaris",
               links: [
-                "All Safaris",
-                "All-Inclusive African Safaris",
-                "Family African Safari",
-                "Romantic Getaways",
-                "Tanzania",
-                "South Africa",
-                "Kenya",
-                "Botswana",
-                "Uganda",
-                "Rwanda",
-              ].map((label) => ({ label })),
+                { label: "All Safaris", href: "/safaris" },
+                {
+                  label: "Luxury Safaris",
+                  href: "/safari-types/luxury-safaris",
+                },
+                {
+                  label: "Family-Friendly Safaris",
+                  href: "/safari-types/family-friendly-safaris",
+                },
+                {
+                  label: "Honeymoon Safaris",
+                  href: "/safari-types/honeymoon-safaris",
+                },
+                {
+                  label: "Bird Watching Safaris",
+                  href: "/safari-types/bird-watching-safaris",
+                },
+                { label: "Beach Safaris", href: "/safari-types/beach-safaris" },
+                {
+                  label: "Fly-In Safaris",
+                  href: "/safari-types/fly-in-safaris",
+                },
+                {
+                  label: "Photography Safaris",
+                  href: "/safari-types/photography-safaris",
+                },
+                {
+                  label: "Female Travel Safaris",
+                  href: "/safari-types/female-travel-safaris",
+                },
+                { label: "Uganda Safaris", href: "/safaris?country=Uganda" },
+                { label: "Rwanda Safaris", href: "/safaris?country=Rwanda" },
+                { label: "Kenya Safaris", href: "/safaris?country=Kenya" },
+                {
+                  label: "Tanzania Safaris",
+                  href: "/safaris?country=Tanzania",
+                },
+              ],
             },
             {
               label: "Trekking",
               links: [
                 {
-                  label: "Climb Kilimanjaro",
-                  href: "/resources/climbing-kilimanjaro",
+                  label: "Climb Rwenzori",
+                  href: "/resources/climbing-rwenzori",
                 },
                 { label: "Gorilla Trekking", href: "/gorilla-trekking" },
               ],
@@ -282,8 +317,8 @@ export default function Navbar() {
                   href: "/resources/visas-and-e-resources",
                 },
                 {
-                  label: "Climbing Mount Kilimanjaro",
-                  href: "/resources/climbing-kilimanjaro",
+                  label: "Climbing Mount Rwenzori",
+                  href: "/resources/climbing-rwenzori",
                 },
                 {
                   label: "Gorilla Trekking Tips",
@@ -297,9 +332,14 @@ export default function Navbar() {
             },
             {
               label: "More",
-              links: ["About Us", "Our Impact", "Meet the Team"].map(
-                (label) => ({ label })
-              ),
+              links: [
+                { label: "About Us", href: "/about" },
+                { label: "Lodging & Accommodation", href: "/lodging" },
+                {
+                  label: "Custom Safari Builder Tool",
+                  href: "/contact",
+                },
+              ],
             },
           ].map(({ label, links }) => (
             <li key={label} className={openMobileItem === label ? "open" : ""}>
@@ -316,26 +356,24 @@ export default function Navbar() {
               <ul className="mobile-sub">
                 {links.map((link) => (
                   <li key={link.label}>
-                    {"href" in link && link.href ? (
-                      <Link href={link.href} onClick={toggleMenu}>
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <a href="#">{link.label}</a>
-                    )}
+                    <Link href={link.href} onClick={toggleMenu}>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </li>
           ))}
           <li>
-            <a href="/blog" className="mobile-toggle">
+            <Link href="/blog" className="mobile-toggle" onClick={toggleMenu}>
               Blog
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="mobile-cta">
-          <a href="/contact">Contact Us</a>
+          <Link href="/contact" onClick={toggleMenu}>
+            Contact Us
+          </Link>
         </div>
       </div>
     </>

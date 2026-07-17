@@ -10,9 +10,9 @@ import Partners from "./components/Partners";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pick Wild Safaris | Private Uganda & East Africa Safaris Since 1995",
+  title: "Pick Wild Safaris | Private Uganda & East Africa Safaris",
   description:
-    "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided. Since 1995.",
+    "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided.",
   alternates: {
     canonical: "https://wildsafarisuganda.com",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://wildsafarisuganda.com",
     title: "Pick Wild Safaris | Private Uganda & East Africa Safaris",
     description:
-      "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided. Since 1995.",
+      "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda, Rwanda, Kenya and East Africa. Expertly planned, personally guided.",
     siteName: "Pick Wild Safaris",
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pick Wild Safaris | Private Uganda & East Africa Safaris",
     description:
-      "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda and East Africa. Since 1995.",
+      "Private gorilla trekking, wildlife safaris, and adventure travel across Uganda and East Africa.",
   },
 };
 

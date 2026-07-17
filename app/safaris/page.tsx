@@ -23,7 +23,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SafarisPage() {
+export default async function SafarisPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ country?: string }>;
+}) {
+  const { country } = await searchParams;
+  const filtered = country
+    ? allItineraries.filter((it) =>
+        it.country.toLowerCase().includes(country.toLowerCase()),
+      )
+    : allItineraries;
+
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -31,15 +42,22 @@ export default function SafarisPage() {
       </div>
 
       <header className="legal-hero">
-        <h1>Our Safaris</h1>
+        <h1>{country ? `${country} Safaris` : "Our Safaris"}</h1>
         <p className="legal-updated">
-          Private, expertly guided journeys — tailored around you
+          {country ? (
+            <>
+              Private, expertly guided journeys in {country} —{" "}
+              <Link href="/safaris">view all safaris</Link>
+            </>
+          ) : (
+            "Private, expertly guided journeys — tailored around you"
+          )}
         </p>
       </header>
 
       <section className="safaris-section">
         <div className="safaris-grid">
-          {allItineraries.map((it) => (
+          {filtered.map((it) => (
             <Link
               key={it.slug}
               className="safari-card"

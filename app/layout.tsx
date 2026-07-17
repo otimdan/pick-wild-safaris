@@ -12,11 +12,11 @@ const ANALYTICS_ENABLED = process.env.NODE_ENV === "production";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Pick Wild Safaris | Private African Safaris Since 1995",
+    default: "Pick Wild Safaris | Private African Safaris, Expertly Guided",
     template: "%s | Pick Wild Safaris",
   },
   description:
-    "Private safaris designed for you. Expertly crafted gorilla trekking, wildlife, and adventure experiences across Uganda and East Africa since 1995.",
+    "Private safaris designed for you. Expertly crafted gorilla trekking, wildlife, and adventure experiences across Uganda and East Africa.",
   alternates: {
     canonical: BASE_URL,
   },

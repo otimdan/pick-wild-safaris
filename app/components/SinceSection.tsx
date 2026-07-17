@@ -95,14 +95,14 @@ export default function SinceSection() {
         </div>
 
         <h2 className="since-heading">
-          We&apos;ve been doing<br />one thing since 1995.
+          We only do one thing<br />&mdash; build it around you.
         </h2>
 
         <div className="since-body">
-          <p>We&apos;ve had clients come back for their honeymoon, their 40s, their 60s, and bring their kids and even grandkids.</p>
-          <p>That kind of repeated trust doesn&apos;t happen by accident.</p>
-          <p>It happens because we take this as seriously as you do.</p>
-          <p>We handle everything. You just show up.</p>
+          <p>Every itinerary starts blank. We fill it in around your dates, your pace, and exactly what you want to see.</p>
+          <p>No fixed departures. No being folded into someone else&apos;s group.</p>
+          <p>Just a private Ugandan guide, a private vehicle, and a trip built for you alone.</p>
+          <p>You tell us what you&apos;re after. We handle everything else.</p>
         </div>
 
         <Link href="/contact" className="since-cta">

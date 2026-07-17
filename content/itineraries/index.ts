@@ -20,8 +20,7 @@ export const itineraries: Itinerary[] = [
     country: "Kenya & Tanzania",
     duration: "9 Days",
     priceFrom: "From $6,480 per person sharing",
-    heroImage:
-      "",
+    heroImage: "/itineraries/east-africa-mara-serengeti-migration/hero.jpg",
     heroFallback: "linear-gradient(160deg, #5a7a3a, #2a4010)",
     badge: "Fan Favorite",
     date: "2026-07-01",
@@ -217,7 +216,7 @@ export const itineraries: Itinerary[] = [
     country: "Uganda",
     duration: "10 Days",
     priceFrom: "From $5,240 per person sharing",
-    heroImage: "/hero-gorilla.jpg",
+    heroImage: "/itineraries/uganda-gorilla-wildlife-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
     date: "2026-07-01",
 
@@ -317,8 +316,6 @@ export const itineraries: Itinerary[] = [
         ],
         accommodation: "Buhoma Lodge",
         meals: "Breakfast, Lunch, Dinner",
-        image: "/hero-gorilla.jpg",
-        imageAlt: "A mountain gorilla in Bwindi Impenetrable Forest",
       },
       {
         label: "Day 8",
@@ -394,7 +391,8 @@ export const itineraries: Itinerary[] = [
         name: "Buhoma Lodge",
         location: "Bwindi Impenetrable Forest, Uganda",
         nights: "3 nights",
-        image: "/hero-gorilla.jpg",
+        image:
+          "",
       },
     ],
 
@@ -412,7 +410,7 @@ export const itineraries: Itinerary[] = [
       "Track mountain gorillas in Bwindi and chimpanzees in Kibale, then take on the legendary Rwenzori Mountains — the 'Mountains of the Moon' — on a demanding multi-day trek toward Margherita Peak.",
     country: "Uganda",
     duration: "17 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-rwenzori-mountains-expedition/hero.jpg",
     heroFallback: "linear-gradient(160deg, #4a5a6a, #16202a)",
     badge: "Expedition Grade",
     date: "2026-07-12",
@@ -660,7 +658,7 @@ export const itineraries: Itinerary[] = [
       "Seventeen days across Uganda's richest birding circuits — Budongo, Semuliki, the Kazinga Channel, and the Mabamba shoebill swamps — anchored by chimpanzee tracking in Kibale and gorilla trekking in Bwindi.",
     country: "Uganda",
     duration: "17 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-birding-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2f5d4a, #0e2a20)",
     badge: "Birder's Choice",
     date: "2026-07-12",
@@ -905,7 +903,7 @@ export const itineraries: Itinerary[] = [
       "Seventeen days covering the very best of Uganda — Nile adventure in Jinja, waterfall hikes at Sipi Falls, Murchison Falls, Kibale's chimpanzees, Queen Elizabeth's game drives, and gorilla trekking in Bwindi.",
     country: "Uganda",
     duration: "17 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-complete-gorilla-wildlife-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #7a5a2a, #2a1a08)",
     badge: "Complete Uganda",
     date: "2026-07-12",
@@ -1136,7 +1134,7 @@ export const itineraries: Itinerary[] = [
       "Thirteen days through Uganda's finest wildlife circuit — a rhino tracking walk at Ziwa, game drives and a boat safari in Murchison Falls, chimpanzee tracking in Kibale, Queen Elizabeth's Kazinga Channel, and gorilla trekking in Bwindi.",
     country: "Uganda",
     duration: "13 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-primates-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #5a4a7a, #1a1030)",
     date: "2026-07-12",
 
@@ -1338,7 +1336,7 @@ export const itineraries: Itinerary[] = [
       "A fast-paced introduction to Uganda's best — chimpanzee tracking in Kibale, game drives and a Kazinga Channel cruise in Queen Elizabeth, and a morning with the mountain gorillas of Bwindi.",
     country: "Uganda",
     duration: "8 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-chimpanzee-express-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #6a3a3a, #240f0f)",
     date: "2026-07-12",
 
@@ -1468,7 +1466,7 @@ export const itineraries: Itinerary[] = [
       "Ten days through Kibale, Queen Elizabeth, and Bwindi for chimpanzees, game drives, and gorilla trekking, finishing with two restorative nights on the terraced shores of Lake Bunyonyi.",
     country: "Uganda",
     duration: "10 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-lake-bunyonyi-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #3a5a6a, #0f1f2a)",
     date: "2026-07-12",
 
@@ -1621,7 +1619,7 @@ export const itineraries: Itinerary[] = [
       "A time-efficient way to see the very best of Uganda: scheduled light-aircraft flights link Murchison Falls, Queen Elizabeth National Park, and Bwindi, trading long road transfers for scenic flights over the Rift Valley.",
     country: "Uganda",
     duration: "9 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-flyin-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2a4a6a, #0a1a2a)",
     badge: "Fly-In",
     date: "2026-07-12",
@@ -1763,7 +1761,7 @@ export const itineraries: Itinerary[] = [
       "Eight days across three of Kenya's classic reserves — Amboseli's elephant herds under Kilimanjaro, Meru's remote rhino sanctuary, and the Masai Mara's abundant plains game.",
     country: "Kenya",
     duration: "8 Days",
-    heroImage: "",
+    heroImage: "/itineraries/kenya-amboseli-meru-masai-mara-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #8a6a2a, #2a1a05)",
     date: "2026-07-12",
 
@@ -1890,7 +1888,7 @@ export const itineraries: Itinerary[] = [
       "Seven days through the land of a thousand hills — Kigali's history and culture, Big Five game drives in Akagera National Park, and canoeing, fishing, and village life on Lake Kivu.",
     country: "Rwanda",
     duration: "7 Days",
-    heroImage: "",
+    heroImage: "/itineraries/rwanda-akagera-kivu-culture-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2a6a4a, #061f14)",
     date: "2026-07-12",
 
@@ -2038,7 +2036,7 @@ export const itineraries: Itinerary[] = [
       "Six days to Uganda's most remote and dramatic national park, where savanna landscapes and mountain backdrops rival the Serengeti — and you're unlucky to meet more than three other vehicles in a day.",
     country: "Uganda",
     duration: "6 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-kidepo-valley-wilderness-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #8a5a2a, #2a1505)",
     date: "2026-07-12",
 
@@ -2172,7 +2170,7 @@ export const itineraries: Itinerary[] = [
       "Six days, two parks: game drives and a Kazinga Channel boat safari in Queen Elizabeth National Park, then a morning with a habituated mountain gorilla family in Bwindi Impenetrable Forest.",
     country: "Uganda",
     duration: "6 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-queen-elizabeth-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #4a6a3a, #12240c)",
     date: "2026-07-12",
 
@@ -2287,7 +2285,7 @@ export const itineraries: Itinerary[] = [
       "Three days — a guided rhino tracking walk at Ziwa Sanctuary, a game drive and boat safari in Murchison Falls National Park, and a walk to the top of the Falls.",
     country: "Uganda",
     duration: "3 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-murchison-falls-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #3a5a3a, #0e1f0e)",
     date: "2026-07-12",
 
@@ -2385,7 +2383,7 @@ export const itineraries: Itinerary[] = [
       "Three days in Uganda's most popular savanna reserve — game drives, a Kazinga Channel boat safari, and a chance at Ishasha's famous tree-climbing lions.",
     country: "Uganda",
     duration: "3 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-queen-elizabeth-express-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #5a6a2a, #1a2408)",
     date: "2026-07-12",
 
@@ -2482,7 +2480,7 @@ export const itineraries: Itinerary[] = [
       "Three days at Lake Mburo National Park — a village walk with the local Bahima pastoralist community, a game drive in search of Uganda's reintroduced giraffes, and a boat cruise among hippos and crocodiles.",
     country: "Uganda",
     duration: "3 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-lake-mburo-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #6a7a3a, #202808)",
     date: "2026-07-12",
 
@@ -2583,7 +2581,7 @@ export const itineraries: Itinerary[] = [
       "Three days at Kibale Forest — chimpanzee tracking, a swamp walk, and a scenic crater lake hike near Fort Portal.",
     country: "Uganda",
     duration: "3 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-kibale-chimpanzee-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2a6a3a, #08240f)",
     date: "2026-07-12",
 
@@ -2681,7 +2679,7 @@ export const itineraries: Itinerary[] = [
       "Three days, one purpose — trek to a habituated mountain gorilla family in Bwindi Impenetrable Forest, with a choice of budget, mid-range, or luxury lodges.",
     country: "Uganda",
     duration: "3 Days",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-gorilla-tracking-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2a4a2a, #081408)",
     date: "2026-07-12",
 
@@ -2789,7 +2787,7 @@ export const itineraries: Itinerary[] = [
     country: "Rwanda",
     duration: "4 Days",
     priceFrom: "From $3,450 per person sharing",
-    heroImage: "",
+    heroImage: "/itineraries/rwanda-gorilla-trekking-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #2f6a3a, #123a1e)",
     date: "2026-07-12",
 
@@ -2910,7 +2908,7 @@ export const itineraries: Itinerary[] = [
     country: "Uganda & Rwanda",
     duration: "8 Days",
     priceFrom: "From $7,250 per person sharing",
-    heroImage: "",
+    heroImage: "/itineraries/uganda-rwanda-gorilla-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #3a6a2a, #123a1e)",
     badge: "Two-Country Combo",
     date: "2026-07-12",
@@ -2977,8 +2975,6 @@ export const itineraries: Itinerary[] = [
         ],
         accommodation: "Buhoma Lodge",
         meals: "Breakfast, Lunch, Dinner",
-        image: "/hero-gorilla.jpg",
-        imageAlt: "A mountain gorilla in Bwindi Impenetrable Forest",
       },
       {
         label: "Day 4",
@@ -3064,6 +3060,645 @@ export const itineraries: Itinerary[] = [
 
     pricingNote:
       "This route includes two gorilla permits (US$800 in Uganda and US$1,500 in Rwanda) — both are strictly limited and sell out early, so book well ahead. The East Africa Tourist Visa covers both countries. Prices are based on two people sharing; contact us for current rates.",
+  },
+
+  {
+    // ── Meta ──────────────────────────────────────────────────
+    slug: "uganda-19-day-gorilla-wildlife-safari",
+    title: "19-Day Uganda Gorilla Trekking & Wildlife Safari",
+    subtitle: "Rhinos, big game, primates, gorillas, lakes, and adventure — the grand tour of Uganda",
+    excerpt:
+      "Nineteen days covering the very best of Uganda in one grand circuit — rhino tracking at Ziwa, Murchison Falls, chimpanzees in Kibale, Queen Elizabeth's game drives, tree-climbing lions, gorilla trekking in Bwindi, a Batwa cultural experience, Lake Bunyonyi, Lake Mburo, and adventure on the Nile at Jinja.",
+    country: "Uganda",
+    duration: "19 Days",
+    heroImage: "/itineraries/uganda-19-day-gorilla-wildlife-safari/hero.jpg",
+    heroFallback: "linear-gradient(160deg, #6a4a2a, #201606)",
+    badge: "Grand Circuit",
+    date: "2026-07-18",
+
+    // ── Overview ──────────────────────────────────────────────
+    overview: [
+      "This is Uganda in full — nineteen days that take in almost everything the country does best. It opens with rhino tracking on foot at Ziwa Rhino Sanctuary and the thunder of Murchison Falls, then moves through Kibale's chimpanzee forests and Queen Elizabeth's game-rich savanna, with a detour into the Ishasha sector for the country's famous tree-climbing lions, before the trip's centrepiece — a morning with the mountain gorillas of Bwindi Impenetrable Forest.",
+      "From there the pace eases: a Batwa cultural experience with the forest's original inhabitants, two nights unwinding on the terraced shores of Lake Bunyonyi, a walking safari and boat cruise at Lake Mburo, and a final stretch of adventure and scenery — white-water rafting country at the Source of the Nile in Jinja, and a guided waterfall hike at Sipi Falls — before returning to Entebbe.",
+      "It's a route built for travellers who want the complete picture — big game, primates, gorillas, culture, lakes, and adventure — in one seamless private journey. Every departure is led by an expert Ugandan driver-guide and shaped around your dates and pace rather than a fixed group schedule.",
+    ],
+
+    // ── At a glance ───────────────────────────────────────────
+    facts: [
+      { label: "Duration", value: "19 Days / 18 Nights" },
+      { label: "Country", value: "Uganda" },
+      { label: "Parks", value: "Murchison Falls · Kibale · Queen Elizabeth · Bwindi · Lake Mburo" },
+      { label: "Adventure Add-ons", value: "Source of the Nile (Jinja) · Sipi Falls" },
+      { label: "Best Time", value: "Jun – Sep & Dec – Feb" },
+      { label: "Nearest Airport", value: "Entebbe (EBB)" },
+    ],
+
+    // ── Highlights ────────────────────────────────────────────
+    highlights: [
+      "Rhino tracking on foot at Ziwa Rhino Sanctuary",
+      "Game drives and a Nile boat cruise beneath Murchison Falls",
+      "Chimpanzee tracking and a wetland walk in Kibale Forest",
+      "Game drives and a Kazinga Channel boat cruise in Queen Elizabeth National Park",
+      "Tree-climbing lions in the remote Ishasha sector",
+      "One unforgettable hour with a habituated mountain gorilla family in Bwindi",
+      "A Batwa cultural experience with the forest's original inhabitants",
+      "Canoeing on the island-dotted waters of Lake Bunyonyi",
+      "A walking safari and boat cruise at Lake Mburo National Park",
+      "Optional white-water rafting and adventure activities at the Source of the Nile, Jinja",
+      "A guided waterfall hike and coffee tour at Sipi Falls",
+    ],
+
+    // ── Day by day ────────────────────────────────────────────
+    days: [
+      {
+        label: "Day 1",
+        title: "Arrive in Entebbe",
+        location: "Entebbe, Uganda",
+        nights: "1 night",
+        body: [
+          "Welcome to Uganda! You're met at Entebbe International Airport by your safari guide and transferred to your hotel on the shores of Lake Victoria — the first chance to rest and settle in before the journey ahead.",
+        ],
+        accommodation: "Papyrus Guest House or 2 Friends Beach Hotel",
+        meals: "Dinner",
+      },
+      {
+        label: "Day 2",
+        title: "Ziwa Rhino Sanctuary & Murchison Falls",
+        location: "Ziwa Rhino Sanctuary → Murchison Falls NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Depart Entebbe for Ziwa Rhino Sanctuary, the only place in Uganda to track southern white rhinos in the wild — a rewarding walk on foot with an armed ranger to find them grazing in the bush. Continue on to Murchison Falls National Park, arriving in time to visit the Top of the Falls, where the entire Nile is forced through a gap barely seven metres wide before plunging into the gorge below.",
+        ],
+        accommodation: "Pakuba Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 3",
+        title: "Murchison Falls Game Drive & Boat Cruise",
+        location: "Murchison Falls NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning game drive across the park's northern savanna, watching for elephant, lion, buffalo, and giraffe, followed by an afternoon boat cruise on the Nile past pods of hippo and basking crocodiles, with the falls themselves rising ahead as the boat approaches.",
+        ],
+        accommodation: "Pakuba Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 4",
+        title: "To Kibale Forest National Park",
+        location: "Kibale Forest NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A long, scenic drive south through the rolling hills and tea plantations of western Uganda, arriving at Kibale Forest — home to the highest density of primates found anywhere in Africa — in time to rest before the next day's tracking.",
+        ],
+        accommodation: "Turaco Treetops",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 5",
+        title: "Chimpanzee Tracking & Bigodi Wetland Walk",
+        location: "Kibale Forest NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning tracking a habituated chimpanzee community through the forest, following their calls and watching them feed and move through the canopy overhead. In the afternoon, a guided walk through the Bigodi Wetland Sanctuary adds monkeys, birdlife, and butterflies to the day's sightings.",
+        ],
+        accommodation: "Turaco Treetops",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 6",
+        title: "To Queen Elizabeth National Park",
+        location: "Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Transfer to Queen Elizabeth National Park, arriving in time for an evening game drive across its open savanna, where lion, elephant, and Uganda kob are regular sightings.",
+        ],
+        accommodation: "Buffalo Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 7",
+        title: "Game Drive & Kazinga Channel Cruise",
+        location: "Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A further morning game drive, followed by an afternoon boat cruise along the Kazinga Channel — one of the best wildlife-viewing boat trips in Africa, with hippo, elephant, buffalo, and a huge variety of waterbirds gathered along its banks.",
+        ],
+        accommodation: "Buffalo Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 8",
+        title: "Tree-Climbing Lions of Ishasha",
+        location: "Ishasha Sector, Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "South to the remote Ishasha sector, where lions have taken to climbing into the branches of fig trees — one of the strangest and most photographed sights on an East African safari. A game drive here is spent scanning the treetops as much as the ground.",
+        ],
+        accommodation: "Enjojo Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 9",
+        title: "To Bwindi Impenetrable Forest",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "A scenic drive through the terraced hills of the Kigezi highlands to Bwindi, home to nearly half the world's remaining mountain gorillas. The afternoon is free for a community or nature walk before the trek ahead.",
+        ],
+        accommodation: "Rushaga Gorilla Haven Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 10",
+        title: "Gorilla Trekking in Bwindi",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "The day you came for. After an early briefing at park headquarters, rangers and trackers lead you through the forest to a habituated gorilla family for one unforgettable hour in their company, before you return to the trailhead with a certificate marking the trek.",
+        ],
+        accommodation: "Rushaga Gorilla Haven Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 11",
+        title: "Batwa Cultural Experience",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "A guided visit with the Batwa, the forest's original inhabitants, who share their traditional hunting and gathering skills, forest knowledge, and music. The rest of the day is yours to relax at the lodge.",
+        ],
+        accommodation: "Rushaga Gorilla Haven Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 12",
+        title: "To Lake Bunyonyi",
+        location: "Lake Bunyonyi, Uganda",
+        nights: "1 night",
+        body: [
+          "A scenic drive to Lake Bunyonyi, one of the few lakes in Uganda safe for swimming, with 29 islands scattered across its still water. Spend the afternoon on a canoe ride or simply relaxing at the lodge.",
+        ],
+        accommodation: "BirdNest Resort",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 13",
+        title: "To Lake Mburo National Park",
+        location: "Lake Mburo NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive north to Lake Mburo, Uganda's smallest savanna park and the only one home to impala, arriving in time for an evening game drive across its acacia woodland and open grassland.",
+        ],
+        accommodation: "Rwakobo Rock Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 14",
+        title: "Walking Safari & Boat Cruise",
+        location: "Lake Mburo NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning walking safari — one of the few Ugandan parks where this is possible, thanks to the absence of lions — followed by an afternoon boat cruise on the lake past hippo, crocodile, and waterbirds.",
+        ],
+        accommodation: "Rwakobo Rock Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 15",
+        title: "To Jinja via Kampala",
+        location: "Jinja, Uganda",
+        nights: "1 night",
+        body: [
+          "A long drive east via Kampala to Jinja, on the shore of Lake Victoria where the Nile begins its 6,600km journey to the Mediterranean.",
+        ],
+        accommodation: "2 Friends Guest House",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 16",
+        title: "Source of the Nile",
+        location: "Jinja, Uganda",
+        nights: "1 night",
+        body: [
+          "A visit to the source of the Nile, where the river leaves Lake Victoria, with the rest of the day free for optional white-water rafting, kayaking, or a gentler boat cruise on the river.",
+        ],
+        accommodation: "2 Friends Guest House",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 17",
+        title: "To Sipi Falls",
+        location: "Sipi Falls, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive to Sipi Falls on the foothills of Mount Elgon, where three waterfalls tumble through coffee-growing hillsides. A guided hike takes you to the falls, with wide views back across the plains below.",
+        ],
+        accommodation: "Sipi Heritage Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 18",
+        title: "Return to Entebbe",
+        location: "Entebbe, Uganda",
+        nights: "1 night",
+        body: [
+          "A long drive back across the country to Entebbe, arriving in the evening with the whole trip behind you.",
+        ],
+        accommodation: "Protea Hotel by Marriott Entebbe",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 19",
+        title: "Departure",
+        location: "Entebbe, Uganda",
+        body: [
+          "Depending on your flight time, spend the morning browsing local craft markets or visiting the Uganda Wildlife Education Centre before transferring to Entebbe International Airport for your departure flight.",
+        ],
+        meals: "Breakfast",
+      },
+    ],
+
+    // ── Included / Excluded ───────────────────────────────────
+    included: [
+      "18 nights' accommodation in hand-picked lodges",
+      "All meals as indicated in the itinerary (B/L/D)",
+      "Private English-speaking Ugandan driver-guide and 4×4 pop-up-roof vehicle",
+      "All fuel and bottled water in the vehicle",
+      "Rhino tracking fee at Ziwa Rhino Sanctuary",
+      "1 gorilla trekking permit per person (Bwindi Impenetrable National Park)",
+      "1 chimpanzee tracking permit per person (Kibale Forest National Park)",
+      "Batwa cultural experience",
+      "Murchison Falls boat safari and Kazinga Channel boat cruise",
+      "Lake Mburo walking safari and boat cruise",
+      "All national park and conservation fees for parks visited",
+    ],
+    excluded: [
+      "International airfares",
+      "Uganda entry visa",
+      "Personal travel and medical insurance",
+      "All drinks",
+      "Meals and snacks not indicated in the itinerary",
+      "Optional adventure activities in Jinja (white-water rafting, kayaking, quad-biking, bungee jumping, etc.) — available at a supplement",
+      "A porter for gorilla trekking (optional — carries your daypack)",
+      "Tips and gratuities for driver-guide and hotel staff",
+      "Personal expenses — laundry, souvenirs, and items of a personal nature",
+    ],
+
+    // ── Accommodation showcase ────────────────────────────────
+    stays: [
+      {
+        name: "Pakuba Safari Lodge",
+        location: "Murchison Falls NP, Uganda",
+        nights: "2 nights",
+        image: "/itineraries/uganda-19-day-gorilla-wildlife-safari/stay-1.jpg",
+      },
+      {
+        name: "Buffalo Safari Lodge",
+        location: "Queen Elizabeth NP, Uganda",
+        nights: "2 nights",
+        image: "/itineraries/uganda-19-day-gorilla-wildlife-safari/stay-2.jpg",
+      },
+      {
+        name: "Rushaga Gorilla Haven Lodge",
+        location: "Bwindi Impenetrable NP, Uganda",
+        nights: "3 nights",
+        image: "/itineraries/uganda-19-day-gorilla-wildlife-safari/stay-3.jpg",
+      },
+    ],
+  },
+
+  {
+    // ── Meta ──────────────────────────────────────────────────
+    slug: "uganda-21-day-explore-wildlife-safari",
+    title: "21-Day Explore Uganda Wildlife Safari",
+    subtitle: "The most complete Uganda journey — wildlife, primates, gorillas, golden monkeys, lakes, and culture",
+    excerpt:
+      "Twenty-one days for travellers who want to see all of Uganda — rhino tracking, Murchison Falls, chimpanzees in Kibale, Queen Elizabeth's game drives, tree-climbing lions, gorilla trekking in Bwindi, Batwa culture, Lake Bunyonyi, Lake Mburo, golden monkey trekking in Mgahinga, Lake Mutanda, and the Source of the Nile.",
+    country: "Uganda",
+    duration: "21 Days",
+    heroImage: "/itineraries/uganda-21-day-explore-wildlife-safari/hero.jpg",
+    heroFallback: "linear-gradient(160deg, #2a5a4a, #0a1c16)",
+    badge: "Ultimate Uganda",
+    date: "2026-07-18",
+
+    // ── Overview ──────────────────────────────────────────────
+    overview: [
+      "This is the most comprehensive Uganda itinerary we run — twenty-one days built for travellers who want to see it all, with nothing left out. It opens with rhino tracking at Ziwa Rhino Sanctuary and the thunder of Murchison Falls, then moves through Kibale's chimpanzee forests, Queen Elizabeth's game-rich savanna, and the tree-climbing lions of Ishasha, before the trip's centrepiece — a morning with the mountain gorillas of Bwindi Impenetrable Forest.",
+      "Where our other Uganda routes turn for home, this one keeps going: a Batwa cultural experience, two nights at Lake Bunyonyi, a walking safari and boat cruise at Lake Mburo, golden monkey trekking in Mgahinga Gorilla National Park, a quiet stop on the shores of Lake Mutanda, and adventure at the Source of the Nile in Jinja, with an optional detour for shoebill birding at Mabamba Swamp on the way back to Entebbe.",
+      "It's the full breadth of Uganda's wildlife, primates, lakes, and culture in one unhurried journey — ideal for travellers with the time to see the country properly. Every departure is private, led by an expert Ugandan driver-guide, and shaped around your dates and pace rather than a fixed group schedule.",
+    ],
+
+    // ── At a glance ───────────────────────────────────────────
+    facts: [
+      { label: "Duration", value: "21 Days / 20 Nights" },
+      { label: "Country", value: "Uganda" },
+      { label: "Parks", value: "Murchison Falls · Kibale · Queen Elizabeth · Bwindi · Lake Mburo · Mgahinga" },
+      { label: "Primate Add-ons", value: "Chimpanzee Tracking · Gorilla Trekking · Golden Monkey Trekking" },
+      { label: "Best Time", value: "Jun – Sep & Dec – Feb" },
+      { label: "Nearest Airport", value: "Entebbe (EBB)" },
+    ],
+
+    // ── Highlights ────────────────────────────────────────────
+    highlights: [
+      "Rhino tracking on foot at Ziwa Rhino Sanctuary",
+      "Game drives and a Nile boat cruise beneath Murchison Falls",
+      "Chimpanzee tracking and a wetland walk in Kibale Forest",
+      "Game drives and a Kazinga Channel boat cruise in Queen Elizabeth National Park",
+      "Tree-climbing lions in the remote Ishasha sector",
+      "One unforgettable hour with a habituated mountain gorilla family in Bwindi",
+      "A Batwa cultural experience and guided nature walk",
+      "Canoeing and an island tour on Lake Bunyonyi",
+      "A walking safari and boat cruise at Lake Mburo National Park",
+      "Golden monkey trekking in Mgahinga Gorilla National Park",
+      "Canoeing and photography on the shores of Lake Mutanda",
+      "Optional white-water rafting, tubing, and adventure activities at the Source of the Nile, Jinja",
+      "Optional shoebill birding at Mabamba Swamp",
+    ],
+
+    // ── Day by day ────────────────────────────────────────────
+    days: [
+      {
+        label: "Day 1",
+        title: "Arrive in Entebbe",
+        location: "Entebbe, Uganda",
+        nights: "1 night",
+        body: [
+          "Welcome to Uganda! You're met at Entebbe International Airport by your safari guide and transferred to your hotel to rest after your flight and settle in before the journey ahead.",
+        ],
+        accommodation: "ViaVia Entebbe or 2 Friends Beach Hotel",
+        meals: "Dinner",
+      },
+      {
+        label: "Day 2",
+        title: "Ziwa Rhino Sanctuary & Murchison Falls",
+        location: "Ziwa Rhino Sanctuary → Murchison Falls NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Depart Entebbe for Ziwa Rhino Sanctuary, the only place in Uganda to track southern white rhinos in the wild, walking on foot with an armed ranger to find them in the bush. Continue on to Murchison Falls National Park, visiting the Top of the Falls, where the entire Nile is forced through a gap barely seven metres wide before plunging into the gorge below.",
+        ],
+        accommodation: "Pakuba Safari Lodge or Fort Murchison Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 3",
+        title: "Murchison Falls Game Drive & Boat Cruise",
+        location: "Murchison Falls NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning game drive across the park's northern savanna, watching for elephant, giraffe, buffalo, and lion, followed by an afternoon boat cruise on the Nile past pods of hippo and basking crocodiles, with the falls rising ahead as the boat approaches.",
+        ],
+        accommodation: "Pakuba Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 4",
+        title: "Murchison Falls at Leisure",
+        location: "Murchison Falls NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A sunrise game drive while the park is at its quietest and most active, with the rest of the day open for optional birdwatching among Murchison's more than 450 recorded species, or a visit to a nearby community.",
+        ],
+        accommodation: "Pakuba Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 5",
+        title: "To Kibale Forest National Park",
+        location: "Kibale Forest NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A long, scenic drive south through the rolling hills and tea plantations of western Uganda, arriving at Kibale Forest — home to the highest density of primates found anywhere in Africa — in time to rest before the next day's tracking.",
+        ],
+        accommodation: "Chimpanzee Forest Lodge or Turaco Treetops",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 6",
+        title: "Chimpanzee Tracking & Bigodi Wetland Walk",
+        location: "Kibale Forest NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning tracking a habituated chimpanzee community through the forest, followed by an afternoon walk through the Bigodi Wetland Sanctuary, rich in monkeys, birdlife, and butterflies.",
+        ],
+        accommodation: "Chimpanzee Forest Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 7",
+        title: "To Queen Elizabeth National Park",
+        location: "Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive to Queen Elizabeth National Park, arriving in time for an evening game drive across its open savanna, where lion, elephant, and Uganda kob are regular sightings.",
+        ],
+        accommodation: "Elephant Hab Lodge or Buffalo Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 8",
+        title: "Game Drive & Kazinga Channel Cruise",
+        location: "Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A further morning game drive, followed by an afternoon boat cruise along the Kazinga Channel, past some of Africa's densest hippo and elephant concentrations and a huge variety of waterbirds.",
+        ],
+        accommodation: "Elephant Hab Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 9",
+        title: "Tree-Climbing Lions of Ishasha",
+        location: "Ishasha Sector, Queen Elizabeth NP, Uganda",
+        nights: "1 night",
+        body: [
+          "South to the remote Ishasha sector in search of Uganda's famous tree-climbing lions, which have taken to resting in the branches of fig trees — one of the strangest sights on an East African safari.",
+        ],
+        accommodation: "Enjojo Lodge or Ishasha Jungle Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 10",
+        title: "To Bwindi Impenetrable Forest",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "A scenic drive through the terraced hills of the Kigezi highlands to Bwindi, home to nearly half the world's remaining mountain gorillas, arriving in time to rest before the trek ahead.",
+        ],
+        accommodation: "Bakiga Lodge or Rushaga Gorilla Haven Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 11",
+        title: "Gorilla Trekking in Bwindi",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "Mountain gorilla trekking — the day you came for. After a briefing at park headquarters, rangers and trackers lead you through the forest to a habituated gorilla family for one unforgettable hour in their company, followed by a relaxed evening back at the lodge.",
+        ],
+        accommodation: "Bakiga Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 12",
+        title: "Bwindi Community Experience",
+        location: "Bwindi Impenetrable Forest, Uganda",
+        nights: "1 night",
+        body: [
+          "A guided Batwa cultural experience with the forest's original inhabitants, who share their traditional hunting and gathering skills and forest knowledge, followed by a further nature walk in the surrounding forest.",
+        ],
+        accommodation: "Bakiga Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 13",
+        title: "Lake Bunyonyi",
+        location: "Lake Bunyonyi, Uganda",
+        nights: "1 night",
+        body: [
+          "A scenic drive to Lake Bunyonyi, one of the few lakes in Uganda safe for swimming, with 29 islands scattered across its still water. Spend the day relaxing lakeside, with a canoe ride and island tour on offer.",
+        ],
+        accommodation: "BirdNest Resort or Arcadia Cottages",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 14",
+        title: "To Lake Mburo National Park",
+        location: "Lake Mburo NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive to Lake Mburo, Uganda's smallest savanna park and the only one home to impala, arriving in time for an afternoon game drive across its acacia woodland and open grassland.",
+        ],
+        accommodation: "Rwakobo Rock Lodge or Eagle's Nest",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 15",
+        title: "Walking Safari & Boat Cruise",
+        location: "Lake Mburo NP, Uganda",
+        nights: "1 night",
+        body: [
+          "A morning walking safari — one of the few Ugandan parks where this is possible, thanks to the absence of lions — followed by an afternoon boat cruise on the lake past hippo, crocodile, and waterbirds.",
+        ],
+        accommodation: "Rwakobo Rock Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 16",
+        title: "Golden Monkey Trekking in Mgahinga",
+        location: "Mgahinga Gorilla NP, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive to Mgahinga Gorilla National Park, Uganda's smallest park and the only place in the country to trek the golden monkey — a vividly coloured, lively primate found only on the bamboo slopes of the Virunga volcanoes.",
+        ],
+        accommodation: "Travellers Rest Hotel or Lake Mulehe Safari Lodge",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 17",
+        title: "Lake Mutanda",
+        location: "Lake Mutanda, Uganda",
+        nights: "1 night",
+        body: [
+          "A short transfer to Lake Mutanda, one of Uganda's most photogenic lakes, framed by the Virunga volcanoes. A quiet day for canoeing, photography, and simply relaxing after the primate trekking of the past week.",
+        ],
+        accommodation: "Mutanda Lake Resort",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 18",
+        title: "To Jinja",
+        location: "Jinja, Uganda",
+        nights: "1 night",
+        body: [
+          "A long drive across the country to Jinja, on the shore of Lake Victoria where the Nile begins its 6,600km journey to the Mediterranean.",
+        ],
+        accommodation: "Nile Village Hotel or 2 Friends Jinja",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 19",
+        title: "Source of the Nile",
+        location: "Jinja, Uganda",
+        nights: "1 night",
+        body: [
+          "A visit to the source of the Nile, where the river leaves Lake Victoria, with the rest of the day free for optional white-water rafting, tubing, quad-biking, or a gentler boat cruise on the river.",
+        ],
+        accommodation: "Nile Village Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 20",
+        title: "Mabamba Swamp & Return to Entebbe",
+        location: "Mabamba Swamp → Entebbe, Uganda",
+        nights: "1 night",
+        body: [
+          "Drive back toward Entebbe, with an optional stop at Mabamba Swamp — one of the best places on earth to see the rare, prehistoric-looking shoebill stork, gliding through papyrus channels by canoe. Continue to Entebbe for your final night.",
+        ],
+        accommodation: "ViaVia Entebbe or 2 Friends Beach Hotel",
+        meals: "Breakfast, Lunch, Dinner",
+      },
+      {
+        label: "Day 21",
+        title: "Departure",
+        location: "Entebbe, Uganda",
+        body: [
+          "Depending on your flight schedule, enjoy some leisure time in Entebbe before transferring to Entebbe International Airport for your departure flight.",
+        ],
+        meals: "Breakfast",
+      },
+    ],
+
+    // ── Included / Excluded ───────────────────────────────────
+    included: [
+      "20 nights' accommodation in hand-picked lodges",
+      "All meals as indicated in the itinerary (B/L/D)",
+      "Private English-speaking Ugandan driver-guide and 4×4 pop-up-roof vehicle",
+      "All fuel and bottled water in the vehicle",
+      "Rhino tracking fee at Ziwa Rhino Sanctuary",
+      "1 gorilla trekking permit per person (Bwindi Impenetrable National Park)",
+      "1 chimpanzee tracking permit per person (Kibale Forest National Park)",
+      "1 golden monkey trekking permit per person (Mgahinga Gorilla National Park)",
+      "Batwa cultural experience",
+      "Murchison Falls boat safari and Kazinga Channel boat cruise",
+      "Lake Mburo walking safari and boat cruise",
+      "Canoe trips at Lake Bunyonyi and Lake Mutanda",
+      "All national park and conservation fees for parks visited",
+    ],
+    excluded: [
+      "International airfares",
+      "Uganda entry visa",
+      "Personal travel and medical insurance",
+      "All drinks",
+      "Meals and snacks not indicated in the itinerary",
+      "Optional adventure activities in Jinja (white-water rafting, tubing, quad-biking, etc.) — available at a supplement",
+      "Optional shoebill birding excursion at Mabamba Swamp",
+      "A porter for gorilla and golden monkey trekking (optional — carries your daypack)",
+      "Tips and gratuities for driver-guide and hotel staff",
+      "Personal expenses — laundry, souvenirs, and items of a personal nature",
+    ],
+
+    // ── Accommodation showcase ────────────────────────────────
+    stays: [
+      {
+        name: "Pakuba Safari Lodge",
+        location: "Murchison Falls NP, Uganda",
+        nights: "3 nights",
+        image: "/itineraries/uganda-21-day-explore-wildlife-safari/stay-1.jpg",
+      },
+      {
+        name: "Bakiga Lodge",
+        location: "Bwindi Impenetrable NP, Uganda",
+        nights: "3 nights",
+        image: "/itineraries/uganda-21-day-explore-wildlife-safari/stay-2.jpg",
+      },
+      {
+        name: "Mutanda Lake Resort",
+        location: "Lake Mutanda, Uganda",
+        nights: "1 night",
+        image: "/itineraries/uganda-21-day-explore-wildlife-safari/stay-3.jpg",
+      },
+    ],
   },
 ];
 
