@@ -47,11 +47,11 @@ export default function SafarisSection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               )}
-            </div>
-            <div className="safari-info">
-              <span className="safari-country">{safari.country}</span>
-              <h3 className="safari-title">{safari.title}</h3>
-              <span className="safari-days">{safari.duration}</span>
+              <div className="safari-info">
+                <span className="safari-country">{safari.country}</span>
+                <h3 className="safari-title">{safari.title}</h3>
+                <span className="safari-days">{safari.duration}</span>
+              </div>
             </div>
             <div className="safari-cta">View Details</div>
           </Link>

@@ -78,11 +78,11 @@ export default async function SafarisPage({
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 )}
-              </div>
-              <div className="safari-info">
-                <span className="safari-country">{it.country}</span>
-                <h3 className="safari-title">{it.title}</h3>
-                <span className="safari-days">{it.duration}</span>
+                <div className="safari-info">
+                  <span className="safari-country">{it.country}</span>
+                  <h3 className="safari-title">{it.title}</h3>
+                  <span className="safari-days">{it.duration}</span>
+                </div>
               </div>
               <div className="safari-cta">View Details</div>
             </Link>
