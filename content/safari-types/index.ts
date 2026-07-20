@@ -17,6 +17,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Private guides, boutique camps, and every detail handled before you think to ask.",
     cardDesc: "Private guides, boutique lodges, and every detail handled.",
     heroFallback: "linear-gradient(160deg, #8a6a2a, #2a1e08)",
+    heroImage: "/safari-types/luxury-safaris.jpg",
     excerpt:
       "Private-guided luxury safaris across Uganda and East Africa — boutique lodges, light-aircraft transfers, and a pace set entirely by you.",
     intro: [
@@ -56,6 +57,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Wildlife adventures the whole family can share — from grandparents to grandkids.",
     cardDesc: "Wildlife adventures the whole family can share.",
     heroFallback: "linear-gradient(160deg, #6a8a3a, #1e3010)",
+    heroImage: "/safari-types/family-friendly-safaris.jpg",
     excerpt:
       "Family safaris in Uganda designed around shorter drives, flexible pacing, and parks where kids and grandparents alike stay engaged.",
     intro: [
@@ -95,6 +97,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Chase rare species across Uganda's forests, wetlands and savannah trails.",
     cardDesc: "Chase rare species across Uganda's richest birding trails.",
     heroFallback: "linear-gradient(160deg, #2a6a5a, #0a2420)",
+    heroImage: "/safari-types/bird-watching-safaris.jpg",
     excerpt:
       "Specialist birding safaris across Uganda's forests and wetlands, home to over 1,000 recorded species — from shoebills to turacos.",
     intro: [
@@ -134,6 +137,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Trade the last days of your trip for open water and quiet shorelines.",
     cardDesc: "Unwind on tropical shores after days in the bush.",
     heroFallback: "linear-gradient(160deg, #2a7a8a, #0a3a4a)",
+    heroImage: "/safari-types/beach-safaris.jpg",
     excerpt:
       "Extend a Uganda or Rwanda safari with a shoreline retreat — Lake Bunyonyi's terraced islands, Lake Kivu's beaches, or a coastal extension to Zanzibar or Diani.",
     intro: [
@@ -173,6 +177,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Light-aircraft transfers between parks — more time in the bush, less on the road.",
     cardDesc: "Skip the long drives — light-aircraft transfers between parks.",
     heroFallback: "linear-gradient(160deg, #3a5a7a, #101c2a)",
+    heroImage: "/safari-types/fly-in-safaris.jpg",
     excerpt:
       "Fly-in safaris across Uganda and East Africa swap long road transfers for scheduled light-aircraft flights, freeing up days for wildlife instead of driving.",
     intro: [
@@ -212,6 +217,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Private camps, quiet corners, and a safari built for two.",
     cardDesc: "Romantic hideaways for the trip of a lifetime.",
     heroFallback: "linear-gradient(160deg, #8a3a4a, #2a0e14)",
+    heroImage: "/safari-types/honeymoon-safaris.jpg",
     excerpt:
       "Honeymoon safaris across Uganda and Rwanda — private camps, romantic extras, and an itinerary paced for two, not a group.",
     intro: [
@@ -251,6 +257,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Golden light, patient guides, and time built around getting the shot.",
     cardDesc: "Golden light, patient guides, built for the perfect shot.",
     heroFallback: "linear-gradient(160deg, #4a4a4a, #141414)",
+    heroImage: "/safari-types/photography-safaris.jpg",
     excerpt:
       "Photography-focused safaris across Uganda and East Africa, with extended stops, golden-hour drives and guides who understand light as well as wildlife.",
     intro: [
@@ -290,6 +297,7 @@ export const safariTypes: SafariType[] = [
     tagline: "Thoughtfully guided trips for women travelling solo or together.",
     cardDesc: "Thoughtfully guided trips for women travelling solo or together.",
     heroFallback: "linear-gradient(160deg, #9a5a7a, #3a1a28)",
+    heroImage: "/safari-types/female-travel-safaris.jpg",
     excerpt:
       "Safaris designed for women travelling solo or in groups — vetted guides, secure lodges, and itineraries planned with safety and comfort in mind.",
     intro: [

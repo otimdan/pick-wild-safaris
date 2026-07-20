@@ -6,8 +6,8 @@ import Link from "next/link";
 
 // Drop local photo paths here (e.g. "/since-left.jpg") to replace the
 // gradient placeholders. Empty string = show the gradient only.
-const LEFT_PHOTO = "";
-const RIGHT_PHOTO = "";
+const LEFT_PHOTO = "/home-1.jpeg";
+const RIGHT_PHOTO = "/home-2.jpg";
 
 export default function SinceSection() {
   const imgLeftRef = useRef<HTMLDivElement>(null);
@@ -55,9 +55,10 @@ export default function SinceSection() {
             {LEFT_PHOTO && (
               <Image
                 src={LEFT_PHOTO}
-                alt="Safari guide and guest smiling by a vehicle"
-                width={400}
-                height={520}
+                alt="Pick Wild Safaris vehicle parked under palms beside a lake in Uganda"
+                width={853}
+                height={1280}
+                sizes="(max-width: 968px) 45vw, 23vw"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             )}
@@ -70,9 +71,10 @@ export default function SinceSection() {
             {RIGHT_PHOTO && (
               <Image
                 src={RIGHT_PHOTO}
-                alt="Guests watching elephant from safari vehicle"
-                width={400}
-                height={420}
+                alt="Guests in a safari vehicle watching a male lion during a game drive"
+                width={1200}
+                height={1600}
+                sizes="(max-width: 968px) 45vw, 23vw"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             )}

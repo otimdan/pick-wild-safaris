@@ -17,6 +17,12 @@
   --cream-text: #f5f0e8;
   --body-font: "Brandon Grotesque", "Gill Sans", "Trebuchet MS", sans-serif;
   --serif: "Cormorant Garamond", Georgia, serif;
+
+  /* Type scale. Section headings share one token so sibling sections stay in
+     step — set the size here, not on the individual section rules. */
+  --section-heading: clamp(2.2rem, 3.6vw, 3.4rem);
+  /* Uppercase CTA buttons (.safari-cta, .since-cta, .load-more-btn, …). */
+  --cta-size: 0.7rem;
 }
 
 body {
@@ -549,7 +555,7 @@ html {
 }
 .since-heading {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-size: var(--section-heading);
   font-weight: 400;
   color: #f5f0e8;
   line-height: 1.1;
@@ -577,7 +583,7 @@ html {
   background: #c8922a;
   color: #1a2e0e;
   font-family: var(--body-font);
-  font-size: 0.7rem;
+  font-size: var(--cta-size);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -640,7 +646,7 @@ html {
 }
 .safaris-heading {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: var(--section-heading);
   font-weight: 400;
   color: #1a2e0e;
   text-align: center;
@@ -751,7 +757,7 @@ html {
   background: #c8922a;
   color: #1a2e0e;
   font-family: var(--body-font);
-  font-size: 0.68rem;
+  font-size: var(--cta-size);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -805,7 +811,7 @@ html {
   color: #1a2e0e;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.68rem;
+  font-size: var(--cta-size);
   font-weight: 700;
   letter-spacing: 0.18em;
   border: 1.5px solid #c8922a;
@@ -832,7 +838,7 @@ html {
 }
 .experiences-header h2 {
   font-family: var(--serif);
-  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-size: var(--section-heading);
   font-weight: 400;
   color: #1a2e0e;
 }
@@ -892,13 +898,16 @@ html {
 }
 .experience-content h3 {
   font-family: var(--serif);
-  font-size: 2.4rem;
+  /* Card is 280px wide with 2rem padding each side — only 216px of usable
+     width. At the old 2.4rem every title wrapped, and the card title came out
+     larger than the section heading above it. */
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.15;
   margin-bottom: 0.8rem;
 }
 .experience-content p {
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
 }
@@ -977,7 +986,9 @@ html {
 .trip-chooser-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  /* 0.45 rather than 0.25 — the background photo is bright (pale sky, sunlit
+     grass) and the right-aligned white text needs the extra contrast. */
+  background: rgba(0, 0, 0, 0.45);
 }
 .trip-chooser-content {
   position: relative;
@@ -1010,7 +1021,7 @@ html {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: var(--cta-size);
   font-weight: 700;
   letter-spacing: 0.18em;
   transition:
@@ -1057,7 +1068,7 @@ html {
 }
 .partners h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: var(--section-heading);
   font-weight: 400;
   color: #1a2e0e;
   text-align: center;
@@ -1083,16 +1094,11 @@ html {
   width: auto;
   height: auto;
   object-fit: contain;
-  opacity: 0.75;
-  filter: grayscale(100%);
-  transition:
-    opacity 0.3s ease,
-    filter 0.3s ease,
-    transform 0.3s ease;
+  /* Logos show in their original colours — no greyscale/fade. Hover is the
+     lift only. */
+  transition: transform 0.3s ease;
 }
 .partner-logo img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
   transform: translateY(-4px);
 }
 @media (max-width: 768px) {

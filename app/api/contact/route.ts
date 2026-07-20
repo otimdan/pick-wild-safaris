@@ -1,7 +1,13 @@
 // app/api/contact/route.ts
 import { sendEmail, escapeHtml } from "@/lib/email";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+// A genuine enquirer sends once, maybe twice. This caps how much mail a
+// single IP can push through our Resend account in an hour.
+const RATE_LIMIT = 5;
+const RATE_WINDOW_SECONDS = 60 * 60;
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -36,6 +42,25 @@ export async function POST(request: Request) {
     return Response.json(
       { ok: false, error: "Please enter a valid email address." },
       { status: 400 },
+    );
+  }
+
+  // Checked after validation so a mistyped email doesn't cost the visitor
+  // one of their attempts — what we're protecting is outbound mail.
+  const limit = await rateLimit({
+    bucket: "contact",
+    identifier: getClientIp(request),
+    limit: RATE_LIMIT,
+    windowSeconds: RATE_WINDOW_SECONDS,
+  });
+  if (!limit.allowed) {
+    return Response.json(
+      {
+        ok: false,
+        error:
+          "You've already sent several enquiries. Please try again a little later, or email us directly at info@wildsafarisuganda.com.",
+      },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfter) } },
     );
   }
 
