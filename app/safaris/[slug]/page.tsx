@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { allItineraries, getItinerary } from "@/content/itineraries/index";
 import ItineraryLayout from "@/app/components/ItineraryLayout";
+import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -100,10 +101,7 @@ function TouristTripSchema({
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 
@@ -129,10 +127,7 @@ function BreadcrumbSchema({ title, slug }: { title: string; slug: string }) {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 

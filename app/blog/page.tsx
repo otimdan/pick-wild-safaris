@@ -8,6 +8,7 @@ import BlogFilter from "./BlogFilter";
 import BlogGrid from "./BlogGrid";
 import BlogPagination from "./BlogPagination";
 import BlogNewsletter from "./BlogNewsletter";
+import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -58,10 +59,7 @@ function BlogIndexSchema() {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 

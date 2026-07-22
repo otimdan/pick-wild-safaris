@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -42,9 +44,40 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("how-much-does-an-african-safari-cost")!;
 
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "What's the average cost of an African safari?",
+    a: "It varies enormously by country, season, and comfort level — there is no meaningful single average. A tailored quote based on your priorities is far more useful than any headline figure.",
+  },
+  {
+    q: "Is Uganda cheaper than Kenya or Tanzania?",
+    a: "Generally yes at a comparable tier, though gorilla permit pricing versus Rwanda flips that comparison.",
+  },
+  {
+    q: "What's the biggest cost I might not think of?",
+    a: "International flights and gorilla or chimpanzee permits — both are usually quoted separately from the ground safari price.",
+  },
+  {
+    q: "Do prices include tips?",
+    a: "No — tips for guides, drivers, and lodge staff are almost always a separate, personal expense on top of the quoted price.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        African safari costs are driven by four things: country,
+        season, comfort level, and how you move between parks. Permits and
+        international flights are usually quoted separately from the ground
+        price, so compare like for like before judging any headline figure.
+      </blockquote>
       <p>
         There&rsquo;s no single answer to what an African safari costs
         &mdash; a three-day budget camping trip and a two-week private
@@ -185,33 +218,7 @@ export default function Post() {
         bundled number.
       </p>
 
-      <h2>Safari Cost FAQ</h2>
-
-      <p>
-        <strong>What&rsquo;s the average cost of an African safari?</strong>{" "}
-        It varies enormously by country, season, and comfort level &mdash;
-        there&rsquo;s no meaningful single average. A tailored quote based
-        on your priorities is far more useful than any headline figure.
-      </p>
-
-      <p>
-        <strong>Is Uganda cheaper than Kenya or Tanzania?</strong> Generally
-        yes at a comparable tier, though gorilla permit pricing versus
-        Rwanda flips that comparison &mdash; see the country-by-country
-        breakdown linked above.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the biggest cost I might not think of?</strong>{" "}
-        International flights and gorilla/chimpanzee permits &mdash; both
-        are usually quoted separately from the ground safari price.
-      </p>
-
-      <p>
-        <strong>Do prices include tips?</strong> No &mdash; tips for guides,
-        drivers, and lodge staff are almost always a separate, personal
-        expense on top of the quoted price.
-      </p>
+      <PostFaq title="Safari Cost FAQ" items={faq} />
 
       <h2>Get a Real Number</h2>
 

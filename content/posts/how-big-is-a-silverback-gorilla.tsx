@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 // A tiny helper for inline images — matches the pattern used in
@@ -40,9 +42,40 @@ function PostImage({
 
 const meta = getPostMeta("how-big-is-a-silverback-gorilla")!;
 
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "How tall is a silverback gorilla?",
+    a: "About 1.5–1.8 m (5–6 ft) standing upright, with an arm span up to around 2.6 m.",
+  },
+  {
+    q: "How much does a silverback gorilla weigh?",
+    a: "Typically 135–220 kg (300–485 lb) in the wild; females are roughly half that.",
+  },
+  {
+    q: "How strong is a silverback gorilla?",
+    a: "Extremely powerful, but the popular “x times stronger than a human” figures are unverified. What is certain is that they can snap thick branches and have a bite force greater than a lion's.",
+  },
+  {
+    q: "What do gorillas eat to get so big?",
+    a: "Mostly leaves, stems, shoots, and pith — up to 18–30 kg of vegetation a day. They are essentially gentle giants running on greenery.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        A wild silverback gorilla stands about 1.5&ndash;1.8 m
+        (5&ndash;6 ft) upright and weighs roughly 135&ndash;220 kg
+        (300&ndash;485 lb) &mdash; around twice the size of an adult female,
+        with an arm span reaching 2.6 m.
+      </blockquote>
       <p>
         Photographs never quite prepare you for it. A silverback gorilla can
         stand nearly six feet tall, weigh as much as three grown men, and spread
@@ -195,31 +228,7 @@ export default function Post() {
         <Link href="/blog/gorilla-trekking-tips">gorilla trekking tips</Link>.
       </p>
 
-      <h2>Silverback Size FAQ</h2>
-
-      <p>
-        <strong>How tall is a silverback gorilla?</strong> About 1.5&ndash;1.8 m
-        (5&ndash;6 ft) standing upright, with an arm span up to around 2.6 m.
-      </p>
-
-      <p>
-        <strong>How much does a silverback gorilla weigh?</strong> Typically
-        135&ndash;220 kg (300&ndash;485 lb) in the wild; females are roughly half
-        that.
-      </p>
-
-      <p>
-        <strong>How strong is a silverback gorilla?</strong> Extremely powerful,
-        but the popular &ldquo;x times stronger than a human&rdquo; figures are
-        unverified. What&rsquo;s certain is that they can snap thick branches and
-        have a bite force greater than a lion&rsquo;s.
-      </p>
-
-      <p>
-        <strong>What do gorillas eat to get so big?</strong> Mostly leaves, stems,
-        shoots, and pith &mdash; up to 18&ndash;30 kg of vegetation a day. They&rsquo;re
-        essentially gentle giants running on greenery.
-      </p>
+      <PostFaq title="Silverback Size FAQ" items={faq} />
 
       <h2>See a Silverback for Yourself</h2>
 

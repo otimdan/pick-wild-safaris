@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,9 +43,42 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("gorilla-permit-prices-explained")!;
 
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is a gorilla permit so expensive?",
+    a: "The fee funds park protection, ranger salaries, and community conservation programmes that make continued gorilla survival possible — it is essentially a direct conservation contribution, not a service fee.",
+  },
+  {
+    q: "Can permit prices change?",
+    a: "Yes — they are set by each country's government and can change with little notice, so always confirm the current rate before booking.",
+  },
+  {
+    q: "Does the permit include anything else?",
+    a: "Just the trek itself and the hour with the gorillas — transport, lodging, and tips are all separate.",
+  },
+  {
+    q: "Is Uganda or Rwanda cheaper?",
+    a: "Uganda, by a significant margin ($800 versus $1,500 in peak season) — though Rwanda offers shorter treks and easier access.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        A gorilla trekking permit costs <strong>$800</strong> in
+        Uganda ($600 in low season), <strong>$1,500</strong> in Rwanda, and
+        around <strong>$450</strong>{" "}
+        in DR Congo. It is a fixed government fee
+        covering the trek and one hour with the gorillas &mdash; no operator
+        sets or discounts it.
+      </blockquote>
       <p>
         A gorilla permit is the single biggest line item on any gorilla
         trekking trip &mdash; and the one piece of pricing we&rsquo;re always
@@ -160,32 +195,7 @@ export default function Post() {
         guide.
       </p>
 
-      <h2>Gorilla Permit Prices FAQ</h2>
-
-      <p>
-        <strong>Why is a gorilla permit so expensive?</strong> The fee funds
-        park protection, ranger salaries, and community conservation programmes
-        that make continued gorilla survival possible &mdash; it&rsquo;s
-        essentially a direct conservation contribution, not a service fee.
-      </p>
-
-      <p>
-        <strong>Can permit prices change?</strong> Yes &mdash; they&rsquo;re set
-        by each country&rsquo;s government and can change with little notice,
-        so always confirm the current rate before booking.
-      </p>
-
-      <p>
-        <strong>Does the permit include anything else?</strong> Just the trek
-        itself and the hour with the gorillas — transport, lodging, and tips
-        are all separate.
-      </p>
-
-      <p>
-        <strong>Is Uganda or Rwanda cheaper?</strong> Uganda, by a significant
-        margin ($800 vs $1,500 in peak season) — though Rwanda offers shorter
-        treks and easier access.
-      </p>
+      <PostFaq title="Gorilla Permit Prices FAQ" items={faq} />
 
       <h2>Book Your Permit With Confidence</h2>
 

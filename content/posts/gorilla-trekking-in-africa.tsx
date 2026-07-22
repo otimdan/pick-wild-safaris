@@ -10,7 +10,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -43,9 +45,42 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("gorilla-trekking-in-africa")!;
 
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "Where in Africa can you go gorilla trekking?",
+    a: "Only Uganda, Rwanda, and DR Congo have wild mountain gorilla populations open to trekking — nowhere else on the continent.",
+  },
+  {
+    q: "Is gorilla trekking in Africa safe?",
+    a: "Yes, within the established trekking destinations — treks are led by armed rangers, gorilla families are well studied, and serious incidents are extremely rare. DR Congo warrants extra, current-conditions research given periodic regional security concerns.",
+  },
+  {
+    q: "How long does gorilla trekking take?",
+    a: "The trek itself can take anywhere from under an hour to five or six hours each way; once you find the family, you get exactly one hour with them.",
+  },
+  {
+    q: "Which country is best for gorilla trekking?",
+    a: "It depends on your budget and priorities. Uganda offers the best value and most to combine, Rwanda the shortest and most polished trip, and DR Congo the lowest permit price.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        Gorilla trekking is only possible in
+        three countries &mdash;{" "}
+        <strong>Uganda, Rwanda, and DR Congo</strong>. You hike through mountain
+        forest with armed rangers, which can take one to six hours, and once the
+        family is found you get exactly one hour with them. Permits run roughly
+        $450&ndash;$1,500 depending on country.
+      </blockquote>
       <p>
         Gorilla trekking is Africa&rsquo;s single most sought-after wildlife
         experience &mdash; a guided hike through misty mountain forest that
@@ -204,37 +239,7 @@ export default function Post() {
         covers what to expect booking a trek over the festive season.
       </p>
 
-      <h2>Gorilla Trekking in Africa FAQ</h2>
-
-      <p>
-        <strong>Where in Africa can you go gorilla trekking?</strong> Only
-        Uganda, Rwanda, and DR Congo have wild mountain gorilla populations
-        open to trekking &mdash; nowhere else on the continent.
-      </p>
-
-      <p>
-        <strong>Is gorilla trekking in Africa safe?</strong> Yes, within the
-        established trekking destinations &mdash; treks are led by armed
-        rangers, gorilla families are well studied, and serious incidents
-        are extremely rare. DR Congo warrants extra, current-conditions
-        research given periodic regional security concerns.
-      </p>
-
-      <p>
-        <strong>How long does gorilla trekking take?</strong> The trek
-        itself can take anywhere from under an hour to five or six hours
-        each way; once you find the family, you get exactly one hour with
-        them.
-      </p>
-
-      <p>
-        <strong>Which country is best for gorilla trekking?</strong> It
-        depends on your budget and priorities &mdash; see our full{" "}
-        <Link href="/blog/gorilla-trekking-uganda-vs-rwanda-vs-congo">
-          Uganda vs Rwanda vs DR Congo comparison
-        </Link>
-        .
-      </p>
+      <PostFaq title="Gorilla Trekking in Africa FAQ" items={faq} />
 
       <h2>Start Planning Your Gorilla Trek</h2>
 

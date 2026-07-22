@@ -1,11 +1,50 @@
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 const meta = getPostMeta("what-to-pack-for-a-safari")!;
+
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "What should I wear on safari?",
+    a: "Neutral colours — khaki, olive, tan, brown, or grey — in light, breathable layers. Avoid bright colours, which startle wildlife, and white, which shows dust immediately. Mornings and evenings are genuinely cold, so pack a fleece and a light waterproof.",
+  },
+  {
+    q: "How much luggage can I bring on safari?",
+    a: "If your itinerary includes bush flights between camps, you are limited to roughly 15kg in a soft-sided duffel bag. Hard-shell suitcases do not fit in small Cessna luggage holds. One 15kg soft bag plus a daypack covers almost any safari.",
+  },
+  {
+    q: "Do I need hiking boots for a safari?",
+    a: "For game drives, comfortable closed shoes are enough. For gorilla or chimpanzee trekking you need proper waterproof hiking boots with ankle support — the forest floor is steep, muddy, and uneven.",
+  },
+  {
+    q: "What do most people forget to pack for a safari?",
+    a: "Binoculars, insect repellent with DEET, a headtorch, spare camera batteries, and any prescription medication in its original packaging. Lodges rarely sell these, and you will want binoculars on the very first drive.",
+  },
+  {
+    q: "Should I pack laundry for every day?",
+    a: "No. Most lodges and camps offer same-day or next-day laundry, so three or four changes of clothing is plenty even on a two-week trip. Packing a full wardrobe is the most common mistake.",
+  },
+];
 
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        Pack neutral-coloured, breathable layers
+        (khaki, olive, tan, grey), a fleece and waterproof for cold mornings,
+        closed walking shoes, binoculars, insect repellent, and sun protection
+        &mdash; all in a <strong>soft-sided bag under 15kg</strong> if your trip
+        includes bush flights. Most lodges do laundry, so three or four changes
+        is plenty.
+      </blockquote>
 
       <p>
         Most people pack too much. Safari vehicles have limited luggage space
@@ -125,6 +164,8 @@ export default function Post() {
         Our recommended approach: one soft-sided 15kg bag plus a small personal
         daypack. Everything you need, nothing you don&apos;t.
       </p>
+
+      <PostFaq title="Safari Packing FAQ" items={faq} />
 
     </BlogPostLayout>
   );

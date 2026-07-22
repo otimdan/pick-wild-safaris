@@ -11,6 +11,7 @@ import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { allItineraries } from "@/content/itineraries/index";
+import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -59,10 +60,7 @@ function BreadcrumbSchema() {
     ],
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 

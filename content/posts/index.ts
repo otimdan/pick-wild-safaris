@@ -155,6 +155,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #2a4a3a, #0a1c14)",
     date: "2026-07-13",
     readTime: "8 min read",
+    topic: {
+      name: "Gorilla trekking",
+      wikipedia: "https://en.wikipedia.org/wiki/Mountain_gorilla",
+    },
   },
   {
     slug: "gorilla-trekking-day-what-to-expect",
@@ -628,6 +632,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #8a6a2a, #322208)",
     date: "2026-07-13",
     readTime: "8 min read",
+    topic: {
+      name: "Cheetah",
+      wikipedia: "https://en.wikipedia.org/wiki/Cheetah",
+    },
   },
   {
     slug: "jacksons-hartebeest-facts",
@@ -754,6 +762,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #2a5a4a, #0a2018)",
     date: "2026-07-12",
     readTime: "11 min read",
+    topic: {
+      name: "Mountain gorilla",
+      wikipedia: "https://en.wikipedia.org/wiki/Mountain_gorilla",
+    },
   },
   {
     slug: "how-many-mountain-gorillas-are-left",
@@ -768,6 +780,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #2f4a2a, #0e1f0c)",
     date: "2026-07-12",
     readTime: "10 min read",
+    topic: {
+      name: "Mountain gorilla",
+      wikipedia: "https://en.wikipedia.org/wiki/Mountain_gorilla",
+    },
   },
   {
     slug: "how-big-is-a-silverback-gorilla",
@@ -782,6 +798,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #3a4030, #14180e)",
     date: "2026-07-12",
     readTime: "9 min read",
+    topic: {
+      name: "Mountain gorilla",
+      wikipedia: "https://en.wikipedia.org/wiki/Mountain_gorilla",
+    },
   },
   {
     slug: "gorilla-vs-chimpanzee",
@@ -854,6 +874,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #8a7a2a, #4a4010)",
     date: "2026-05-05",
     readTime: "7 min read",
+    topic: {
+      name: "Safari",
+      wikipedia: "https://en.wikipedia.org/wiki/Safari",
+    },
   },
   {
     slug: "tigers-in-africa",
@@ -896,6 +920,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #7a6a2a, #241e08)",
     date: "2026-07-14",
     readTime: "8 min read",
+    topic: {
+      name: "Safari",
+      wikipedia: "https://en.wikipedia.org/wiki/Safari",
+    },
   },
   {
     slug: "romantic-honeymoon-safari",
@@ -938,6 +966,10 @@ export const allPosts: PostMeta[] = [
     coverFallback: "linear-gradient(160deg, #2a4a3a, #0a1c14)",
     date: "2026-07-14",
     readTime: "9 min read",
+    topic: {
+      name: "Gorilla trekking",
+      wikipedia: "https://en.wikipedia.org/wiki/Mountain_gorilla",
+    },
   },
   {
     slug: "gorilla-trekking-uganda-vs-rwanda-vs-congo",

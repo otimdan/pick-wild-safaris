@@ -2,6 +2,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { allPosts, getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
+import JsonLd from "@/app/components/JsonLd";
+import { ORG_ID, SITE_ID } from "@/app/layout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -83,29 +86,53 @@ function BlogPostingSchema({
     image: ogImageFor(meta.coverImage),
     datePublished: meta.date,
     dateModified: meta.date,
-    author: {
-      "@type": "Organization",
-      name: "Pick Wild Safaris",
-      url: BASE_URL,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Pick Wild Safaris",
-      url: BASE_URL,
-    },
+    // Point at the site-wide entity by @id rather than restating the business,
+    // so every post reinforces one organization instead of describing a new one.
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${BASE_URL}/blog/${slug}`,
     },
     url: `${BASE_URL}/blog/${slug}`,
+    isPartOf: { "@id": SITE_ID },
+    inLanguage: "en",
+    // Names the real-world subject explicitly instead of leaving an answer
+    // engine to infer it from the prose.
+    ...(meta.topic
+      ? {
+          about: {
+            "@type": "Thing",
+            name: meta.topic.name,
+            sameAs: meta.topic.wikipedia,
+          },
+        }
+      : {}),
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
+}
+
+// FAQPage JSON-LD, built from the `faq` array the post exports. This is the
+// markup answer engines actually lift question/answer pairs from, so the text
+// here is the same text the reader sees — never a separate summary.
+function FaqSchema({ items }: { items: readonly FaqItem[] }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  return <JsonLd schema={schema} />;
 }
 
 // Breadcrumb JSON-LD
@@ -136,10 +163,7 @@ function BreadcrumbSchema({ title, slug }: { title: string; slug: string }) {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 
@@ -153,9 +177,15 @@ export default async function BlogPostPage({
   if (!meta) notFound();
 
   let PostContent: React.ComponentType;
+  // Posts may also export `faq` — the same array they render via <PostFaq> —
+  // which we read off the module we're already importing. Co-locating it with
+  // the post keeps the schema and the visible section from drifting apart, and
+  // posts that haven't been converted simply leave it undefined.
+  let faq: readonly FaqItem[] | undefined;
   try {
     const mod = await import(`@/content/posts/${slug}`);
     PostContent = mod.default;
+    faq = mod.faq;
   } catch {
     notFound();
   }
@@ -164,6 +194,7 @@ export default async function BlogPostPage({
     <>
       <BlogPostingSchema meta={meta} slug={slug} />
       <BreadcrumbSchema title={meta.title} slug={slug} />
+      {faq?.length ? <FaqSchema items={faq} /> : null}
       <PostContent />
     </>
   );

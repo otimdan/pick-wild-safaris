@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,9 +42,42 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("uganda-vs-rwanda-gorilla-trekking")!;
 
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "Is gorilla trekking cheaper in Uganda or Rwanda?",
+    a: "Uganda — the permit is about $800 (or $600 in low season) versus Rwanda's flat $1,500, and lodges span more budgets.",
+  },
+  {
+    q: "Are the gorillas different?",
+    a: "No — both countries protect mountain gorillas of the same species, in forests that actually share a border. The difference is the trip, not the animal.",
+  },
+  {
+    q: "Which has the easier trek?",
+    a: "Rwanda's volcano slopes are generally more open; Uganda's Bwindi is denser and steeper. Both depend on where the gorillas move that day.",
+  },
+  {
+    q: "Which is better for a longer safari?",
+    a: "Uganda, comfortably — there is far more to combine, from chimps to big game to the Nile.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
+      {/* Answer-first summary: the passage extraction-based answer
+          engines are most likely to quote. Keep it self-contained. */}
+      <blockquote className="post-quick-answer">
+        <strong>Quick answer:</strong>{" "}
+        Choose <strong>Uganda</strong>{" "}
+        for value and a longer, more varied safari &mdash; permits are $800
+        versus Rwanda&rsquo;s $1,500, and there is far more to combine. Choose{" "}
+        <strong>Rwanda</strong>{" "}
+        for a shorter, more polished trip: Kigali is two hours from the park,
+        against a full day&rsquo;s drive to Bwindi. Same species either way.
+      </blockquote>
       <p>
         It&rsquo;s the question almost every gorilla traveller wrestles with:{" "}
         <strong>Uganda or Rwanda?</strong> The gorillas themselves are the same
@@ -246,31 +281,7 @@ export default function Post() {
         </span>
       </p>
 
-      <h2>Uganda vs Rwanda Gorilla Trekking FAQ</h2>
-
-      <p>
-        <strong>Is gorilla trekking cheaper in Uganda or Rwanda?</strong> Uganda
-        &mdash; the permit is about $800 (or $600 in low season) versus Rwanda&rsquo;s
-        flat $1,500, and lodges span more budgets.
-      </p>
-
-      <p>
-        <strong>Are the gorillas different?</strong> No &mdash; both countries
-        protect mountain gorillas of the same species, in forests that actually
-        share a border. The difference is the trip, not the animal.
-      </p>
-
-      <p>
-        <strong>Which has the easier trek?</strong> Rwanda&rsquo;s volcano slopes
-        are generally more open; Uganda&rsquo;s Bwindi is denser and steeper. Both
-        depend on where the gorillas move that day.
-      </p>
-
-      <p>
-        <strong>Which is better for a longer safari?</strong> Uganda, comfortably
-        &mdash; there&rsquo;s far more to combine, from chimps to big game to the
-        Nile.
-      </p>
+      <PostFaq title="Uganda vs Rwanda Gorilla Trekking FAQ" items={faq} />
 
       <h2>Plan Your Gorilla Trek</h2>
 

@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 // A tiny helper for inline images — matches the pattern used in
@@ -41,6 +43,28 @@ function PostImage({
 }
 
 const meta = getPostMeta("how-fast-is-a-cheetah")!;
+
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD emitted
+// by app/blog/[slug]/page.tsx. Plain text only — this is quoted verbatim by
+// answer engines, so entities and markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "How fast is a cheetah in mph?",
+    a: "About 70 mph (roughly 112–120 km/h) at full sprint — the fastest of any land animal.",
+  },
+  {
+    q: "How long can a cheetah run at top speed?",
+    a: "Only around 20–30 seconds, over a few hundred metres, before it overheats and must stop.",
+  },
+  {
+    q: "How fast does a cheetah accelerate?",
+    a: "From 0 to 60 mph in roughly three seconds — faster than most sports cars off the line.",
+  },
+  {
+    q: "Is the cheetah the fastest animal in the world?",
+    a: "The fastest on land, yes. In the air, a diving peregrine falcon is faster, but that's a dive rather than a run.",
+  },
+];
 
 export default function Post() {
   return (
@@ -175,30 +199,7 @@ export default function Post() {
         easy to tell them apart.
       </p>
 
-      <h2>Cheetah Speed FAQ</h2>
-
-      <p>
-        <strong>How fast is a cheetah in mph?</strong> About 70 mph (roughly
-        112&ndash;120 km/h) at full sprint &mdash; the fastest of any land
-        animal.
-      </p>
-
-      <p>
-        <strong>How long can a cheetah run at top speed?</strong> Only around
-        20&ndash;30 seconds, over a few hundred metres, before it overheats and
-        must stop.
-      </p>
-
-      <p>
-        <strong>How fast does a cheetah accelerate?</strong> From 0 to 60 mph in
-        roughly three seconds &mdash; faster than most sports cars off the line.
-      </p>
-
-      <p>
-        <strong>Is the cheetah the fastest animal in the world?</strong> The
-        fastest on land, yes. In the air, a diving peregrine falcon is faster,
-        but that&rsquo;s a dive rather than a run.
-      </p>
+      <PostFaq title="Cheetah Speed FAQ" items={faq} />
 
       <h2>Watch One Run</h2>
 

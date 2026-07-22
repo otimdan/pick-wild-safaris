@@ -1,6 +1,7 @@
 // app/resources/faq/page.tsx
 import type { Metadata } from "next";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
+import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -148,10 +149,7 @@ function FaqSchema() {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 

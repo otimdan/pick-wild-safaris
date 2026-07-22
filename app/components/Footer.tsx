@@ -32,13 +32,13 @@ export default function Footer() {
             <h4>Follow Us</h4>
             <div className="social-icons">
               {[
-                { icon: "fab fa-facebook-f", label: "Facebook" },
-                { icon: "fab fa-instagram", label: "Instagram" },
-                { icon: "fab fa-linkedin-in", label: "LinkedIn" },
-                { icon: "fab fa-youtube", label: "YouTube" },
-                { icon: "fab fa-tiktok", label: "TikTok" },
-              ].map(({ icon, label }) => (
-                <a key={label} href="#" aria-label={label}>
+                { icon: "fab fa-facebook-f", label: "Facebook", href: "https://facebook.com/PickWildSafaris", },
+                { icon: "fab fa-instagram", label: "Instagram", href: "https://instagram.com/pickwildsafaris", },
+                { icon: "fab fa-linkedin-in", label: "LinkedIn", href: "https://linkedin.com/company/pick-wild-safaris", },
+                { icon: "fab fa-youtube", label: "YouTube", href: "https://youtube.com/pickwildsafaris", },
+                { icon: "fab fa-tiktok", label: "TikTok", href: "https://tiktok.com/@pickwildsafaris", },
+              ].map(({ icon, label, href }) => (
+                <a key={label} href={href} aria-label={label}>
                   <i className={icon} />
                 </a>
               ))}

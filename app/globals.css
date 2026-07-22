@@ -1805,6 +1805,22 @@ html {
   font-style: italic;
   color: #444;
 }
+/* Answer-first summary at the top of a post. Shares the blockquote shell but
+   drops the italic/muted pull-quote treatment — this is the key factual
+   passage on the page, so it needs to read as plainly as body copy. */
+.post-content blockquote.post-quick-answer {
+  font-style: normal;
+  color: #2a2a2a;
+  margin: 0 0 2rem;
+}
+.post-content blockquote.post-quick-answer strong:first-child {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6a2a;
+}
 .post-content hr {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);

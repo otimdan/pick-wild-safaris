@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
+import JsonLd from "./components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -41,13 +42,28 @@ export const metadata: Metadata = {
   },
 };
 
-function OrganizationSchema() {
-  const schema = {
-    "@context": "https://schema.org",
+// Site-wide entity graph.
+//
+// Both nodes carry a stable `@id` so every other page can point at them by
+// reference instead of restating the business. That is what lets search and
+// answer engines merge all our pages into a single known entity rather than
+// treating each page's org block as a separate company.
+//
+// Exported so other routes can reference the same identifiers.
+export const ORG_ID = `${BASE_URL}/#organization`;
+export const SITE_ID = `${BASE_URL}/#website`;
+
+function SiteEntitySchema() {
+  const organization = {
     "@type": "TravelAgency",
+    "@id": ORG_ID,
     name: "Pick Wild Safaris",
     url: BASE_URL,
-    logo: `${BASE_URL}/logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${BASE_URL}/pick-wild-safaris.png`,
+    },
+    image: `${BASE_URL}/pick-wild-safaris.png`,
     description:
       "Private safaris designed for you. Gorilla trekking, wildlife safaris, and adventure travel across Uganda and East Africa.",
     address: {
@@ -59,10 +75,11 @@ function OrganizationSchema() {
     },
     telephone: ["+256393000813", "+256742441148"],
     email: "info@wildsafarisuganda.com",
+    // Only verified profiles belong here — a sameAs that 404s is a negative
+    // trust signal, so leave one out until its real URL is confirmed.
     sameAs: [
       "https://www.facebook.com/pickwildsafaris",
       "https://www.instagram.com/pickwildsafaris",
-      "https://www.tripadvisor.com/pickwildsafaris",
     ],
     areaServed: [
       "Uganda",
@@ -72,12 +89,33 @@ function OrganizationSchema() {
       "Botswana",
       "Namibia",
     ],
+    knowsAbout: [
+      "Gorilla trekking",
+      "Chimpanzee trekking",
+      "Wildlife safaris",
+      "Bird watching",
+      "Kilimanjaro climbing",
+      "Uganda travel",
+    ],
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": SITE_ID,
+    url: BASE_URL,
+    name: "Pick Wild Safaris",
+    description:
+      "Private safaris designed for you. Expertly crafted gorilla trekking, wildlife, and adventure experiences across Uganda and East Africa.",
+    publisher: { "@id": ORG_ID },
+    inLanguage: "en",
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    <JsonLd
+      schema={{
+        "@context": "https://schema.org",
+        "@graph": [organization, website],
+      }}
     />
   );
 }
@@ -102,7 +140,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
-        <OrganizationSchema />
+        <SiteEntitySchema />
       </head>
       <body>
         <PostHogProvider>{children}</PostHogProvider>

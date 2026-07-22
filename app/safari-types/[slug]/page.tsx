@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { safariTypes, getSafariType } from "@/content/safari-types/index";
 import SafariTypeLayout from "@/app/components/SafariTypeLayout";
+import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -63,10 +64,7 @@ function BreadcrumbSchema({ title, slug }: { title: string; slug: string }) {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <JsonLd schema={schema} />
   );
 }
 

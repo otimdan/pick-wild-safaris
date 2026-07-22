@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("how-many-mountain-gorillas-are-left")!;
+
+// Drives both the rendered FAQ section below and the FAQPage JSON-LD
+// emitted by app/blog/[slug]/page.tsx. Plain text only — an answer
+// engine quotes this verbatim, so markup would leak into the citation.
+export const faq: FaqItem[] = [
+  {
+    q: "How many mountain gorillas are left in the world?",
+    a: "Just over 1,000 — the last full census counted 1,063, and the number has been rising.",
+  },
+  {
+    q: "Are mountain gorillas still endangered?",
+    a: "Yes. They were downlisted from Critically Endangered to Endangered in 2018, but Endangered still means they remain at real risk.",
+  },
+  {
+    q: "Where do mountain gorillas live?",
+    a: "Only in two forest ecosystems spanning Uganda, Rwanda, and the DRC — the Bwindi–Sarambwe area and the Virunga Massif. None survive in captivity.",
+  },
+  {
+    q: "Can you still see them in the wild?",
+    a: "Yes — through permitted, guided trekking in Uganda, Rwanda, or the DRC. It is strictly limited, which is exactly what keeps the gorillas safe.",
+  },
+];
 
 export default function Post() {
   return (
@@ -254,32 +278,7 @@ export default function Post() {
         can put you in the forest in as little as three days.
       </p>
 
-      <h2>Mountain Gorilla FAQ</h2>
-
-      <p>
-        <strong>How many mountain gorillas are left in the world?</strong> Just
-        over 1,000 &mdash; the last full census counted 1,063, and the number has
-        been rising.
-      </p>
-
-      <p>
-        <strong>Are mountain gorillas still endangered?</strong> Yes. They were
-        downlisted from Critically Endangered to Endangered in 2018, but
-        &ldquo;Endangered&rdquo; still means they remain at real risk.
-      </p>
-
-      <p>
-        <strong>Where do mountain gorillas live?</strong> Only in two forest
-        ecosystems spanning Uganda, Rwanda, and the DRC &mdash; the
-        Bwindi&ndash;Sarambwe area and the Virunga Massif. None survive in
-        captivity.
-      </p>
-
-      <p>
-        <strong>Can you still see them in the wild?</strong> Yes &mdash; through
-        permitted, guided trekking in Uganda, Rwanda, or the DRC. It&rsquo;s
-        strictly limited, which is exactly what keeps the gorillas safe.
-      </p>
+      <PostFaq title="Mountain Gorilla FAQ" items={faq} />
 
       <h2>Be Part of the Good News</h2>
 
