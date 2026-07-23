@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("tree-climbing-lions-ishasha")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Where can you see tree-climbing lions in Uganda?",
+    a: "In the Ishasha sector at the southern end of Queen Elizabeth National Park.",
+  },
+  {
+    q: "Why do the lions climb trees?",
+    a: "Most likely to escape heat and biting insects and to watch for prey — but it’s a rare, learned behaviour, not something all lions do.",
+  },
+  {
+    q: "Are you guaranteed to see them?",
+    a: "No — they’re wild and roam a large area. Visiting during the midday heat with an experienced guide gives you the best chance.",
+  },
+  {
+    q: "Where else in the world do lions climb trees?",
+    a: "The other famous population is around Lake Manyara in Tanzania; the behaviour is otherwise very unusual.",
+  },
+];
 
 export default function Post() {
   return (
@@ -93,7 +117,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Escaping the heat:</strong> a breeze moves through the branches
+          <strong>Escaping the heat:</strong>{" "}a breeze moves through the branches
           that doesn&rsquo;t reach the ground, and the lions catch it in the
           midday sun
         </li>
@@ -102,7 +126,7 @@ export default function Post() {
           insects are more troublesome at ground level
         </li>
         <li>
-          <strong>A better vantage point:</strong> from up high the lions can
+          <strong>A better vantage point:</strong>{" "}from up high the lions can
           survey the plains for prey &mdash; and for the Uganda kob and buffalo
           they hunt
         </li>
@@ -185,30 +209,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Tree-Climbing Lions FAQ</h2>
-
-      <p>
-        <strong>Where can you see tree-climbing lions in Uganda?</strong> In the
-        Ishasha sector at the southern end of Queen Elizabeth National Park.
-      </p>
-
-      <p>
-        <strong>Why do the lions climb trees?</strong> Most likely to escape heat
-        and biting insects and to watch for prey &mdash; but it&rsquo;s a rare,
-        learned behaviour, not something all lions do.
-      </p>
-
-      <p>
-        <strong>Are you guaranteed to see them?</strong> No &mdash; they&rsquo;re
-        wild and roam a large area. Visiting during the midday heat with an
-        experienced guide gives you the best chance.
-      </p>
-
-      <p>
-        <strong>Where else in the world do lions climb trees?</strong> The other
-        famous population is around Lake Manyara in Tanzania; the behaviour is
-        otherwise very unusual.
-      </p>
+      <PostFaq title="Tree-Climbing Lions FAQ" items={faq} />
 
       <h2>Go Find Them</h2>
 

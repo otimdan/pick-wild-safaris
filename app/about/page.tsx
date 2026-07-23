@@ -1,12 +1,13 @@
 // app/about/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import Link from "next/link";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "About Us | Pick Wild Safaris",
+  title: "About Us",
   description:
     "Pick Wild Safaris is a locally owned, Kampala-based tour operator running private, tailor-made safaris across Uganda, Kenya, Rwanda, and Tanzania since 2012.",
   alternates: { canonical: `${BASE_URL}/about` },
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     description:
       "A locally owned Uganda tour operator running private, tailor-made safaris since 2012.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

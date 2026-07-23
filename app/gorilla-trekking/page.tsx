@@ -6,6 +6,7 @@
 // informational blog pillar this page bridges from. Reuses the itin-*
 // CSS classes from ItineraryLayout/SafariTypeLayout; no new CSS needed.
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     description:
       "Private, permit-secured gorilla trekking safaris across Uganda, Rwanda, and DR Congo — expertly planned, personally guided.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",

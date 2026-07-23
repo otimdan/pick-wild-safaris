@@ -300,7 +300,7 @@ export default function Navbar() {
               links: [
                 {
                   label: "Climb Rwenzori",
-                  href: "/resources/climbing-rwenzori",
+                  href: "/blog/rwenzori-mountains-trekking-guide",
                 },
                 { label: "Gorilla Trekking", href: "/gorilla-trekking" },
               ],
@@ -318,7 +318,7 @@ export default function Navbar() {
                 },
                 {
                   label: "Climbing Mount Rwenzori",
-                  href: "/resources/climbing-rwenzori",
+                  href: "/blog/rwenzori-mountains-trekking-guide",
                 },
                 {
                   label: "Gorilla Trekking Tips",

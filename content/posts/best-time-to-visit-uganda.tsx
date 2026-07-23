@@ -1,5 +1,7 @@
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 function PostImage({
@@ -29,6 +31,27 @@ function PostImage({
 }
 
 const meta = getPostMeta("best-time-to-visit-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text only.
+export const faq: FaqItem[] = [
+  {
+    q: "When is the best time to visit Uganda?",
+    a: "The two dry seasons — June to August and December to February — are the most popular, with firm trails and easier wildlife viewing. June to August is the all-round sweet spot.",
+  },
+  {
+    q: "Can you visit Uganda in the rainy season?",
+    a: "Yes. The wet seasons (March to May and September to November) bring mud and steeper treks, but also greener landscapes, fewer crowds, lower prices, and last-minute gorilla permit availability. October to November is genuinely underrated value.",
+  },
+  {
+    q: "What is the best time for gorilla trekking in Uganda?",
+    a: "Gorillas can be tracked year-round — they don't migrate. The dry seasons make trekking easier underfoot, while in the wet season gorillas sometimes stay at lower, more accessible altitudes.",
+  },
+  {
+    q: "What is the best time for chimpanzee trekking?",
+    a: "Kibale National Park is good year-round. The dry seasons make the forest floor more walkable, but chimps are active and vocal in the wet season too, with a lush canopy for photography.",
+  },
+];
 
 export default function Post() {
   return (
@@ -165,7 +188,7 @@ export default function Post() {
       <h2>Our Recommendation</h2>
 
       <p>
-        If you have flexibility, aim for <strong>June–August</strong> for the
+        If you have flexibility, aim for <strong>June–August</strong>{" "}for the
         best all-round experience. If you want value and don&apos;t mind a bit
         of mud, <strong>October–November</strong> is genuinely underrated — you
         can often walk into gorilla permits that cancel at the last minute.
@@ -174,6 +197,7 @@ export default function Post() {
       <p>
         Whatever month you choose, Uganda will surprise you. It always does.
       </p>
+      <PostFaq title="Best Time to Visit Uganda FAQ" items={faq} />
     </BlogPostLayout>
   );
 }

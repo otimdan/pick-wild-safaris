@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("uganda-vs-kenya-vs-tanzania-safari")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Which country has the Great Migration?",
+    a: "Kenya (Masai Mara) and Tanzania (Serengeti) both host different stages of the same migration; Uganda does not.",
+  },
+  {
+    q: "Which country has the gorillas?",
+    a: "Uganda and Rwanda both offer gorilla trekking; Uganda holds close to half the world’s mountain gorilla population.",
+  },
+  {
+    q: "Which is least crowded?",
+    a: "Uganda, generally — its parks see far fewer visitors than Kenya’s or Tanzania’s headline reserves.",
+  },
+  {
+    q: "Can I do a Uganda gorilla trek and a Kenya/Tanzania safari on one trip?",
+    a: "Yes — it’s a popular and rewarding combination, pairing forest primates with open-plains migration wildlife.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -60,11 +84,11 @@ export default function Post() {
           and a quieter, less-crowded safari alongside classic savanna wildlife
         </li>
         <li>
-          <strong>Choose Kenya</strong> for the Masai Mara&rsquo;s Great
+          <strong>Choose Kenya</strong>{" "}for the Masai Mara&rsquo;s Great
           Migration river crossings and iconic open savanna
         </li>
         <li>
-          <strong>Choose Tanzania</strong> for the Serengeti&rsquo;s vast
+          <strong>Choose Tanzania</strong>{" "}for the Serengeti&rsquo;s vast
           migration herds, Ngorongoro Crater, and the largest lion population
           in Africa
         </li>
@@ -119,7 +143,7 @@ export default function Post() {
       <p>
         Gorilla permits are the clearest fixed-price comparison point: Uganda&rsquo;s
         permit runs around <strong>USD $800</strong>, considerably less than
-        Rwanda&rsquo;s <strong>USD $1,500</strong> for the same experience
+        Rwanda&rsquo;s <strong>USD $1,500</strong>{" "}for the same experience
         &mdash; see the full breakdown in{" "}
         <Link href="/blog/gorilla-permit-prices-explained">
           gorilla permit prices explained
@@ -148,32 +172,7 @@ export default function Post() {
         for ways to combine countries.
       </p>
 
-      <h2>Uganda vs Kenya vs Tanzania FAQ</h2>
-
-      <p>
-        <strong>Which country has the Great Migration?</strong> Kenya (Masai
-        Mara) and Tanzania (Serengeti) both host different stages of the same
-        migration; Uganda does not.
-      </p>
-
-      <p>
-        <strong>Which country has the gorillas?</strong> Uganda and Rwanda both
-        offer gorilla trekking; Uganda holds close to half the world&rsquo;s
-        mountain gorilla population.
-      </p>
-
-      <p>
-        <strong>Which is least crowded?</strong> Uganda, generally — its
-        parks see far fewer visitors than Kenya&rsquo;s or Tanzania&rsquo;s
-        headline reserves.
-      </p>
-
-      <p>
-        <strong>Can I do a Uganda gorilla trek and a Kenya/Tanzania safari on
-        one trip?</strong> Yes — it&rsquo;s a popular and rewarding
-        combination, pairing forest primates with open-plains migration
-        wildlife.
-      </p>
+      <PostFaq title="Uganda vs Kenya vs Tanzania FAQ" items={faq} />
 
       <h2>Let Us Help You Decide</h2>
 

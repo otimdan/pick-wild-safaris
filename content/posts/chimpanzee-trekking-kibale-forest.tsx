@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("chimpanzee-trekking-kibale-forest")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How much does chimpanzee trekking cost in Uganda?",
+    a: "A Kibale permit is around $250 per person for foreign non-residents — far less than a gorilla permit. The full-day habituation experience costs more.",
+  },
+  {
+    q: "How likely am I to see chimps?",
+    a: "Very likely in Kibale, where communities are well habituated — though, as with all wild animals, sightings are never guaranteed.",
+  },
+  {
+    q: "Is chimp trekking hard?",
+    a: "Generally easier than gorilla trekking — flatter terrain and better trails — but still a forest walk of one to four hours.",
+  },
+  {
+    q: "What’s the minimum age?",
+    a: "Chimpanzee tracking typically has a minimum age (often 12), the same as gorilla trekking. <span style={{ opacity: 0.75 }}> [VERIFY: confirm the current UWA minimum age you want stated.] </span>",
+  },
+];
 
 export default function Post() {
   return (
@@ -106,7 +130,7 @@ export default function Post() {
       <p>
         You need a permit, and numbers are capped to protect the chimps and keep
         the experience calm. A standard Kibale chimpanzee permit costs{" "}
-        <strong>around USD $250</strong> per person for foreign non-residents
+        <strong>around USD $250</strong>{" "}per person for foreign non-residents
         &mdash; a fraction of a gorilla permit.
       </p>
 
@@ -198,33 +222,7 @@ export default function Post() {
         , which combines Kibale&rsquo;s chimps with Bwindi&rsquo;s gorillas.
       </p>
 
-      <h2>Chimpanzee Trekking FAQ</h2>
-
-      <p>
-        <strong>How much does chimpanzee trekking cost in Uganda?</strong> A Kibale
-        permit is around $250 per person for foreign non-residents &mdash; far less
-        than a gorilla permit. The full-day habituation experience costs more.
-      </p>
-
-      <p>
-        <strong>How likely am I to see chimps?</strong> Very likely in Kibale,
-        where communities are well habituated &mdash; though, as with all wild
-        animals, sightings are never guaranteed.
-      </p>
-
-      <p>
-        <strong>Is chimp trekking hard?</strong> Generally easier than gorilla
-        trekking &mdash; flatter terrain and better trails &mdash; but still a
-        forest walk of one to four hours.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the minimum age?</strong> Chimpanzee tracking
-        typically has a minimum age (often 12), the same as gorilla trekking.{" "}
-        <span style={{ opacity: 0.75 }}>
-          [VERIFY: confirm the current UWA minimum age you want stated.]
-        </span>
-      </p>
+      <PostFaq title="Chimpanzee Trekking FAQ" items={faq} />
 
       <h2>Track Chimps in Kibale</h2>
 

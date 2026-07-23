@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("tribes-and-cultures-of-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How many tribes are there in Uganda?",
+    a: "More than 56 recognised tribes, speaking dozens of languages across several broad language families.",
+  },
+  {
+    q: "Who are the Batwa?",
+    a: "Indigenous forest hunter-gatherers of south-western Uganda, evicted from Bwindi and Mgahinga in 1991 when those parks were created; today they share their culture through community-run experiences.",
+  },
+  {
+    q: "Can I visit a traditional community on safari?",
+    a: "Yes — Batwa, Karamojong, Bahima, and other community experiences can be added to many itineraries, ideally through community-led operators.",
+  },
+  {
+    q: "Is it respectful to visit?",
+    a: "It can be, when done through community-led programmes, with consent for photos and money reaching local people directly.",
+  },
+];
 
 export default function Post() {
   return (
@@ -80,7 +104,7 @@ export default function Post() {
       <h2>The Baganda</h2>
 
       <p>
-        The <strong>Baganda</strong> are Uganda&rsquo;s largest single ethnic
+        The <strong>Baganda</strong>{" "}are Uganda&rsquo;s largest single ethnic
         group, centred on the south and the region around Kampala and Lake
         Victoria. They give the country its name &mdash; &ldquo;Uganda&rdquo; comes
         from &ldquo;Buganda,&rdquo; their kingdom &mdash; and their monarchy, the
@@ -94,9 +118,9 @@ export default function Post() {
 
       <p>
         In the rolling grasslands of the south-west live the{" "}
-        <strong>Banyankole</strong>, long associated with the majestic
-        <strong> Ankole cattle</strong> and their enormous, curved horns. Among
-        them, the <strong>Bahima</strong> are traditionally cattle-keepers whose
+        <strong>Banyankole</strong>, long associated with the majestic{" "}
+        <strong>Ankole cattle</strong> and their enormous, curved horns. Among
+        them, the <strong>Bahima</strong>{" "}are traditionally cattle-keepers whose
         entire way of life &mdash; diet, wealth, songs, and social standing &mdash;
         has revolved around their herds. It&rsquo;s a pastoral culture you can
         glimpse first-hand on a village walk near Lake Mburo, where cattle and
@@ -106,7 +130,7 @@ export default function Post() {
       <h2>The Batwa</h2>
 
       <p>
-        The <strong>Batwa</strong> are among the oldest inhabitants of the region
+        The <strong>Batwa</strong>{" "}are among the oldest inhabitants of the region
         &mdash; forest-dwelling hunter-gatherers who lived for millennia within the
         ancient rainforests of the south-west, including Bwindi and Mgahinga. Their
         story is also one of profound loss, and it deserves to be told honestly.
@@ -173,7 +197,7 @@ export default function Post() {
           genuinely reaches local people
         </li>
         <li>
-          <strong>Always ask before photographing</strong> anyone, and respect a
+          <strong>Always ask before photographing</strong>{" "}anyone, and respect a
           &ldquo;no&rdquo;
         </li>
         <li>
@@ -203,32 +227,7 @@ export default function Post() {
         weave them in thoughtfully.
       </p>
 
-      <h2>Uganda Cultures FAQ</h2>
-
-      <p>
-        <strong>How many tribes are there in Uganda?</strong> More than 56
-        recognised tribes, speaking dozens of languages across several broad
-        language families.
-      </p>
-
-      <p>
-        <strong>Who are the Batwa?</strong> Indigenous forest hunter-gatherers of
-        south-western Uganda, evicted from Bwindi and Mgahinga in 1991 when those
-        parks were created; today they share their culture through community-run
-        experiences.
-      </p>
-
-      <p>
-        <strong>Can I visit a traditional community on safari?</strong> Yes &mdash;
-        Batwa, Karamojong, Bahima, and other community experiences can be added to
-        many itineraries, ideally through community-led operators.
-      </p>
-
-      <p>
-        <strong>Is it respectful to visit?</strong> It can be, when done through
-        community-led programmes, with consent for photos and money reaching local
-        people directly.
-      </p>
+      <PostFaq title="Uganda Cultures FAQ" items={faq} />
 
       <h2>Travel Deeper</h2>
 

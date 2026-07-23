@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("strongest-birds-in-africa")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What is the strongest bird in Africa?",
+    a: "For its size, the African crowned eagle — it can kill prey several times its own weight. By sheer size, the martial eagle, Africa’s largest eagle.",
+  },
+  {
+    q: "What is the strongest bird in the world?",
+    a: "The harpy eagle of the Americas and the crowned eagle of Africa are usually named as the most powerful raptors; the ostrich has the strongest legs of any bird.",
+  },
+  {
+    q: "Can an eagle’s grip really break bone?",
+    a: "The largest eagles have a grip strong enough to crush the skulls of their prey — crushing power is central to how they kill.",
+  },
+  {
+    q: "Where can I see these birds in Uganda?",
+    a: "Raptors across the savanna parks (Queen Elizabeth, Kidepo, Murchison), and the shoebill in the Mabamba and Nile wetlands.",
+  },
+];
 
 export default function Post() {
   return (
@@ -151,7 +175,7 @@ export default function Post() {
 
       <p>
         Two more African specialists round out the list. The{" "}
-        <strong>secretary bird</strong> is a long-legged raptor that hunts on
+        <strong>secretary bird</strong>{" "}is a long-legged raptor that hunts on
         foot, killing snakes and other prey with rapid, powerful stamps of its
         feet &mdash; a strike delivered with several times its own body weight in
         force. The <strong>Goliath heron</strong>, the tallest heron on earth at
@@ -176,31 +200,7 @@ export default function Post() {
         near Entebbe is one of the most reliable places on earth to find one.
       </p>
 
-      <h2>Strongest Birds FAQ</h2>
-
-      <p>
-        <strong>What is the strongest bird in Africa?</strong> For its size, the
-        African crowned eagle &mdash; it can kill prey several times its own
-        weight. By sheer size, the martial eagle, Africa&rsquo;s largest eagle.
-      </p>
-
-      <p>
-        <strong>What is the strongest bird in the world?</strong> The harpy eagle
-        of the Americas and the crowned eagle of Africa are usually named as the
-        most powerful raptors; the ostrich has the strongest legs of any bird.
-      </p>
-
-      <p>
-        <strong>Can an eagle&rsquo;s grip really break bone?</strong> The largest
-        eagles have a grip strong enough to crush the skulls of their prey &mdash;
-        crushing power is central to how they kill.
-      </p>
-
-      <p>
-        <strong>Where can I see these birds in Uganda?</strong> Raptors across the
-        savanna parks (Queen Elizabeth, Kidepo, Murchison), and the shoebill in
-        the Mabamba and Nile wetlands.
-      </p>
+      <PostFaq title="Strongest Birds FAQ" items={faq} />
 
       <h2>Go Birding in Uganda</h2>
 

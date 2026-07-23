@@ -101,7 +101,7 @@ export default function Post() {
       <p>
         Gorilla trekking means hiking into protected mountain forest with an
         armed ranger and expert trackers to find a specific,{" "}
-        <strong>habituated</strong> gorilla family &mdash; one that has been
+        <strong>habituated</strong>{" "}gorilla family &mdash; one that has been
         gradually accustomed to human presence over years so it tolerates a
         respectful visit without stress. Once your group finds the family,
         you get one hour with them: watching, photographing, and simply
@@ -247,7 +247,7 @@ export default function Post() {
         Every gorilla trekking trip we run is private, fully permitted in
         advance, and built around you. See the full shape of what we offer
         on our{" "}
-        <Link href="/gorilla-trekking">gorilla trekking</Link> page, or tell
+        <Link href="/gorilla-trekking">gorilla trekking</Link>{" "}page, or tell
         us your dates and priorities and we&rsquo;ll shape the right country
         and itinerary &mdash; starting with a{" "}
         <Link href="/safaris/uganda-gorilla-tracking-safari">

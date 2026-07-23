@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("kampala-city-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is Kampala worth visiting, or just a stopover?",
+    a: "It’s worth at least a half-day — the Kasubi Tombs and a market visit give real insight into Buganda history and daily Ugandan life.",
+  },
+  {
+    q: "Why is Kampala named after an antelope?",
+    a: "The city’s hills were once grazing ground for impala herds — the name comes from “hill of the impala” in the local language.",
+  },
+  {
+    q: "Is Kampala the same as Entebbe?",
+    a: "No — Entebbe, on Lake Victoria, is where the international airport is located, about 40–60 minutes from central Kampala.",
+  },
+  {
+    q: "How many days do I need in Kampala?",
+    a: "A half-day covers the highlights; most travellers use it as a start/end point rather than a multi-day stay.",
+  },
+];
 
 export default function Post() {
   return (
@@ -132,31 +156,7 @@ export default function Post() {
         or an overnight stop before heading west toward the parks.
       </p>
 
-      <h2>Kampala FAQ</h2>
-
-      <p>
-        <strong>Is Kampala worth visiting, or just a stopover?</strong> It&rsquo;s
-        worth at least a half-day &mdash; the Kasubi Tombs and a market visit give
-        real insight into Buganda history and daily Ugandan life.
-      </p>
-
-      <p>
-        <strong>Why is Kampala named after an antelope?</strong> The city&rsquo;s
-        hills were once grazing ground for impala herds &mdash; the name comes
-        from &ldquo;hill of the impala&rdquo; in the local language.
-      </p>
-
-      <p>
-        <strong>Is Kampala the same as Entebbe?</strong> No &mdash; Entebbe, on
-        Lake Victoria, is where the international airport is located, about
-        40&ndash;60 minutes from central Kampala.
-      </p>
-
-      <p>
-        <strong>How many days do I need in Kampala?</strong> A half-day covers
-        the highlights; most travellers use it as a start/end point rather than a
-        multi-day stay.
-      </p>
+      <PostFaq title="Kampala FAQ" items={faq} />
 
       <h2>Start or End Your Trip Here</h2>
 

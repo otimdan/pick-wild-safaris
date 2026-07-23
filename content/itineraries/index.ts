@@ -215,7 +215,7 @@ export const itineraries: Itinerary[] = [
       "Ten days across the Pearl of Africa — track wild chimpanzees in Kibale, cruise the Kazinga Channel, search for tree-climbing lions in Ishasha, and stand face-to-face with a mountain gorilla family in Bwindi.",
     country: "Uganda",
     duration: "10 Days",
-    priceFrom: "From $5,240 per person sharing",
+    // priceFrom: "From $5,240 per person sharing",
     heroImage: "/itineraries/uganda-gorilla-wildlife-safari/hero.jpg",
     heroFallback: "linear-gradient(160deg, #3a6a2a, #1a3a0e)",
     date: "2026-07-01",

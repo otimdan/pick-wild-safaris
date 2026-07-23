@@ -10,7 +10,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -43,6 +45,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("ugandan-etiquette-customs-guide")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is it rude to use my left hand?",
+    a: "Traditionally, yes — use your right hand (or both) for greetings, eating, and exchanging items where possible.",
+  },
+  {
+    q: "Do I need to dress conservatively?",
+    a: "In cities, smart casual is fine; in rural areas and religious sites, covering shoulders and knees is respectful and often expected.",
+  },
+  {
+    q: "Can I take photos of people freely?",
+    a: "Always ask first — it's simple courtesy, and most people are glad to say yes.",
+  },
+  {
+    q: "Are there legal considerations LGBTQ+ travellers should know?",
+    a: "Yes — Uganda has strict laws against same-sex relationships and public affection; this is worth knowing before you travel.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -67,7 +91,7 @@ export default function Post() {
         comes with a genuine &ldquo;How are you?&rdquo; before any actual
         conversation begins; skipping straight to business can come across as
         abrupt. Learning a simple greeting in a local language, even just{" "}
-        <em>oli otya?</em> in Luganda, is always warmly received &mdash; we
+        <em>oli otya?</em>{" "}in Luganda, is always warmly received &mdash; we
         cover a few more phrases in{" "}
         <Link href="/blog/what-language-is-spoken-in-uganda">
           what language is spoken in Uganda
@@ -94,7 +118,7 @@ export default function Post() {
           finger; gesturing with an open hand is considered more polite
         </li>
         <li>
-          <strong>Public displays of affection</strong> between couples are
+          <strong>Public displays of affection</strong>{" "}between couples are
           uncommon and can draw unwanted attention &mdash; a low-key approach
           is best
         </li>
@@ -151,30 +175,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Ugandan Etiquette FAQ</h2>
-
-      <p>
-        <strong>Is it rude to use my left hand?</strong> Traditionally, yes
-        &mdash; use your right hand (or both) for greetings, eating, and
-        exchanging items where possible.
-      </p>
-
-      <p>
-        <strong>Do I need to dress conservatively?</strong> In cities, smart
-        casual is fine; in rural areas and religious sites, covering shoulders
-        and knees is respectful and often expected.
-      </p>
-
-      <p>
-        <strong>Can I take photos of people freely?</strong> Always ask first
-        &mdash; it's simple courtesy, and most people are glad to say yes.
-      </p>
-
-      <p>
-        <strong>Are there legal considerations LGBTQ+ travellers should know?</strong>{" "}
-        Yes &mdash; Uganda has strict laws against same-sex relationships and
-        public affection; this is worth knowing before you travel.
-      </p>
+      <PostFaq title="Ugandan Etiquette FAQ" items={faq} />
 
       <h2>Travel Respectfully, Travel Well</h2>
 

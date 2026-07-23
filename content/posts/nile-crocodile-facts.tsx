@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("nile-crocodile-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How big do Nile crocodiles get?",
+    a: "Typically 3–4.5 metres as adults, with exceptional individuals recorded well over 6 metres.",
+  },
+  {
+    q: "How strong is a Nile crocodile’s bite?",
+    a: "Around 5,000 psi — among the strongest bites of any living animal.",
+  },
+  {
+    q: "Where can I see the most crocodiles in Uganda?",
+    a: "The Nile at Murchison Falls, which holds the highest concentration of Nile crocodiles anywhere in Africa.",
+  },
+  {
+    q: "Are Nile crocodiles dangerous to humans?",
+    a: "Yes — they are responsible for a significant number of attacks across Africa each year, which is exactly why boat safaris keep a respectful distance.",
+  },
+];
 
 export default function Post() {
   return (
@@ -137,30 +161,7 @@ export default function Post() {
         &mdash; wherever a boat safari puts you close to the water&rsquo;s edge.
       </p>
 
-      <h2>Nile Crocodile FAQ</h2>
-
-      <p>
-        <strong>How big do Nile crocodiles get?</strong> Typically 3&ndash;4.5
-        metres as adults, with exceptional individuals recorded well over 6
-        metres.
-      </p>
-
-      <p>
-        <strong>How strong is a Nile crocodile&rsquo;s bite?</strong> Around
-        5,000 psi &mdash; among the strongest bites of any living animal.
-      </p>
-
-      <p>
-        <strong>Where can I see the most crocodiles in Uganda?</strong> The Nile
-        at Murchison Falls, which holds the highest concentration of Nile
-        crocodiles anywhere in Africa.
-      </p>
-
-      <p>
-        <strong>Are Nile crocodiles dangerous to humans?</strong> Yes &mdash;
-        they are responsible for a significant number of attacks across Africa
-        each year, which is exactly why boat safaris keep a respectful distance.
-      </p>
+      <PostFaq title="Nile Crocodile FAQ" items={faq} />
 
       <h2>See Them Up Close on a Boat Safari</h2>
 

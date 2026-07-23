@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("rothschilds-giraffe-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How do I tell a Rothschild’s giraffe from other subspecies?",
+    a: "Its plain white lower legs, with no patterning below the knee, are the clearest field mark.",
+  },
+  {
+    q: "Is the Rothschild’s giraffe endangered?",
+    a: "Yes — classified as near threatened, with a global population in the low thousands.",
+  },
+  {
+    q: "Where can I see one?",
+    a: "Murchison Falls National Park in Uganda holds the largest single population in the world.",
+  },
+  {
+    q: "How many ossicones does it have?",
+    a: "Typically five — the only giraffe type usually born this way, versus the usual two.",
+  },
+];
 
 export default function Post() {
   return (
@@ -127,30 +151,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Rothschild&rsquo;s Giraffe FAQ</h2>
-
-      <p>
-        <strong>How do I tell a Rothschild&rsquo;s giraffe from other
-        subspecies?</strong> Its plain white lower legs, with no patterning below
-        the knee, are the clearest field mark.
-      </p>
-
-      <p>
-        <strong>Is the Rothschild&rsquo;s giraffe endangered?</strong> Yes
-        &mdash; classified as near threatened, with a global population in the
-        low thousands.
-      </p>
-
-      <p>
-        <strong>Where can I see one?</strong> Murchison Falls National Park in
-        Uganda holds the largest single population in the world.
-      </p>
-
-      <p>
-        <strong>How many ossicones does it have?</strong> Typically five
-        &mdash; the only giraffe type usually born this way, versus the usual
-        two.
-      </p>
+      <PostFaq title="Rothschild’s Giraffe FAQ" items={faq} />
 
       <h2>See Uganda&rsquo;s Conservation Success Story</h2>
 

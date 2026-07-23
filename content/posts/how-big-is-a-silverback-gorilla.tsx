@@ -85,7 +85,7 @@ export default function Post() {
       </p>
 
       <p>
-        So how big <em>is</em> a silverback, really? Here are the honest numbers
+        So how big <em>is</em>{" "}a silverback, really? Here are the honest numbers
         on height, weight, and strength &mdash; and a straight answer on the
         strength myths that get wildly exaggerated online.
       </p>
@@ -139,7 +139,7 @@ export default function Post() {
           <strong>Adult female:</strong> ~70&ndash;100 kg (150&ndash;220 lb)
         </li>
         <li>
-          <strong>Newborn:</strong> around 1.8&ndash;2 kg &mdash; smaller than a
+          <strong>Newborn:</strong>{" "}around 1.8&ndash;2 kg &mdash; smaller than a
           human baby
         </li>
       </ul>

@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("big-cats-of-africa")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How many wild cat species live in Africa?",
+    a: "Five widely recognised big and mid-sized cats — lion, leopard, cheetah, serval, and caracal — alongside the smaller African wildcat, ancestor of the domestic cat.",
+  },
+  {
+    q: "Are there tigers in Africa?",
+    a: "No — tigers are native to Asia and have never lived wild in Africa. See are there tigers in Africa? for the full explanation.",
+  },
+  {
+    q: "Which African cat is fastest?",
+    a: "The cheetah, by a huge margin — the fastest land animal alive.",
+  },
+  {
+    q: "Which African cat is most dangerous?",
+    a: "The lion, both for its size and its social hunting behaviour, though all of Africa’s big cats warrant serious respect and distance in the wild.",
+  },
+];
 
 export default function Post() {
   return (
@@ -157,12 +181,12 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Queen Elizabeth National Park:</strong> the best
+          <strong>Queen Elizabeth National Park:</strong>{" "}the best
           all-rounder &mdash; tree-climbing lions, healthy leopard numbers,
           and a Kazinga Channel boat safari alongside them
         </li>
         <li>
-          <strong>Kidepo Valley National Park:</strong> Uganda&rsquo;s best
+          <strong>Kidepo Valley National Park:</strong>{" "}Uganda&rsquo;s best
           shot at cheetah, in wild, remote wilderness with far fewer
           vehicles than the southern circuit
         </li>
@@ -182,35 +206,7 @@ export default function Post() {
         drive.
       </p>
 
-      <h2>Big Cats of Africa FAQ</h2>
-
-      <p>
-        <strong>How many wild cat species live in Africa?</strong> Five
-        widely recognised big and mid-sized cats &mdash; lion, leopard,
-        cheetah, serval, and caracal &mdash; alongside the smaller African
-        wildcat, ancestor of the domestic cat.
-      </p>
-
-      <p>
-        <strong>Are there tigers in Africa?</strong> No &mdash; tigers are
-        native to Asia and have never lived wild in Africa. See{" "}
-        <Link href="/blog/tigers-in-africa">
-          are there tigers in Africa?
-        </Link>{" "}
-        for the full explanation.
-      </p>
-
-      <p>
-        <strong>Which African cat is fastest?</strong> The cheetah, by a
-        huge margin &mdash; the fastest land animal alive.
-      </p>
-
-      <p>
-        <strong>Which African cat is most dangerous?</strong> The lion,
-        both for its size and its social hunting behaviour, though all of
-        Africa&rsquo;s big cats warrant serious respect and distance in the
-        wild.
-      </p>
+      <PostFaq title="Big Cats of Africa FAQ" items={faq} />
 
       <h2>See Africa&rsquo;s Big Cats for Yourself</h2>
 

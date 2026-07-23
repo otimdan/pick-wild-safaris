@@ -1,13 +1,14 @@
 // app/resources/visas-and-e-resources/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Visas & E-Resources for East Africa | Pick Wild Safaris",
+  title: "Visas & E-Resources for East Africa",
   description:
-    "Visa requirements and official e-visa links for Uganda, Kenya, Rwanda, and Tanzania — including the East Africa Tourist Visa, yellow fever rules, and how to apply online.",
+    "Visa requirements and official e-visa links for Uganda, Kenya, Rwanda, and Tanzania, including the East Africa Tourist Visa and yellow fever rules.",
   alternates: {
     canonical: `${BASE_URL}/resources/visas-and-e-resources`,
   },
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     description:
       "How to get your visa for Uganda, Kenya, Rwanda, and Tanzania — official portals, costs, and the East Africa Tourist Visa explained.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

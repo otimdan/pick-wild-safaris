@@ -11,7 +11,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -43,6 +45,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("batwa-forest-people-of-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Who are the Batwa?",
+    a: "An indigenous forest people of south-western Uganda, historically hunter-gatherers in what are now Bwindi and Mgahinga National Parks.",
+  },
+  {
+    q: "Why were they evicted from the forest?",
+    a: "In 1991, the Ugandan government gazetted their ancestral forest as protected national parks to conserve the mountain gorilla, displacing roughly 4,000 Batwa without compensation.",
+  },
+  {
+    q: "How many Batwa remain today?",
+    a: "Uganda’s 2024 census recorded 3,857 — a significant decline from 6,198 in 2014.",
+  },
+  {
+    q: "How can I visit respectfully?",
+    a: "The community-led Batwa Trail near Bwindi offers a structured, income-generating cultural experience led by Batwa guides themselves.",
+  },
+];
 
 export default function Post() {
   return (
@@ -115,7 +139,7 @@ export default function Post() {
       <h2>The Batwa Trail: Tourism as a Path Forward</h2>
 
       <p>
-        Since 2011, the <strong>Batwa Trail</strong> has offered a structured,
+        Since 2011, the <strong>Batwa Trail</strong>{" "}has offered a structured,
         community-led way for visitors to meet Batwa communities near Bwindi
         &mdash; walking into the forest with Batwa guides who demonstrate
         traditional hunting and gathering skills, fire-making, medicinal plant
@@ -141,31 +165,7 @@ export default function Post() {
         <Link href="/blog/bwindi-impenetrable-forest-guide">Bwindi</Link>.
       </p>
 
-      <h2>The Batwa FAQ</h2>
-
-      <p>
-        <strong>Who are the Batwa?</strong> An indigenous forest people of
-        south-western Uganda, historically hunter-gatherers in what are now
-        Bwindi and Mgahinga National Parks.
-      </p>
-
-      <p>
-        <strong>Why were they evicted from the forest?</strong> In 1991, the
-        Ugandan government gazetted their ancestral forest as protected
-        national parks to conserve the mountain gorilla, displacing roughly
-        4,000 Batwa without compensation.
-      </p>
-
-      <p>
-        <strong>How many Batwa remain today?</strong> Uganda&rsquo;s 2024
-        census recorded 3,857 &mdash; a significant decline from 6,198 in 2014.
-      </p>
-
-      <p>
-        <strong>How can I visit respectfully?</strong> The community-led Batwa
-        Trail near Bwindi offers a structured, income-generating cultural
-        experience led by Batwa guides themselves.
-      </p>
+      <PostFaq title="The Batwa FAQ" items={faq} />
 
       <h2>Meet the Batwa on Your Trip</h2>
 

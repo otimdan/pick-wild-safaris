@@ -1,13 +1,14 @@
 // app/resources/climbing-kilimanjaro/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Climbing Mount Kilimanjaro: The Complete Guide | Pick Wild Safaris",
+  title: "Climbing Mount Kilimanjaro Guide",
   description:
-    "Everything you need to climb Mount Kilimanjaro — the seven routes compared, the best time to climb, altitude and acclimatisation, training, costs, and what to pack.",
+    "Everything you need to climb Kilimanjaro: the seven routes compared, best time to go, altitude and acclimatisation, training, costs, and what to pack.",
   alternates: { canonical: `${BASE_URL}/resources/climbing-kilimanjaro` },
   openGraph: {
     type: "article",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Routes compared, best seasons, acclimatisation, training and costs for reaching Uhuru Peak — Africa's highest summit.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

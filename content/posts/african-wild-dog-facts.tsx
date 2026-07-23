@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("african-wild-dog-facts")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is the wild dog called a “painted wolf”?",
+    a: "For its irregular, multicoloured coat — no two individuals are patterned alike.",
+  },
+  {
+    q: "Are wild dogs better hunters than lions?",
+    a: "By success rate, yes — up to around 80% compared to a lion’s roughly 30%, thanks to highly coordinated pack hunting.",
+  },
+  {
+    q: "Can you see wild dogs in Uganda?",
+    a: "They’re extremely rare, having recently begun returning to Kidepo Valley after being considered extinct in the country for decades.",
+  },
+  {
+    q: "Why are wild dogs endangered?",
+    a: "Habitat loss, conflict with livestock farmers, disease from domestic dogs, and their need for very large home ranges.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -67,7 +91,7 @@ export default function Post() {
           around 80%, far higher than lions or leopards
         </li>
         <li>
-          <strong>Highly social:</strong> lives in tight packs of roughly 5&ndash;20
+          <strong>Highly social:</strong>{" "}lives in tight packs of roughly 5&ndash;20
           individuals
         </li>
         <li>
@@ -75,7 +99,7 @@ export default function Post() {
           after the Ethiopian wolf
         </li>
         <li>
-          <strong>Went extinct in Uganda</strong> by the early 1980s &mdash;
+          <strong>Went extinct in Uganda</strong>{" "}by the early 1980s &mdash;
           and has recently begun returning to Kidepo Valley
         </li>
       </ul>
@@ -139,31 +163,7 @@ export default function Post() {
         </span>
       </p>
 
-      <h2>African Wild Dog FAQ</h2>
-
-      <p>
-        <strong>Why is the wild dog called a &ldquo;painted wolf&rdquo;?</strong>{" "}
-        For its irregular, multicoloured coat &mdash; no two individuals are
-        patterned alike.
-      </p>
-
-      <p>
-        <strong>Are wild dogs better hunters than lions?</strong> By success
-        rate, yes &mdash; up to around 80% compared to a lion&rsquo;s roughly
-        30%, thanks to highly coordinated pack hunting.
-      </p>
-
-      <p>
-        <strong>Can you see wild dogs in Uganda?</strong> They&rsquo;re
-        extremely rare, having recently begun returning to Kidepo Valley after
-        being considered extinct in the country for decades.
-      </p>
-
-      <p>
-        <strong>Why are wild dogs endangered?</strong> Habitat loss, conflict
-        with livestock farmers, disease from domestic dogs, and their need for
-        very large home ranges.
-      </p>
+      <PostFaq title="African Wild Dog FAQ" items={faq} />
 
       <h2>Look for Them in Kidepo</h2>
 

@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("traditional-music-dance-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What is Uganda’s most famous traditional dance?",
+    a: "Bakisimba, from the Buganda kingdom, is probably the best known and most widely performed.",
+  },
+  {
+    q: "What instruments are used in Ugandan traditional music?",
+    a: "Instruments like the adungu (harp), endingidi (fiddle), and various drums and xylophones, varying by region and ethnic group.",
+  },
+  {
+    q: "Can travellers see traditional performances?",
+    a: "Yes — many lodges and community tourism projects host cultural evenings featuring live music and dance.",
+  },
+  {
+    q: "Is dance tied to specific ceremonies?",
+    a: "Often, yes — kadodi accompanies circumcision ceremonies, larakaraka is traditionally a courtship dance, and many others mark weddings or cultural celebrations.",
+  },
+];
 
 export default function Post() {
   return (
@@ -94,7 +118,7 @@ export default function Post() {
 
       <p>
         Perhaps Uganda&rsquo;s best-known traditional dance,{" "}
-        <strong>bakisimba</strong> comes from the Kiganda tradition of the
+        <strong>bakisimba</strong>{" "}comes from the Kiganda tradition of the
         Buganda kingdom &mdash; a joyful, hip-driven dance performed to
         distinctive drumming, said to have originated as a celebration of a
         king&rsquo;s enjoyment of banana beer. It remains a staple of Ugandan
@@ -152,33 +176,7 @@ export default function Post() {
         experience Uganda beyond its wildlife.
       </p>
 
-      <h2>Traditional Music &amp; Dance FAQ</h2>
-
-      <p>
-        <strong>What is Uganda&rsquo;s most famous traditional dance?</strong>{" "}
-        Bakisimba, from the Buganda kingdom, is probably the best known and
-        most widely performed.
-      </p>
-
-      <p>
-        <strong>What instruments are used in Ugandan traditional
-        music?</strong> Instruments like the adungu (harp), endingidi
-        (fiddle), and various drums and xylophones, varying by region and
-        ethnic group.
-      </p>
-
-      <p>
-        <strong>Can travellers see traditional performances?</strong> Yes
-        &mdash; many lodges and community tourism projects host cultural
-        evenings featuring live music and dance.
-      </p>
-
-      <p>
-        <strong>Is dance tied to specific ceremonies?</strong> Often, yes
-        &mdash; kadodi accompanies circumcision ceremonies, larakaraka is
-        traditionally a courtship dance, and many others mark weddings or
-        cultural celebrations.
-      </p>
+      <PostFaq title="Traditional Music & Dance FAQ" items={faq} />
 
       <h2>Add a Cultural Evening to Your Trip</h2>
 

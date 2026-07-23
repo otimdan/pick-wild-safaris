@@ -96,7 +96,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Country and permits:</strong> gorilla trekking permits
+          <strong>Country and permits:</strong>{" "}gorilla trekking permits
           alone range from around $400 to $1,500 per person depending on
           country &mdash; see{" "}
           <Link href="/blog/gorilla-permit-prices-explained">
@@ -106,7 +106,7 @@ export default function Post() {
           classic wildlife safaris) skip this cost entirely
         </li>
         <li>
-          <strong>Accommodation tier:</strong> the single biggest lever on
+          <strong>Accommodation tier:</strong>{" "}the single biggest lever on
           daily cost &mdash; basic camping and budget lodges sit at one end,
           boutique and luxury camps at the other, with a wide mid-range in
           between. Our{" "}
@@ -119,7 +119,7 @@ export default function Post() {
           shared group departure, but buys flexibility, privacy, and pace
         </li>
         <li>
-          <strong>Road transfers vs. fly-in:</strong> light-aircraft
+          <strong>Road transfers vs. fly-in:</strong>{" "}light-aircraft
           transfers between parks cost meaningfully more than road
           transfers but save entire days &mdash; the trade-offs are covered
           in{" "}
@@ -133,7 +133,7 @@ export default function Post() {
           command higher lodge rates than the quieter green season
         </li>
         <li>
-          <strong>International flights:</strong> often the most variable
+          <strong>International flights:</strong>{" "}often the most variable
           cost of all, and entirely separate from the ground safari price
           &mdash; booked well ahead, they can swing the total trip cost
           significantly
@@ -160,15 +160,15 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Budget / camping safari:</strong> roughly $150&ndash;250
+          <strong>Budget / camping safari:</strong>{" "}roughly $150&ndash;250
           per person per day
         </li>
         <li>
-          <strong>Mid-range lodge safari:</strong> roughly $250&ndash;450 per
+          <strong>Mid-range lodge safari:</strong>{" "}roughly $250&ndash;450 per
           person per day
         </li>
         <li>
-          <strong>Luxury safari:</strong> roughly $450&ndash;1,000+ per
+          <strong>Luxury safari:</strong>{" "}roughly $450&ndash;1,000+ per
           person per day
         </li>
       </ul>

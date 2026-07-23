@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("ugandan-food-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What is Uganda’s national dish?",
+    a: "Matoke — steamed, mashed green bananas — is the closest thing to a national staple, eaten daily across the country.",
+  },
+  {
+    q: "What is a rolex?",
+    a: "Uganda’s favourite street food — a chapati rolled around fried eggs and vegetables, named for “rolled eggs.”",
+  },
+  {
+    q: "Is Ugandan food spicy?",
+    a: "Generally mild and comforting rather than spicy, built around starchy staples, stews, and sauces.",
+  },
+  {
+    q: "Where can I try luwombo?",
+    a: "Look for it at cultural restaurants or ask your lodge in advance — it’s a special dish, not always on a standard menu.",
+  },
+];
 
 export default function Post() {
   return (
@@ -128,30 +152,7 @@ export default function Post() {
         more locally during your trip, and most kitchens are happy to oblige.
       </p>
 
-      <h2>Ugandan Food FAQ</h2>
-
-      <p>
-        <strong>What is Uganda&rsquo;s national dish?</strong> Matoke &mdash;
-        steamed, mashed green bananas &mdash; is the closest thing to a
-        national staple, eaten daily across the country.
-      </p>
-
-      <p>
-        <strong>What is a rolex?</strong> Uganda&rsquo;s favourite street food
-        &mdash; a chapati rolled around fried eggs and vegetables, named for
-        &ldquo;rolled eggs.&rdquo;
-      </p>
-
-      <p>
-        <strong>Is Ugandan food spicy?</strong> Generally mild and comforting
-        rather than spicy, built around starchy staples, stews, and sauces.
-      </p>
-
-      <p>
-        <strong>Where can I try luwombo?</strong> Look for it at cultural
-        restaurants or ask your lodge in advance &mdash; it&rsquo;s a special
-        dish, not always on a standard menu.
-      </p>
+      <PostFaq title="Ugandan Food FAQ" items={faq} />
 
       <h2>Taste Your Way Through Uganda</h2>
 

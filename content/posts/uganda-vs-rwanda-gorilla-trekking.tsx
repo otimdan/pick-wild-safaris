@@ -80,7 +80,7 @@ export default function Post() {
       </blockquote>
       <p>
         It&rsquo;s the question almost every gorilla traveller wrestles with:{" "}
-        <strong>Uganda or Rwanda?</strong> The gorillas themselves are the same
+        <strong>Uganda or Rwanda?</strong>{" "}The gorillas themselves are the same
         species &mdash; the same misty forests even span the border between the
         two countries &mdash; but the trips built around them are genuinely
         different. One is the value-and-adventure option with far more to see
@@ -107,12 +107,12 @@ export default function Post() {
           <strong>Permit cost:</strong> Uganda ~USD $800; Rwanda USD $1,500
         </li>
         <li>
-          <strong>Access:</strong> Rwanda is closer &mdash; a few hours&rsquo;
+          <strong>Access:</strong>{" "}Rwanda is closer &mdash; a few hours&rsquo;
           drive from Kigali; Uganda&rsquo;s Bwindi is a long drive or short flight
           from Entebbe
         </li>
         <li>
-          <strong>Terrain:</strong> Uganda&rsquo;s Bwindi is dense, steep
+          <strong>Terrain:</strong>{" "}Uganda&rsquo;s Bwindi is dense, steep
           rainforest; Rwanda&rsquo;s volcano slopes are more open
         </li>
         <li>
@@ -120,7 +120,7 @@ export default function Post() {
           both, and more availability
         </li>
         <li>
-          <strong>Wider safari:</strong> Uganda offers far more to add on &mdash;
+          <strong>Wider safari:</strong>{" "}Uganda offers far more to add on &mdash;
           chimps, big game, the Nile; Rwanda is more compact
         </li>
         <li>
@@ -138,7 +138,7 @@ export default function Post() {
 
       <p>
         Money is where the two countries diverge most sharply. A Uganda gorilla
-        permit costs <strong>around USD $800</strong> per person for foreign
+        permit costs <strong>around USD $800</strong>{" "}per person for foreign
         non-residents, and Uganda even discounts it to about $600 in the low-season
         months (April, May, and November). Rwanda&rsquo;s permit is a flat{" "}
         <strong>USD $1,500</strong> per person, with no seasonal discount.
@@ -251,13 +251,13 @@ export default function Post() {
       <h2>So Which Should You Choose?</h2>
 
       <p>
-        <strong>Choose Rwanda if</strong> you&rsquo;re short on time, want the
+        <strong>Choose Rwanda if</strong>{" "}you&rsquo;re short on time, want the
         easiest possible access from the airport, are set on a luxury lodge, and
         don&rsquo;t mind paying a premium for convenience and polish.
       </p>
 
       <p>
-        <strong>Choose Uganda if</strong> you want better value on the permit, a
+        <strong>Choose Uganda if</strong>{" "}you want better value on the permit, a
         wilder and more adventurous trek, more gorilla families and permit
         availability, and &mdash; above all &mdash; the chance to combine gorillas
         with chimps, big game, and the rest of an extraordinary safari country. For

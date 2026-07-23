@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 // A tiny helper for inline images — matches the pattern used in
@@ -42,13 +44,35 @@ function PostImage({
 
 const meta = getPostMeta("do-lions-eat-leopards-cheetahs-and-hyenas")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Do lions eat leopards, cheetahs, and hyenas?",
+    a: "They kill all three to remove competition, but they very rarely eat them — the flesh of another predator is a poor meal.",
+  },
+  {
+    q: "Why do lions kill animals they don’t eat?",
+    a: "To protect their food supply. Killing a rival carnivore (and its cubs) means fewer hunters competing for the same antelope herds.",
+  },
+  {
+    q: "Do cheetahs eat hyenas or lions?",
+    a: "No. Cheetahs hunt antelope and avoid other predators entirely — hyenas and lions regularly steal cheetah kills and hunt cheetah cubs.",
+  },
+  {
+    q: "Who wins, a lion or a hyena?",
+    a: "One-on-one the lion, easily. But a large clan of hyenas can overwhelm a lone lion or drive a small pride off a kill.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
       <p>
         It&rsquo;s one of the most-asked questions on an African safari: if a lion
         runs into a leopard, a cheetah, or a hyena, does it eat them? The short,
-        slightly surprising answer is that lions <strong>kill</strong> these
+        slightly surprising answer is that lions <strong>kill</strong>{" "}these
         animals fairly often &mdash; but they very rarely <strong>eat</strong>{" "}
         them. And that one distinction explains almost everything about how
         Africa&rsquo;s big predators live alongside each other.
@@ -69,7 +93,7 @@ export default function Post() {
           when they can catch them, but they almost never eat them.
         </li>
         <li>
-          <strong>Do lions eat cheetahs?</strong> Same story &mdash; lions kill
+          <strong>Do lions eat cheetahs?</strong>{" "}Same story &mdash; lions kill
           cheetahs, especially cubs, but don&rsquo;t feed on them.
         </li>
         <li>
@@ -77,7 +101,7 @@ export default function Post() {
           food and territory; eating them is rare.
         </li>
         <li>
-          <strong>Do cheetahs eat lions or hyenas?</strong> No &mdash; cheetahs
+          <strong>Do cheetahs eat lions or hyenas?</strong>{" "}No &mdash; cheetahs
           are the ones on the back foot here, and they avoid both.
         </li>
       </ul>
@@ -214,31 +238,7 @@ export default function Post() {
         <Link href="/blog/leopard-vs-cheetah">leopard vs cheetah</Link>.
       </p>
 
-      <h2>Predator Rivalry FAQ</h2>
-
-      <p>
-        <strong>Do lions eat leopards, cheetahs, and hyenas?</strong> They kill
-        all three to remove competition, but they very rarely eat them &mdash;
-        the flesh of another predator is a poor meal.
-      </p>
-
-      <p>
-        <strong>Why do lions kill animals they don&rsquo;t eat?</strong> To
-        protect their food supply. Killing a rival carnivore (and its cubs) means
-        fewer hunters competing for the same antelope herds.
-      </p>
-
-      <p>
-        <strong>Do cheetahs eat hyenas or lions?</strong> No. Cheetahs hunt
-        antelope and avoid other predators entirely &mdash; hyenas and lions
-        regularly steal cheetah kills and hunt cheetah cubs.
-      </p>
-
-      <p>
-        <strong>Who wins, a lion or a hyena?</strong> One-on-one the lion, easily.
-        But a large clan of hyenas can overwhelm a lone lion or drive a small
-        pride off a kill.
-      </p>
+      <PostFaq title="Predator Rivalry FAQ" items={faq} />
 
       <h2>See It for Yourself</h2>
 

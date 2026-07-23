@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 // Gradient placeholder card standing in for a photo not yet added.
 // Delete the wrapper and drop a <PostImage src=…/> in when ready.
@@ -42,6 +44,32 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("is-the-shoebill-stork-a-dinosaur")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is the shoebill stork a dinosaur?",
+    a: "Not a surviving prehistoric one — but since all birds descend from theropod dinosaurs, it’s technically an avian dinosaur, just like every other bird. It only looks more the part than most.",
+  },
+  {
+    q: "Is the shoebill dangerous to humans?",
+    a: "No. Despite the intimidating appearance, shoebills are not known to attack people and are strikingly tolerant of a calm, respectful approach.",
+  },
+  {
+    q: "How rare is the shoebill?",
+    a: "Genuinely rare — a Vulnerable species with only a few thousand left in the wild, which is why dedicated birders travel a long way to see one.",
+  },
+  {
+    q: "Can you see shoebills year-round in Uganda?",
+    a: "Yes. They live in the wetlands permanently, so any time of year can work; early morning is the prime window.",
+  },
+  {
+    q: "How tall is a shoebill?",
+    a: "Usually 110–140 cm, with the biggest birds reaching about 152 cm — roughly five feet tall.",
+  },
+];
 
 export default function Post() {
   return (
@@ -97,7 +125,7 @@ export default function Post() {
       </p>
 
       <p>
-        The shoebill is <strong>not</strong> a leftover from the age of
+        The shoebill is <strong>not</strong>{" "}a leftover from the age of
         dinosaurs. It isn&rsquo;t a surviving pterosaur, it didn&rsquo;t coexist
         with <em>T. rex</em>, and it&rsquo;s no more a direct relic of the
         Mesozoic than a pigeon is. Its prehistoric look is a coincidence of size,
@@ -106,7 +134,7 @@ export default function Post() {
       </p>
 
       <p>
-        Now the twist: <strong>birds genuinely are dinosaurs.</strong> Modern
+        Now the twist: <strong>birds genuinely are dinosaurs.</strong>{" "}Modern
         science places all birds within the theropod dinosaurs &mdash; the same
         lineage as <em>Velociraptor</em> and <em>T. rex</em>. So in the strict
         scientific sense, every living bird is an avian dinosaur, and the shoebill
@@ -134,18 +162,18 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Height:</strong> typically 110&ndash;140 cm (about
+          <strong>Height:</strong>{" "}typically 110&ndash;140 cm (about
           3.6&ndash;4.6 ft), with large individuals reaching 152 cm &mdash;
           roughly five feet
         </li>
         <li>
-          <strong>Wingspan:</strong> around 2.3&ndash;2.6 m (7.5&ndash;8.5 ft)
+          <strong>Wingspan:</strong>{" "}around 2.3&ndash;2.6 m (7.5&ndash;8.5 ft)
         </li>
         <li>
-          <strong>Weight:</strong> roughly 4&ndash;7 kg (9&ndash;15 lb)
+          <strong>Weight:</strong>{" "}roughly 4&ndash;7 kg (9&ndash;15 lb)
         </li>
         <li>
-          <strong>Bill:</strong> up to about 24 cm long and unusually wide, with
+          <strong>Bill:</strong>{" "}up to about 24 cm long and unusually wide, with
           a sharp hooked tip &mdash; the whole reason for the name
         </li>
       </ul>
@@ -196,7 +224,7 @@ export default function Post() {
           rapid burst that&rsquo;s often compared to a machine gun.
         </li>
         <li>
-          <strong>They practise siblicide.</strong> A female usually lays two
+          <strong>They practise siblicide.</strong>{" "}A female usually lays two
           eggs, but the stronger, older chick typically outcompetes and kills the
           younger one, and the parents raise a single chick. It&rsquo;s bleak, but
           it&rsquo;s normal for the species.
@@ -207,7 +235,7 @@ export default function Post() {
 
       <p>
         Not many, and that&rsquo;s part of what makes seeing one feel like such a
-        privilege. The shoebill is listed as <strong>Vulnerable</strong> on the
+        privilege. The shoebill is listed as <strong>Vulnerable</strong>{" "}on the
         IUCN Red List, with a wild population commonly estimated at roughly
         5,000&ndash;8,000 birds &mdash; though estimates vary and the number of
         breeding adults is lower.{" "}
@@ -238,7 +266,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>Mabamba Bay Wetland</strong> is the headline. A Ramsar-listed
+        <strong>Mabamba Bay Wetland</strong>{" "}is the headline. A Ramsar-listed
         swamp on the northern shore of Lake Victoria, it sits only about an
         hour&rsquo;s drive from Entebbe International Airport, and it&rsquo;s
         widely considered the single most reliable place in the world to find a
@@ -254,7 +282,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>Murchison Falls National Park</strong> is the other classic. Where
+        <strong>Murchison Falls National Park</strong>{" "}is the other classic. Where
         the Victoria Nile spills into Lake Albert, the delta shelters shoebills
         among the papyrus, and they&rsquo;re spotted on the boat cruises there &mdash;
         a very different, more expansive setting than the intimate Mabamba canoe.
@@ -315,37 +343,7 @@ export default function Post() {
         </span>
       </p>
 
-      <h2>Shoebill FAQ</h2>
-
-      <p>
-        <strong>Is the shoebill stork a dinosaur?</strong> Not a surviving
-        prehistoric one &mdash; but since all birds descend from theropod
-        dinosaurs, it&rsquo;s technically an avian dinosaur, just like every other
-        bird. It only <em>looks</em> more the part than most.
-      </p>
-
-      <p>
-        <strong>Is the shoebill dangerous to humans?</strong> No. Despite the
-        intimidating appearance, shoebills are not known to attack people and are
-        strikingly tolerant of a calm, respectful approach.
-      </p>
-
-      <p>
-        <strong>How rare is the shoebill?</strong> Genuinely rare &mdash; a
-        Vulnerable species with only a few thousand left in the wild, which is
-        why dedicated birders travel a long way to see one.
-      </p>
-
-      <p>
-        <strong>Can you see shoebills year-round in Uganda?</strong> Yes. They
-        live in the wetlands permanently, so any time of year can work; early
-        morning is the prime window.
-      </p>
-
-      <p>
-        <strong>How tall is a shoebill?</strong> Usually 110&ndash;140 cm, with
-        the biggest birds reaching about 152 cm &mdash; roughly five feet tall.
-      </p>
+      <PostFaq title="Shoebill FAQ" items={faq} />
 
       <h2>See One for Yourself</h2>
 

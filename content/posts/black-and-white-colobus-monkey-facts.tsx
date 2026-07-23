@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("black-and-white-colobus-monkey-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why doesn’t the colobus have a thumb?",
+    a: "Its reduced, four-fingered hand forms a hook-like grip suited to fast movement through the forest canopy — an adaptation, not a disability.",
+  },
+  {
+    q: "What do colobus monkeys eat?",
+    a: "Almost exclusively leaves, digested with the help of a complex, multi-chambered stomach.",
+  },
+  {
+    q: "Where can I see them in Uganda?",
+    a: "Widely, including Kibale Forest and Bwindi, often spotted during chimp or gorilla treks.",
+  },
+  {
+    q: "How big are colobus troops?",
+    a: "Typically 5 to 15 individuals, each troop defending its own patch of forest.",
+  },
+];
 
 export default function Post() {
   return (
@@ -72,7 +96,7 @@ export default function Post() {
           digesting tough foliage
         </li>
         <li>
-          <strong>Lives in small territorial troops</strong> of 5&ndash;15
+          <strong>Lives in small territorial troops</strong>{" "}of 5&ndash;15
           individuals
         </li>
         <li>
@@ -135,28 +159,7 @@ export default function Post() {
         reliable, beautiful bonus sighting on almost any primate trek.
       </p>
 
-      <h2>Black-and-White Colobus FAQ</h2>
-
-      <p>
-        <strong>Why doesn&rsquo;t the colobus have a thumb?</strong> Its reduced,
-        four-fingered hand forms a hook-like grip suited to fast movement through
-        the forest canopy &mdash; an adaptation, not a disability.
-      </p>
-
-      <p>
-        <strong>What do colobus monkeys eat?</strong> Almost exclusively leaves,
-        digested with the help of a complex, multi-chambered stomach.
-      </p>
-
-      <p>
-        <strong>Where can I see them in Uganda?</strong> Widely, including
-        Kibale Forest and Bwindi, often spotted during chimp or gorilla treks.
-      </p>
-
-      <p>
-        <strong>How big are colobus troops?</strong> Typically 5 to 15
-        individuals, each troop defending its own patch of forest.
-      </p>
+      <PostFaq title="Black-and-White Colobus FAQ" items={faq} />
 
       <h2>Spot Them on a Forest Trek</h2>
 

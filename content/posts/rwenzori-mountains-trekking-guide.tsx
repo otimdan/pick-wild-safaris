@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("rwenzori-mountains-trekking-guide")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How hard is trekking the Rwenzori?",
+    a: "Considerably more technical than Kilimanjaro — the full summit trek involves glacier travel and requires basic mountaineering skills.",
+  },
+  {
+    q: "How long does the trek take?",
+    a: "Around seven to eight days for the full trek to Margherita Peak; shorter multi-day routes are available for non-summit trekking.",
+  },
+  {
+    q: "Do the Rwenzori really have glaciers?",
+    a: "Yes, though they are shrinking rapidly with climate change — less than half their size a century ago.",
+  },
+  {
+    q: "Is Rwenzori better than Kilimanjaro?",
+    a: "Not better or worse — different: wilder, wetter, more technical, and far less crowded.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -62,7 +86,7 @@ export default function Post() {
       <p>
         The Rwenzori are the <strong>highest non-volcanic mountains in the
         world</strong>, a jagged, glaciated range on the Uganda&ndash;DR Congo
-        border. Their highest point, <strong>Margherita Peak</strong> on Mount
+        border. Their highest point, <strong>Margherita Peak</strong>{" "}on Mount
         Stanley, reaches 5,109 metres &mdash; the third-highest point in Africa,
         after Kilimanjaro and Mount Kenya. Unlike those two volcanic giants, the
         Rwenzori were pushed up by tectonic faulting, giving them a much more
@@ -141,31 +165,7 @@ export default function Post() {
         proper rain gear is essential whenever you go.
       </p>
 
-      <h2>Rwenzori Mountains FAQ</h2>
-
-      <p>
-        <strong>How hard is trekking the Rwenzori?</strong> Considerably more
-        technical than Kilimanjaro &mdash; the full summit trek involves glacier
-        travel and requires basic mountaineering skills.
-      </p>
-
-      <p>
-        <strong>How long does the trek take?</strong> Around seven to eight days
-        for the full trek to Margherita Peak; shorter multi-day routes are
-        available for non-summit trekking.
-      </p>
-
-      <p>
-        <strong>Do the Rwenzori really have glaciers?</strong> Yes, though they
-        are shrinking rapidly with climate change &mdash; less than half their
-        size a century ago.
-      </p>
-
-      <p>
-        <strong>Is Rwenzori better than Kilimanjaro?</strong> Not better or
-        worse — different: wilder, wetter, more technical, and far less
-        crowded.
-      </p>
+      <PostFaq title="Rwenzori Mountains FAQ" items={faq} />
 
       <h2>Take On the Mountains of the Moon</h2>
 

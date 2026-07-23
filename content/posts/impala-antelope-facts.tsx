@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("impala-antelope-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is Kampala really named after the impala?",
+    a: "Yes — the name traces to a phrase meaning “hill of the impala,” from the herds that once grazed the site of the modern city.",
+  },
+  {
+    q: "How high can an impala jump?",
+    a: "Around 3 metres high and up to roughly 10 metres in a single leap — among the best jumpers of any antelope.",
+  },
+  {
+    q: "Do female impala have horns?",
+    a: "No — only males carry the lyre-shaped horns; females are hornless.",
+  },
+  {
+    q: "Where can I see impala in Uganda?",
+    a: "Only in Lake Mburo National Park, the single Ugandan park where the species occurs.",
+  },
+];
 
 export default function Post() {
   return (
@@ -80,7 +104,7 @@ export default function Post() {
           <strong>Uganda link:</strong> Kampala takes its name from the impala
         </li>
         <li>
-          <strong>Where in Uganda:</strong> Lake Mburo &mdash; the only Ugandan
+          <strong>Where in Uganda:</strong>{" "}Lake Mburo &mdash; the only Ugandan
           park with impala
         </li>
       </ul>
@@ -109,7 +133,7 @@ export default function Post() {
         The impala is one of the great athletes of the animal kingdom. When
         startled, a herd will scatter in an explosion of soaring, criss-crossing
         jumps &mdash; individuals clearing around <strong>3 metres in height and
-        up to 10 metres in length</strong> in a single bound, sometimes leaping
+        up to 10 metres in length</strong>{" "}in a single bound, sometimes leaping
         clean over one another. This chaotic display is thought to confuse
         predators, making it hard to single out one target. It&rsquo;s one of the
         most beautiful things to watch on a savanna, and a big part of why the
@@ -169,29 +193,7 @@ export default function Post() {
         is another one worth knowing.
       </p>
 
-      <h2>Impala FAQ</h2>
-
-      <p>
-        <strong>Is Kampala really named after the impala?</strong> Yes &mdash; the
-        name traces to a phrase meaning &ldquo;hill of the impala,&rdquo; from the
-        herds that once grazed the site of the modern city.
-      </p>
-
-      <p>
-        <strong>How high can an impala jump?</strong> Around 3 metres high and up
-        to roughly 10 metres in a single leap &mdash; among the best jumpers of
-        any antelope.
-      </p>
-
-      <p>
-        <strong>Do female impala have horns?</strong> No &mdash; only males carry
-        the lyre-shaped horns; females are hornless.
-      </p>
-
-      <p>
-        <strong>Where can I see impala in Uganda?</strong> Only in Lake Mburo
-        National Park, the single Ugandan park where the species occurs.
-      </p>
+      <PostFaq title="Impala FAQ" items={faq} />
 
       <h2>See the Antelope That Named a City</h2>
 

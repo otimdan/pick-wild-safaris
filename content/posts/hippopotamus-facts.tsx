@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("hippopotamus-facts")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Are hippos really more dangerous than lions?",
+    a: "Most sources rank them as Africa’s most dangerous large mammal by human death toll, though the exact figures vary and are widely disputed.",
+  },
+  {
+    q: "How fast can a hippo run?",
+    a: "Fast enough to outrun a person over a short distance on land, despite weighing several tonnes.",
+  },
+  {
+    q: "How strong is a hippo’s bite?",
+    a: "Around 1,800 psi — nearly double the bite force of an African lion.",
+  },
+  {
+    q: "Where can I see hippos in Uganda?",
+    a: "The Kazinga Channel and the Nile at Murchison Falls both offer close, safe sightings from a boat.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -65,7 +89,7 @@ export default function Post() {
           <strong>Enormous weight:</strong> males can weigh close to 4.5 tonnes
         </li>
         <li>
-          <strong>One of the strongest bites of any land mammal:</strong> around
+          <strong>One of the strongest bites of any land mammal:</strong>{" "}around
           1,800 psi &mdash; nearly double a lion&rsquo;s
         </li>
         <li>
@@ -152,29 +176,7 @@ export default function Post() {
         </li>
       </ul>
 
-      <h2>Hippopotamus FAQ</h2>
-
-      <p>
-        <strong>Are hippos really more dangerous than lions?</strong> Most
-        sources rank them as Africa&rsquo;s most dangerous large mammal by human
-        death toll, though the exact figures vary and are widely disputed.
-      </p>
-
-      <p>
-        <strong>How fast can a hippo run?</strong> Fast enough to outrun a
-        person over a short distance on land, despite weighing several tonnes.
-      </p>
-
-      <p>
-        <strong>How strong is a hippo&rsquo;s bite?</strong> Around 1,800 psi
-        &mdash; nearly double the bite force of an African lion.
-      </p>
-
-      <p>
-        <strong>Where can I see hippos in Uganda?</strong> The Kazinga Channel
-        and the Nile at Murchison Falls both offer close, safe sightings from a
-        boat.
-      </p>
+      <PostFaq title="Hippopotamus FAQ" items={faq} />
 
       <h2>See Them Safely From the Water</h2>
 

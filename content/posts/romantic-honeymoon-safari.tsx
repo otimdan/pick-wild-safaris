@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("romantic-honeymoon-safari")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is a safari a good honeymoon idea?",
+    a: "Very much so — it offers genuine shared adventure and striking, private settings that a standard resort honeymoon usually can’t match.",
+  },
+  {
+    q: "How long should a honeymoon safari be?",
+    a: "Most couples find 7–10 days strikes the right balance — enough time for wildlife and gorilla trekking plus a slower, romantic close, without the trip feeling rushed.",
+  },
+  {
+    q: "Should we combine gorilla trekking with a honeymoon?",
+    a: "Many couples do, and it works well — just plan a restful day either side of the trek itself, since it’s physically demanding.",
+  },
+  {
+    q: "Can lodges arrange romantic extras?",
+    a: "Yes — private dinners, decorated rooms, and small honeymoon touches are common if requested when you book, rather than as a surprise walk-in ask.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -61,7 +85,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Shared adventure, not just relaxation:</strong> you&rsquo;re
+          <strong>Shared adventure, not just relaxation:</strong>{" "}you&rsquo;re
           building memories together, not just lying side by side on
           matching loungers
         </li>
@@ -90,13 +114,13 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Bwindi Impenetrable Forest:</strong> gorilla trekking is
+          <strong>Bwindi Impenetrable Forest:</strong>{" "}gorilla trekking is
           as close as a honeymoon gets to a shared once-in-a-lifetime
           adventure &mdash; strenuous, emotional, and unforgettable in
           exactly the way you&rsquo;ll want to tell people about for years
         </li>
         <li>
-          <strong>Lake Bunyonyi:</strong> terraced hills, private islands,
+          <strong>Lake Bunyonyi:</strong>{" "}terraced hills, private islands,
           and calm water make it one of East Africa&rsquo;s most romantic
           settings to unwind after trekking &mdash; see our full{" "}
           <Link href="/blog/lake-bunyonyi-guide">Lake Bunyonyi guide</Link>
@@ -116,7 +140,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Go private, not group:</strong> the cost difference is
+          <strong>Go private, not group:</strong>{" "}the cost difference is
           worth it for a honeymoon &mdash; you set the pace, not a bus
           schedule
         </li>
@@ -134,7 +158,7 @@ export default function Post() {
           drives most pleasant
         </li>
         <li>
-          <strong>Consider a beach or lake close:</strong> ending the trip
+          <strong>Consider a beach or lake close:</strong>{" "}ending the trip
           somewhere you can genuinely do nothing is its own kind of
           romantic &mdash; see our{" "}
           <Link href="/safari-types/beach-safaris">beach safaris</Link>{" "}
@@ -149,34 +173,7 @@ export default function Post() {
         </li>
       </ul>
 
-      <h2>Romantic Honeymoon Safari FAQ</h2>
-
-      <p>
-        <strong>Is a safari a good honeymoon idea?</strong> Very much so
-        &mdash; it offers genuine shared adventure and striking, private
-        settings that a standard resort honeymoon usually can&rsquo;t match.
-      </p>
-
-      <p>
-        <strong>How long should a honeymoon safari be?</strong> Most couples
-        find 7&ndash;10 days strikes the right balance &mdash; enough time
-        for wildlife and gorilla trekking plus a slower, romantic close,
-        without the trip feeling rushed.
-      </p>
-
-      <p>
-        <strong>Should we combine gorilla trekking with a honeymoon?</strong>{" "}
-        Many couples do, and it works well &mdash; just plan a restful day
-        either side of the trek itself, since it&rsquo;s physically
-        demanding.
-      </p>
-
-      <p>
-        <strong>Can lodges arrange romantic extras?</strong> Yes &mdash;
-        private dinners, decorated rooms, and small honeymoon touches are
-        common if requested when you book, rather than as a surprise
-        walk-in ask.
-      </p>
+      <PostFaq title="Romantic Honeymoon Safari FAQ" items={faq} />
 
       <h2>Start Planning Your Honeymoon Safari</h2>
 

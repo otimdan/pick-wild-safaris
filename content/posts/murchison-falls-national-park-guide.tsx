@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("murchison-falls-national-park-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is Murchison Falls famous?",
+    a: "For its extraordinary falls — the Nile forced through a seven-metre gap and dropping around 43 metres — and for being Uganda’s largest, wildlife-rich national park.",
+  },
+  {
+    q: "Can you see the Big Five?",
+    a: "Lions, elephants, buffalo, and leopards live in the park; rhinos are seen at nearby Ziwa Rhino Sanctuary, so a combined trip lets you see all five.",
+  },
+  {
+    q: "Is the boat safari worth it?",
+    a: "Absolutely — the launch trip to the base of the falls, past hippos and crocodiles, is a highlight of the whole park.",
+  },
+  {
+    q: "How long should I spend there?",
+    a: "Two to three nights lets you enjoy a game drive, the boat safari, and the Top of the Falls without rushing.",
+  },
+];
 
 export default function Post() {
   return (
@@ -90,7 +114,7 @@ export default function Post() {
       <h2>Wildlife &amp; Game Drives</h2>
 
       <p>
-        The savanna north of the Nile &mdash; the <strong>Buligi</strong> area
+        The savanna north of the Nile &mdash; the <strong>Buligi</strong>{" "}area
         &mdash; is the park&rsquo;s prime game-viewing country. Morning game drives
         here bring good chances of:
       </p>
@@ -138,7 +162,7 @@ export default function Post() {
 
       <p>
         Many Murchison itineraries include a stop at{" "}
-        <strong>Ziwa Rhino Sanctuary</strong> on the drive up from Kampala &mdash;
+        <strong>Ziwa Rhino Sanctuary</strong>{" "}on the drive up from Kampala &mdash;
         the only place in Uganda where you can see wild rhinos, tracked on foot with
         a ranger. It&rsquo;s the missing piece that lets you tick off the last of
         the &ldquo;Big Five&rdquo; that the parks themselves no longer hold, and
@@ -176,32 +200,7 @@ export default function Post() {
         , which links Murchison with Queen Elizabeth and Bwindi by light aircraft.
       </p>
 
-      <h2>Murchison Falls FAQ</h2>
-
-      <p>
-        <strong>Why is Murchison Falls famous?</strong> For its extraordinary falls
-        &mdash; the Nile forced through a seven-metre gap and dropping around 43
-        metres &mdash; and for being Uganda&rsquo;s largest, wildlife-rich national
-        park.
-      </p>
-
-      <p>
-        <strong>Can you see the Big Five?</strong> Lions, elephants, buffalo, and
-        leopards live in the park; rhinos are seen at nearby Ziwa Rhino Sanctuary,
-        so a combined trip lets you see all five.
-      </p>
-
-      <p>
-        <strong>Is the boat safari worth it?</strong> Absolutely &mdash; the launch
-        trip to the base of the falls, past hippos and crocodiles, is a highlight
-        of the whole park.
-      </p>
-
-      <p>
-        <strong>How long should I spend there?</strong> Two to three nights lets
-        you enjoy a game drive, the boat safari, and the Top of the Falls without
-        rushing.
-      </p>
+      <PostFaq title="Murchison Falls FAQ" items={faq} />
 
       <h2>Plan Your Murchison Falls Safari</h2>
 

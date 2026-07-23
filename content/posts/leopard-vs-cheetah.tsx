@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,32 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("leopard-vs-cheetah")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What’s the difference between cheetah spots and leopard spots?",
+    a: "Cheetah spots are small, solid, evenly round dots. Leopard spots are rosettes — irregular rings of spots around a darker centre. It’s the single most reliable way to tell the two apart from a photo.",
+  },
+  {
+    q: "What’s the easiest way to tell them apart?",
+    a: "The cheetah’s black tear marks and solid round spots versus the leopard’s clean face and ringed rosettes.",
+  },
+  {
+    q: "Which is faster, a leopard or a cheetah?",
+    a: "The cheetah, by a huge margin — it’s the fastest land animal alive. The leopard is stronger but far slower.",
+  },
+  {
+    q: "Which is more dangerous?",
+    a: "The leopard is the more powerful and formidable predator; the cheetah is comparatively timid and avoids confrontation.",
+  },
+  {
+    q: "Can they climb trees?",
+    a: "Leopards are expert climbers and store kills in trees; cheetahs rarely climb beyond low, sloping branches.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -67,7 +95,7 @@ export default function Post() {
           clusters); cheetahs have simple, solid round spots
         </li>
         <li>
-          <strong>Face:</strong> cheetahs have two black &ldquo;tear marks&rdquo;
+          <strong>Face:</strong>{" "}cheetahs have two black &ldquo;tear marks&rdquo;
           running from eye to mouth; leopards don&rsquo;t
         </li>
         <li>
@@ -156,12 +184,12 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Leopards:</strong> widespread but elusive &mdash; Queen
+          <strong>Leopards:</strong>{" "}widespread but elusive &mdash; Queen
           Elizabeth and Kidepo in Uganda, and the Masai Mara and Serengeti, all
           hold good numbers. Look in trees at dusk.
         </li>
         <li>
-          <strong>Cheetahs:</strong> much rarer in Uganda &mdash; Kidepo Valley
+          <strong>Cheetahs:</strong>{" "}much rarer in Uganda &mdash; Kidepo Valley
           is your best bet in the north &mdash; and more reliably seen on the
           open plains of the Masai Mara and Serengeti.
         </li>
@@ -177,38 +205,7 @@ export default function Post() {
         walks through the seasons.
       </p>
 
-      <h2>Leopard vs Cheetah FAQ</h2>
-
-      <p>
-        <strong>What&rsquo;s the difference between cheetah spots and
-        leopard spots?</strong> Cheetah spots are small, solid, evenly
-        round dots. Leopard spots are rosettes &mdash; irregular rings of
-        spots around a darker centre. It&rsquo;s the single most reliable
-        way to tell the two apart from a photo.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the easiest way to tell them apart?</strong> The
-        cheetah&rsquo;s black tear marks and solid round spots versus the
-        leopard&rsquo;s clean face and ringed rosettes.
-      </p>
-
-      <p>
-        <strong>Which is faster, a leopard or a cheetah?</strong> The cheetah, by
-        a huge margin &mdash; it&rsquo;s the fastest land animal alive. The
-        leopard is stronger but far slower.
-      </p>
-
-      <p>
-        <strong>Which is more dangerous?</strong> The leopard is the more
-        powerful and formidable predator; the cheetah is comparatively timid and
-        avoids confrontation.
-      </p>
-
-      <p>
-        <strong>Can they climb trees?</strong> Leopards are expert climbers and
-        store kills in trees; cheetahs rarely climb beyond low, sloping branches.
-      </p>
+      <PostFaq title="Leopard vs Cheetah FAQ" items={faq} />
 
       <h2>Track Both on Safari</h2>
 

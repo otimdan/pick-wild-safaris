@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -42,6 +44,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("do-cheetahs-eat-lions-and-hyenas")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Do cheetahs eat lions?",
+    a: "No — cheetahs never hunt or eat lions. Lions are a lethal threat to cheetahs, not the other way round.",
+  },
+  {
+    q: "Do cheetahs eat hyenas?",
+    a: "No. Hyenas are larger and stronger in a fight and regularly steal cheetah kills; a cheetah avoids them.",
+  },
+  {
+    q: "What do cheetahs eat instead?",
+    a: "Mainly gazelles, impala, and other small-to-medium antelope, plus hares and game birds — fast, harmless prey they can run down.",
+  },
+  {
+    q: "Do lions and hyenas eat cheetahs?",
+    a: "They kill cheetahs — cubs especially — largely to remove a competitor, though they rarely eat them. They’re the cheetah’s main enemies.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -64,7 +88,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Do cheetahs eat lions?</strong> No. Cheetahs never hunt or eat
+          <strong>Do cheetahs eat lions?</strong>{" "}No. Cheetahs never hunt or eat
           lions &mdash; lions are a deadly threat to them, not prey.
         </li>
         <li>
@@ -72,7 +96,7 @@ export default function Post() {
           in a fight, and routinely rob cheetahs of their kills.
         </li>
         <li>
-          <strong>So who eats whom?</strong> Lions and hyenas kill cheetahs
+          <strong>So who eats whom?</strong>{" "}Lions and hyenas kill cheetahs
           (especially cubs) and steal their food &mdash; the relationship runs the
           opposite way to the search.
         </li>
@@ -112,7 +136,7 @@ export default function Post() {
 
       <p>
         Every one of these is smaller than the cheetah and, crucially, harmless to
-        it. A cheetah is engineered to <em>outrun</em> its food, not to overpower
+        it. A cheetah is engineered to <em>outrun</em>{" "}its food, not to overpower
         anything dangerous &mdash; which is exactly why lions and hyenas are off
         the menu.
       </p>
@@ -142,14 +166,14 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>They steal its food.</strong> After a hard sprint a cheetah is
+          <strong>They steal its food.</strong>{" "}After a hard sprint a cheetah is
           exhausted and needs to catch its breath before eating. Lions and hyenas
           often arrive, drive the cheetah off, and take the kill &mdash; a habit
           biologists call kleptoparasitism. A cheetah won&rsquo;t risk injury to
           defend a meal, so it simply gives it up.
         </li>
         <li>
-          <strong>They kill its cubs.</strong> Lions are the single biggest cause
+          <strong>They kill its cubs.</strong>{" "}Lions are the single biggest cause
           of cheetah cub deaths, and a large share of cubs don&rsquo;t reach
           independence in areas with many lions. It&rsquo;s one of the main reasons
           cheetah numbers stay low even where prey is abundant.
@@ -203,29 +227,7 @@ export default function Post() {
         simple.
       </p>
 
-      <h2>Do Cheetahs Eat Lions or Hyenas? FAQ</h2>
-
-      <p>
-        <strong>Do cheetahs eat lions?</strong> No &mdash; cheetahs never hunt or
-        eat lions. Lions are a lethal threat to cheetahs, not the other way round.
-      </p>
-
-      <p>
-        <strong>Do cheetahs eat hyenas?</strong> No. Hyenas are larger and stronger
-        in a fight and regularly steal cheetah kills; a cheetah avoids them.
-      </p>
-
-      <p>
-        <strong>What do cheetahs eat instead?</strong> Mainly gazelles, impala, and
-        other small-to-medium antelope, plus hares and game birds &mdash; fast,
-        harmless prey they can run down.
-      </p>
-
-      <p>
-        <strong>Do lions and hyenas eat cheetahs?</strong> They kill cheetahs
-        &mdash; cubs especially &mdash; largely to remove a competitor, though they
-        rarely eat them. They&rsquo;re the cheetah&rsquo;s main enemies.
-      </p>
+      <PostFaq title="Do Cheetahs Eat Lions or Hyenas? FAQ" items={faq} />
 
       <h2>Find Them on Safari</h2>
 

@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 // A tiny helper for inline images — matches the pattern used in
@@ -41,6 +43,28 @@ function PostImage({
 
 const meta = getPostMeta("tigers-in-africa")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Are there wild tigers anywhere in Africa?",
+    a: "No. Tigers have never been a native African species; their entire wild range is in Asia.",
+  },
+  {
+    q: "Can you see tigers in Africa at all?",
+    a: "Only in captivity — some private facilities, mostly in South Africa, breed and keep tigers, which has drawn significant conservation criticism. There is no wild tiger population on the continent.",
+  },
+  {
+    q: "What’s the biggest cat in Africa?",
+    a: "The lion, both by typical body size and by its dominance of the food chain as Africa’s apex predator.",
+  },
+  {
+    q: "Why do people confuse lions and tigers?",
+    a: "Mostly pop culture — both are iconic “big cats” often pictured together in media without reference to which continent each actually comes from.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -65,7 +89,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Lions and tigers get mentally lumped together</strong> as
+          <strong>Lions and tigers get mentally lumped together</strong>{" "}as
           &ldquo;the big striped/maned cat,&rdquo; especially in children&rsquo;s
           books, cartoons, and phrases like &ldquo;lions and tigers and
           bears&rdquo; that never specify a continent
@@ -84,7 +108,7 @@ export default function Post() {
           tigers as an indigenous species
         </li>
         <li>
-          <strong>&ldquo;Tiger&rdquo; gets used loosely</strong> as slang for
+          <strong>&ldquo;Tiger&rdquo; gets used loosely</strong>{" "}as slang for
           any large, powerful striped or spotted cat, the way people
           sometimes say &ldquo;tiger stripes&rdquo; to describe a
           leopard&rsquo;s coat
@@ -120,7 +144,7 @@ export default function Post() {
           only truly social big cat; tigers are solitary
         </li>
         <li>
-          <strong>Habitat:</strong> lions roam Africa&rsquo;s savanna and
+          <strong>Habitat:</strong>{" "}lions roam Africa&rsquo;s savanna and
           grassland; tigers live in Asia&rsquo;s forests, mangroves, and
           grasslands
         </li>
@@ -194,33 +218,7 @@ export default function Post() {
         caption="A tree-climbing lion in the Ishasha sector, Queen Elizabeth National Park"
       />
 
-      <h2>Tigers in Africa FAQ</h2>
-
-      <p>
-        <strong>Are there wild tigers anywhere in Africa?</strong> No.
-        Tigers have never been a native African species; their entire wild
-        range is in Asia.
-      </p>
-
-      <p>
-        <strong>Can you see tigers in Africa at all?</strong> Only in
-        captivity &mdash; some private facilities, mostly in South Africa,
-        breed and keep tigers, which has drawn significant conservation
-        criticism. There is no wild tiger population on the continent.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the biggest cat in Africa?</strong> The lion,
-        both by typical body size and by its dominance of the food chain
-        as Africa&rsquo;s apex predator.
-      </p>
-
-      <p>
-        <strong>Why do people confuse lions and tigers?</strong> Mostly
-        pop culture &mdash; both are iconic &ldquo;big cats&rdquo; often
-        pictured together in media without reference to which continent
-        each actually comes from.
-      </p>
+      <PostFaq title="Tigers in Africa FAQ" items={faq} />
 
       <h2>See Africa&rsquo;s Real Big Cats</h2>
 

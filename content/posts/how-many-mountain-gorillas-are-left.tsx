@@ -68,7 +68,7 @@ export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
       <p>
-        There are just over <strong>1,000 mountain gorillas</strong> left on
+        There are just over <strong>1,000 mountain gorillas</strong>{" "}left on
         earth. It sounds impossibly small &mdash; and it is &mdash; but it comes
         with a twist that almost no other endangered species can claim: the
         number is going <em>up</em>. Mountain gorillas are the only great ape on

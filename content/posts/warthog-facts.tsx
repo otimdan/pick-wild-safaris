@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("warthog-facts")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why does a warthog run with its tail up?",
+    a: "It’s thought to help family members keep track of each other while fleeing at speed through tall grass.",
+  },
+  {
+    q: "Why do warthogs kneel to graze?",
+    a: "Their short necks make it easier to reach short grass from padded, thickened wrist joints built for the purpose.",
+  },
+  {
+    q: "Do warthogs dig their own burrows?",
+    a: "Rarely — they typically move into burrows abandoned by aardvarks, backing in tail first.",
+  },
+  {
+    q: "Is the mongoose friendship real?",
+    a: "Yes — mongooses genuinely groom ticks and parasites off warthogs in a mutually beneficial relationship.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -63,7 +87,7 @@ export default function Post() {
           protect it during fights
         </li>
         <li>
-          <strong>Curved tusks</strong> up to 60&ndash;65 cm long in large males
+          <strong>Curved tusks</strong>{" "}up to 60&ndash;65 cm long in large males
         </li>
         <li>
           <strong>Grazes on its knees</strong>, using thickened, padded joints
@@ -134,8 +158,8 @@ export default function Post() {
       <h2>Family Life</h2>
 
       <p>
-        Female warthogs and their young live in social groups called
-        <strong> sounders</strong>, typically two to ten animals, while adult
+        Female warthogs and their young live in social groups called{" "}
+        <strong>sounders</strong>, typically two to ten animals, while adult
         males are largely solitary or gather in loose bachelor groups outside
         the breeding season.
       </p>
@@ -149,31 +173,7 @@ export default function Post() {
         beside the road.
       </p>
 
-      <h2>Warthog FAQ</h2>
-
-      <p>
-        <strong>Why does a warthog run with its tail up?</strong> It&rsquo;s
-        thought to help family members keep track of each other while fleeing at
-        speed through tall grass.
-      </p>
-
-      <p>
-        <strong>Why do warthogs kneel to graze?</strong> Their short necks make
-        it easier to reach short grass from padded, thickened wrist joints built
-        for the purpose.
-      </p>
-
-      <p>
-        <strong>Do warthogs dig their own burrows?</strong> Rarely — they
-        typically move into burrows abandoned by aardvarks, backing in tail
-        first.
-      </p>
-
-      <p>
-        <strong>Is the mongoose friendship real?</strong> Yes — mongooses
-        genuinely groom ticks and parasites off warthogs in a mutually
-        beneficial relationship.
-      </p>
+      <PostFaq title="Warthog FAQ" items={faq} />
 
       <h2>Spot Them on Your Game Drive</h2>
 

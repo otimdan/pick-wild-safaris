@@ -1,14 +1,15 @@
 // app/resources/faq/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 import JsonLd from "@/app/components/JsonLd";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Pick Wild Safaris",
+  title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about African safaris — booking, best time to go, gorilla trekking, visas, health and safety, costs, packing, and travelling with children.",
+    "Answers to common questions about African safaris: booking, best time to go, gorilla trekking, visas, health, safety, costs, and packing.",
   alternates: { canonical: `${BASE_URL}/resources/faq` },
   openGraph: {
     type: "article",
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     description:
       "Everything travellers ask us about planning an African safari — answered.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

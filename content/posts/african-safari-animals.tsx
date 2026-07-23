@@ -11,7 +11,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -43,6 +45,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("african-safari-animals")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What animals will I see on an African safari?",
+    a: "It depends on the park, but a good Uganda or East Africa trip typically delivers elephants, lions, buffalo, hippos, giraffe, many antelope, and — uniquely in Uganda — gorillas and chimpanzees.",
+  },
+  {
+    q: "What are the Big Five?",
+    a: "Lion, leopard, elephant, buffalo, and rhino — originally the five animals hardest and most dangerous to hunt on foot.",
+  },
+  {
+    q: "Can you see the Big Five in Uganda?",
+    a: "Yes — four in Murchison Falls, with rhino at the Ziwa Rhino Sanctuary on the way north.",
+  },
+  {
+    q: "What makes Uganda different from other safari countries?",
+    a: "It combines classic savanna wildlife with mountain gorillas and chimpanzees — a mix you can’t get on a standard plains-only safari.",
+  },
+];
 
 export default function Post() {
   return (
@@ -310,31 +334,7 @@ export default function Post() {
         explains the seasons.
       </p>
 
-      <h2>African Safari Animals FAQ</h2>
-
-      <p>
-        <strong>What animals will I see on an African safari?</strong> It depends
-        on the park, but a good Uganda or East Africa trip typically delivers
-        elephants, lions, buffalo, hippos, giraffe, many antelope, and &mdash;
-        uniquely in Uganda &mdash; gorillas and chimpanzees.
-      </p>
-
-      <p>
-        <strong>What are the Big Five?</strong> Lion, leopard, elephant, buffalo,
-        and rhino &mdash; originally the five animals hardest and most dangerous to
-        hunt on foot.
-      </p>
-
-      <p>
-        <strong>Can you see the Big Five in Uganda?</strong> Yes &mdash; four in
-        Murchison Falls, with rhino at the Ziwa Rhino Sanctuary on the way north.
-      </p>
-
-      <p>
-        <strong>What makes Uganda different from other safari countries?</strong>{" "}
-        It combines classic savanna wildlife with mountain gorillas and chimpanzees
-        &mdash; a mix you can&rsquo;t get on a standard plains-only safari.
-      </p>
+      <PostFaq title="African Safari Animals FAQ" items={faq} />
 
       <h2>See Them for Yourself</h2>
 

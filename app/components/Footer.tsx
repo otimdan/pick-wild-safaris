@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -33,9 +35,9 @@ export default function Footer() {
             <div className="social-icons">
               {[
                 { icon: "fab fa-facebook-f", label: "Facebook", href: "https://facebook.com/PickWildSafaris", },
-                { icon: "fab fa-instagram", label: "Instagram", href: "https://instagram.com/pickwildsafaris", },
+                { icon: "fab fa-instagram", label: "Instagram", href: "https://instagram.com/pick_wild_safaris", },
                 { icon: "fab fa-linkedin-in", label: "LinkedIn", href: "https://linkedin.com/company/pick-wild-safaris", },
-                { icon: "fab fa-youtube", label: "YouTube", href: "https://youtube.com/pickwildsafaris", },
+                { icon: "fab fa-youtube", label: "YouTube", href: "https://youtube.com/@pickwildsafaris", },
                 { icon: "fab fa-tiktok", label: "TikTok", href: "https://tiktok.com/@pickwildsafaris", },
               ].map(({ icon, label, href }) => (
                 <a key={label} href={href} aria-label={label}>
@@ -51,19 +53,16 @@ export default function Footer() {
           <h3>Company</h3>
           <ul>
             <li>
-              <a href="#">About Us</a>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <a href="#">Our Impact</a>
+              <Link href="/lodging">Lodging &amp; Accommodation</Link>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">Reviews</a>
+              <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -73,19 +72,27 @@ export default function Footer() {
           <h3>Resources</h3>
           <ul>
             <li>
-              <a href="#">Safari Prep</a>
+              <Link href="/resources/how-to-prepare-for-safari">
+                How to Prepare for Safari
+              </Link>
             </li>
             <li>
-              <a href="#">E-Resources</a>
+              <Link href="/resources/visas-and-e-resources">
+                Visas &amp; E-Resources
+              </Link>
             </li>
             <li>
-              <a href="#">Gorilla Trekking Tips</a>
+              <Link href="/resources/climbing-kilimanjaro">
+                Climbing Mount Kilimanjaro
+              </Link>
             </li>
             <li>
-              <a href="#">Climbing Mt Kilimanjaro</a>
+              <Link href="/blog/gorilla-trekking-tips">
+                Gorilla Trekking Tips
+              </Link>
             </li>
             <li>
-              <a href="#">Craft Your Adventure</a>
+              <Link href="/resources/faq">Frequently Asked Questions</Link>
             </li>
           </ul>
         </div>
@@ -95,19 +102,16 @@ export default function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="#">Sustainability Policy</a>
+              <Link href="/safaris">Safaris</Link>
             </li>
             <li>
-              <a href="#">Safaris</a>
+              <Link href="/gorilla-trekking">Gorilla Trekking</Link>
             </li>
             <li>
-              <a href="#">Trekking</a>
+              <Link href="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
-              <a href="/privacy-policy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="/terms">Terms</a>
+              <Link href="/terms">Terms</Link>
             </li>
           </ul>
         </div>

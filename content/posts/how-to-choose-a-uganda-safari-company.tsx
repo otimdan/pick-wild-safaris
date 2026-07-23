@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("how-to-choose-a-uganda-safari-company")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Should I book with a local or international company?",
+    a: "Booking with a reputable Uganda-based operator usually means better value and deeper local knowledge, since they run the trip on the ground themselves.",
+  },
+  {
+    q: "How do I know a safari company is legitimate?",
+    a: "Look for Ugandan licensing and AUTO membership, a real local office, transparent itineraries, and genuine independent reviews.",
+  },
+  {
+    q: "Why do gorilla trips cost more?",
+    a: "Much of the cost is the government permit itself (USD $800 in peak season), which is fixed and non-negotiable — a legitimate operator won’t undercut it.",
+  },
+  {
+    q: "Can I customise my safari?",
+    a: "Yes — a good operator builds a private, tailor-made trip around your dates, interests, and pace.",
+  },
+];
 
 export default function Post() {
   return (
@@ -182,31 +206,7 @@ export default function Post() {
         point of booking with people who actually run the ground.
       </p>
 
-      <h2>Choosing a Uganda Safari Company FAQ</h2>
-
-      <p>
-        <strong>Should I book with a local or international company?</strong>{" "}
-        Booking with a reputable Uganda-based operator usually means better value
-        and deeper local knowledge, since they run the trip on the ground
-        themselves.
-      </p>
-
-      <p>
-        <strong>How do I know a safari company is legitimate?</strong> Look for
-        Ugandan licensing and AUTO membership, a real local office, transparent
-        itineraries, and genuine independent reviews.
-      </p>
-
-      <p>
-        <strong>Why do gorilla trips cost more?</strong> Much of the cost is the
-        government permit itself (USD $800 in peak season), which is fixed and
-        non-negotiable &mdash; a legitimate operator won&rsquo;t undercut it.
-      </p>
-
-      <p>
-        <strong>Can I customise my safari?</strong> Yes &mdash; a good operator
-        builds a private, tailor-made trip around your dates, interests, and pace.
-      </p>
+      <PostFaq title="Choosing a Uganda Safari Company FAQ" items={faq} />
 
       <h2>Plan Your Trip With Us</h2>
 
@@ -215,7 +215,7 @@ export default function Post() {
         private and built around you &mdash; not pulled off a shelf. Browse our{" "}
         <Link href="/safaris">Uganda &amp; East Africa safaris</Link> for a
         starting point, then{" "}
-        <Link href="/contact">tell us what you have in mind</Link> and we&rsquo;ll
+        <Link href="/contact">tell us what you have in mind</Link>{" "}and we&rsquo;ll
         shape an itinerary around your dates, interests, and budget.{" "}
         <span style={{ opacity: 0.75 }}>
           [NEEDS INPUT: which trust credentials should we state here &mdash; AUTO

@@ -1,5 +1,6 @@
 // app/safaris/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
@@ -9,9 +10,9 @@ import { allItineraries } from "@/content/itineraries/index";
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Safaris & Itineraries | Private Uganda & East Africa Tours",
+  title: "Uganda & East Africa Safari Itineraries",
   description:
-    "Browse our private, expertly guided safari itineraries across Uganda, Kenya, Tanzania and East Africa — from the Great Migration to gorilla trekking. Every trip tailored around you.",
+    "Private, expertly guided safari itineraries across Uganda, Kenya, Tanzania and East Africa — from the Great Migration to gorilla trekking.",
   alternates: { canonical: `${BASE_URL}/safaris` },
   openGraph: {
     type: "website",
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "Private, expertly guided safari itineraries across Uganda and East Africa — from the Great Migration to gorilla trekking.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

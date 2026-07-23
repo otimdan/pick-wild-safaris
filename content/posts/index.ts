@@ -147,7 +147,7 @@ export const allPosts: PostMeta[] = [
     title: "Gorilla Permit Prices Explained: Uganda vs Rwanda vs Congo",
     excerpt:
       "A gorilla permit is the biggest line item on any trekking trip — and a fixed government fee, not something any operator sets. A clear breakdown of permit prices in Uganda, Rwanda, and DR Congo, and why they differ.",
-    metaTitle: "Gorilla Permit Prices: Uganda vs Rwanda vs Congo",
+    metaTitle: "Gorilla Permit Prices Explained",
     metaDescription:
       "Gorilla permit prices explained — Uganda, Rwanda, and DR Congo compared, what the fee includes, and why the costs differ so much.",
     category: "Planning Tips",
@@ -179,7 +179,7 @@ export const allPosts: PostMeta[] = [
     title: "Money in Uganda: Currency, Cash & Tipping Guide",
     excerpt:
       "What currency to bring, whether US dollars work, and how much to tip — the practical money questions every first-time Uganda traveller asks. A clear guide to cash, currency, and tipping on safari.",
-    metaTitle: "Money in Uganda: Currency & Tipping Guide",
+    metaTitle: "Money in Uganda: Currency & Tips",
     metaDescription:
       "A guide to money in Uganda — the Ugandan Shilling, bringing US dollars, cash vs cards, and a clear tipping guide for your safari.",
     category: "Planning Tips",
@@ -459,7 +459,7 @@ export const allPosts: PostMeta[] = [
     title: "Bwindi Impenetrable Forest: The Complete Guide",
     excerpt:
       "Home to nearly half the world's mountain gorillas, Bwindi is the reason most people first look at a map of Uganda. The four trekking sectors, the wildlife beyond the gorillas, and how to plan a visit.",
-    metaTitle: "Bwindi Impenetrable Forest: Complete Guide",
+    metaTitle: "Bwindi Impenetrable Forest Guide",
     metaDescription:
       "A complete guide to Bwindi Impenetrable Forest — the four gorilla trekking sectors, wildlife beyond the gorillas, best time to go, and how to visit.",
     category: "Uganda",
@@ -583,7 +583,7 @@ export const allPosts: PostMeta[] = [
     title: "Do Lions Eat Leopards, Cheetahs, and Hyenas?",
     excerpt:
       "Lions kill leopards, cheetahs, and hyenas surprisingly often — but they almost never eat them. Here's the honest story of Africa's big-predator rivalries, and where to see the drama on safari.",
-    metaTitle: "Do Lions Eat Leopards, Cheetahs & Hyenas?",
+    metaTitle: "Do Lions Eat Leopards & Cheetahs?",
     metaDescription:
       "Do lions eat leopards, cheetahs, and hyenas? They kill them but rarely eat them — Africa's big-predator rivalries explained, and where to see them.",
     category: "Wildlife",
@@ -958,7 +958,7 @@ export const allPosts: PostMeta[] = [
     title: "Gorilla Trekking in Africa: The Complete Guide",
     excerpt:
       "Africa's single most sought-after wildlife experience, explained end to end — what it involves, where to go, what it costs, and how to decide, with links to every deeper guide you'll need.",
-    metaTitle: "Gorilla Trekking in Africa: Complete Guide",
+    metaTitle: "Gorilla Trekking in Africa Guide",
     metaDescription:
       "The complete guide to gorilla trekking in Africa — where to go, permit costs, difficulty, and what to expect, across Uganda, Rwanda, and DR Congo.",
     category: "Planning Tips",

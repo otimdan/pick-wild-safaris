@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("kibale-forest-national-park-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is Kibale called the primate capital of Africa?",
+    a: "It holds 13 primate species — the highest primate density on the continent — including over 1,500 chimpanzees.",
+  },
+  {
+    q: "Is Kibale only about chimps?",
+    a: "No — it also offers rich birding, several other primate species, and the Bigodi Wetland walk just outside the park.",
+  },
+  {
+    q: "How does Kibale connect to Queen Elizabeth?",
+    a: "A forested corridor links the two parks, historically used as an elephant migration route, making them a natural pairing on an itinerary.",
+  },
+  {
+    q: "How long should I spend at Kibale?",
+    a: "One to two nights covers a chimp trek and the Bigodi wetland walk comfortably.",
+  },
+];
 
 export default function Post() {
   return (
@@ -118,7 +142,7 @@ export default function Post() {
 
       <p>
         Just outside the park, the community-run <strong>Bigodi Wetland
-        Sanctuary</strong> offers a gentler, excellent complement to forest
+        Sanctuary</strong>{" "}offers a gentler, excellent complement to forest
         trekking &mdash; a guided boardwalk and trail through papyrus swamp
         alive with monkeys, birds, and butterflies, with proceeds supporting the
         local community. It&rsquo;s a lovely half-day addition for anyone who
@@ -155,30 +179,7 @@ export default function Post() {
         across the south-west.
       </p>
 
-      <h2>Kibale Forest FAQ</h2>
-
-      <p>
-        <strong>Why is Kibale called the primate capital of Africa?</strong> It
-        holds 13 primate species &mdash; the highest primate density on the
-        continent &mdash; including over 1,500 chimpanzees.
-      </p>
-
-      <p>
-        <strong>Is Kibale only about chimps?</strong> No &mdash; it also offers
-        rich birding, several other primate species, and the Bigodi Wetland walk
-        just outside the park.
-      </p>
-
-      <p>
-        <strong>How does Kibale connect to Queen Elizabeth?</strong> A forested
-        corridor links the two parks, historically used as an elephant migration
-        route, making them a natural pairing on an itinerary.
-      </p>
-
-      <p>
-        <strong>How long should I spend at Kibale?</strong> One to two nights
-        covers a chimp trek and the Bigodi wetland walk comfortably.
-      </p>
+      <PostFaq title="Kibale Forest FAQ" items={faq} />
 
       <h2>Explore the Primate Capital</h2>
 

@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -42,6 +44,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("family-safari-uganda-with-kids")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What’s the best age for a Uganda safari with kids?",
+    a: "Roughly 6 to 14 gets the most from the experience, though activity limits (like gorilla trekking’s 15+ rule) shape what’s possible at younger ages.",
+  },
+  {
+    q: "Can young children go gorilla trekking?",
+    a: "No — the minimum age is 15, strictly enforced across Uganda, Rwanda, and DR Congo.",
+  },
+  {
+    q: "Is Uganda safe for children health-wise?",
+    a: "With proper preparation — travel clinic consultation, yellow fever vaccination, and appropriate malaria prevention — it's considered manageable, but always confirm specifics with a medical professional.",
+  },
+  {
+    q: "What activities work well for younger kids?",
+    a: "Game drives, boat safaris, and Lake Mburo’s walking and horseback activities are all good options below the gorilla trekking age limit.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -63,7 +87,7 @@ export default function Post() {
       <h2>What Age Is Right for a Uganda Safari?</h2>
 
       <p>
-        Children roughly <strong>6 to 14</strong> tend to get the most out of a
+        Children roughly <strong>6 to 14</strong>{" "}tend to get the most out of a
         family safari &mdash; old enough to sit through game drives and absorb
         the experience, young enough to still find every animal thrilling. That
         said, activity-specific age limits shape what&rsquo;s actually possible
@@ -72,7 +96,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Gorilla trekking:</strong> minimum age 15, strictly enforced
+          <strong>Gorilla trekking:</strong>{" "}minimum age 15, strictly enforced
           &mdash; see{" "}
           <Link href="/blog/gorilla-trekking-day-what-to-expect">
             what happens on a gorilla trek
@@ -113,7 +137,7 @@ export default function Post() {
         a malaria risk area, so this needs proper planning well in advance.
         We&rsquo;d strongly encourage every family to consult a travel clinic
         or paediatrician{" "}
-        <strong>4&ndash;6 weeks before departure</strong> to discuss
+        <strong>4&ndash;6 weeks before departure</strong>{" "}to discuss
         age-appropriate malaria prevention and confirm routine vaccinations are
         up to date &mdash; this is genuinely medical advice best given by a
         professional who knows your children&rsquo;s specific health history,
@@ -157,33 +181,7 @@ export default function Post() {
         for every family member.
       </p>
 
-      <h2>Family Safari FAQ</h2>
-
-      <p>
-        <strong>What&rsquo;s the best age for a Uganda safari with kids?</strong>{" "}
-        Roughly 6 to 14 gets the most from the experience, though activity
-        limits (like gorilla trekking&rsquo;s 15+ rule) shape what&rsquo;s
-        possible at younger ages.
-      </p>
-
-      <p>
-        <strong>Can young children go gorilla trekking?</strong> No &mdash; the
-        minimum age is 15, strictly enforced across Uganda, Rwanda, and DR
-        Congo.
-      </p>
-
-      <p>
-        <strong>Is Uganda safe for children health-wise?</strong> With proper
-        preparation — travel clinic consultation, yellow fever vaccination,
-        and appropriate malaria prevention — it's considered manageable, but
-        always confirm specifics with a medical professional.
-      </p>
-
-      <p>
-        <strong>What activities work well for younger kids?</strong> Game
-        drives, boat safaris, and Lake Mburo&rsquo;s walking and horseback
-        activities are all good options below the gorilla trekking age limit.
-      </p>
+      <PostFaq title="Family Safari FAQ" items={faq} />
 
       <h2>Plan a Trip the Whole Family Will Remember</h2>
 

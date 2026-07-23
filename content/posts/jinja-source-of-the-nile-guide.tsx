@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("jinja-source-of-the-nile-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is Jinja worth visiting?",
+    a: "Yes — between the historical Source of the Nile, world-class rafting, and a relaxed town to explore, it’s one of the best breaks from a wildlife-focused itinerary.",
+  },
+  {
+    q: "How far is Jinja from Kampala?",
+    a: "About two hours by road, making it an easy stop on the way east or as a stand-alone day or overnight trip.",
+  },
+  {
+    q: "Is the white water rafting safe for beginners?",
+    a: "Operators run both full-grade rapids and gentler sections, with safety kayakers and full equipment provided; no prior rafting experience is required.",
+  },
+  {
+    q: "How many days do I need in Jinja?",
+    a: "One full day covers the source of the Nile and one adventure activity; two days allows a more relaxed pace or multiple activities.",
+  },
+];
 
 export default function Post() {
   return (
@@ -127,33 +151,7 @@ export default function Post() {
         itinerary that&rsquo;s otherwise all game drives and treks.
       </p>
 
-      <h2>Jinja &amp; Source of the Nile FAQ</h2>
-
-      <p>
-        <strong>Is Jinja worth visiting?</strong> Yes &mdash; between the
-        historical Source of the Nile, world-class rafting, and a relaxed town to
-        explore, it&rsquo;s one of the best breaks from a wildlife-focused
-        itinerary.
-      </p>
-
-      <p>
-        <strong>How far is Jinja from Kampala?</strong> About two hours by road,
-        making it an easy stop on the way east or as a stand-alone day or
-        overnight trip.
-      </p>
-
-      <p>
-        <strong>Is the white water rafting safe for beginners?</strong>{" "}
-        Operators run both full-grade rapids and gentler sections, with safety
-        kayakers and full equipment provided; no prior rafting experience is
-        required.
-      </p>
-
-      <p>
-        <strong>How many days do I need in Jinja?</strong> One full day covers
-        the source of the Nile and one adventure activity; two days allows a more
-        relaxed pace or multiple activities.
-      </p>
+      <PostFaq title="Jinja & Source of the Nile FAQ" items={faq} />
 
       <h2>Add Some Adrenaline to Your Trip</h2>
 

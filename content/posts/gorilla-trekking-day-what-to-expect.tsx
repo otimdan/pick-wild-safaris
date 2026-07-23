@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("gorilla-trekking-day-what-to-expect")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How long does the whole day take?",
+    a: "Typically 6–10 hours door to door, including the briefing, the trek itself (30 minutes to 6+ hours each way), and the hour with the gorillas.",
+  },
+  {
+    q: "What’s the minimum age?",
+    a: "15 years old, strictly enforced across Uganda, Rwanda, and DR Congo.",
+  },
+  {
+    q: "How close do you get to the gorillas?",
+    a: "Rangers typically maintain a distance of around seven metres, for the health and safety of both trekkers and gorillas.",
+  },
+  {
+    q: "Should I hire a porter?",
+    a: "Yes — it makes a real difference on steep terrain and directly supports the local community. See our full gorilla trekking tips for preparation advice.",
+  },
+];
 
 export default function Post() {
   return (
@@ -129,32 +153,7 @@ export default function Post() {
         muddy, and thoroughly satisfied.
       </p>
 
-      <h2>Gorilla Trekking Day FAQ</h2>
-
-      <p>
-        <strong>How long does the whole day take?</strong> Typically 6&ndash;10
-        hours door to door, including the briefing, the trek itself (30
-        minutes to 6+ hours each way), and the hour with the gorillas.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the minimum age?</strong> 15 years old, strictly
-        enforced across Uganda, Rwanda, and DR Congo.
-      </p>
-
-      <p>
-        <strong>How close do you get to the gorillas?</strong> Rangers
-        typically maintain a distance of around seven metres, for the health
-        and safety of both trekkers and gorillas.
-      </p>
-
-      <p>
-        <strong>Should I hire a porter?</strong> Yes — it makes a real
-        difference on steep terrain and directly supports the local community.
-        See our full{" "}
-        <Link href="/blog/gorilla-trekking-tips">gorilla trekking tips</Link>{" "}
-        for preparation advice.
-      </p>
+      <PostFaq title="Gorilla Trekking Day FAQ" items={faq} />
 
       <h2>Experience It Yourself</h2>
 

@@ -1,13 +1,14 @@
 // app/resources/how-to-prepare-for-safari/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "How to Prepare for a Safari | Pick Wild Safaris",
+  title: "How to Prepare for a Safari",
   description:
-    "A complete first-timer's guide to preparing for an African safari — vaccinations, visas, packing, fitness, money, tipping, and what to expect on game drives and treks.",
+    "A first-timer's guide to preparing for an African safari: vaccinations, visas, packing, fitness, money, tipping, and what to expect on game drives.",
   alternates: { canonical: `${BASE_URL}/resources/how-to-prepare-for-safari` },
   openGraph: {
     type: "article",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Everything you need to do before your African safari — health, documents, packing, money, fitness, and etiquette.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

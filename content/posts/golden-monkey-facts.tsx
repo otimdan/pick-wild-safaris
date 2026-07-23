@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("golden-monkey-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Where can you see golden monkeys?",
+    a: "Only in the Virunga volcanoes, shared by Uganda (Mgahinga), Rwanda, and DR Congo — in Uganda, Mgahinga is the only trekking site.",
+  },
+  {
+    q: "Are golden monkeys endangered?",
+    a: "Yes — their range is extremely limited, confined almost entirely to high-altitude bamboo forest on the Virunga volcanoes.",
+  },
+  {
+    q: "Is golden monkey trekking harder than gorilla trekking?",
+    a: "Generally easier and shorter, making it a good option for less time or fitness.",
+  },
+  {
+    q: "What do golden monkeys eat?",
+    a: "Mostly young bamboo leaves and shoots, supplemented with fruit and occasional insects.",
+  },
+];
 
 export default function Post() {
   return (
@@ -134,30 +158,7 @@ export default function Post() {
         gorillas nearby.
       </p>
 
-      <h2>Golden Monkey FAQ</h2>
-
-      <p>
-        <strong>Where can you see golden monkeys?</strong> Only in the Virunga
-        volcanoes, shared by Uganda (Mgahinga), Rwanda, and DR Congo &mdash; in
-        Uganda, Mgahinga is the only trekking site.
-      </p>
-
-      <p>
-        <strong>Are golden monkeys endangered?</strong> Yes &mdash; their range
-        is extremely limited, confined almost entirely to high-altitude bamboo
-        forest on the Virunga volcanoes.
-      </p>
-
-      <p>
-        <strong>Is golden monkey trekking harder than gorilla trekking?</strong>{" "}
-        Generally easier and shorter, making it a good option for less time or
-        fitness.
-      </p>
-
-      <p>
-        <strong>What do golden monkeys eat?</strong> Mostly young bamboo leaves
-        and shoots, supplemented with fruit and occasional insects.
-      </p>
+      <PostFaq title="Golden Monkey FAQ" items={faq} />
 
       <h2>Add Golden Monkeys to Your Trip</h2>
 

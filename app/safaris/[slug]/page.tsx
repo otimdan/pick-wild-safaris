@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { allItineraries, getItinerary } from "@/content/itineraries/index";
 import ItineraryLayout from "@/app/components/ItineraryLayout";
 import JsonLd from "@/app/components/JsonLd";
+import { seoTitle, clampDescription } from "@/lib/seo";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -30,16 +31,20 @@ export async function generateMetadata({
   if (!it) return {};
 
   const url = `${BASE_URL}/safaris/${slug}`;
+  // Brand-aware title kept under the ~60-char limit, and a description clamped
+  // to ~160 chars — itinerary excerpts run long (up to 300+ chars).
+  const title = seoTitle(it.title);
+  const description = clampDescription(it.excerpt);
 
   return {
-    title: `${it.title} | Pick Wild Safaris`,
-    description: it.excerpt,
+    title,
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: "website",
       url,
       title: it.title,
-      description: it.excerpt,
+      description,
       siteName: "Pick Wild Safaris",
       images: [
         { url: ogImageFor(it.heroImage), width: 1200, height: 630, alt: it.title },
@@ -48,7 +53,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: it.title,
-      description: it.excerpt,
+      description,
       images: [ogImageFor(it.heroImage)],
     },
   };

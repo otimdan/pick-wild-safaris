@@ -1,16 +1,26 @@
 // app/privacy-policy/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 const UPDATED = "5 July 2026";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Pick Wild Safaris",
+  title: "Privacy Policy",
   description:
     "How Pick Wild Safaris collects, uses, shares, and protects your personal information when you use our website and book a safari.",
   alternates: { canonical: `${BASE_URL}/privacy-policy` },
   robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${BASE_URL}/privacy-policy`,
+    title: "Privacy Policy",
+    description:
+      "How Pick Wild Safaris collects, uses, and protects your personal information.",
+    siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function PrivacyPolicyPage() {

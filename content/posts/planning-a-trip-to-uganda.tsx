@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("planning-a-trip-to-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How many days do you need in Uganda?",
+    a: "Around 7–10 days is ideal for gorillas plus a savanna park and chimps; a focused gorilla trip can be done in 3–4.",
+  },
+  {
+    q: "Do I need a visa for Uganda?",
+    a: "Most visitors do — a single-entry tourist e-visa (USD $50) applied for online, or the East Africa Tourist Visa if combining countries.",
+  },
+  {
+    q: "Is a yellow fever certificate required?",
+    a: "Yes — it’s mandatory, and must date from at least 10 days before arrival.",
+  },
+  {
+    q: "Is Uganda safe for tourists?",
+    a: "Uganda is a popular, welcoming safari destination; travel with a reputable operator, use normal precautions, and follow your guide’s advice around wildlife.",
+  },
+];
 
 export default function Post() {
   return (
@@ -111,14 +135,14 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Tourist e-visa:</strong> most visitors need one, applied for
+          <strong>Tourist e-visa:</strong>{" "}most visitors need one, applied for
           online in advance &mdash; the single-entry Uganda tourist e-visa costs{" "}
           <strong>USD $50</strong>. If you&rsquo;re combining Uganda with Kenya
           and Rwanda, the <strong>East Africa Tourist Visa</strong> (around USD
           $100) covers all three.
         </li>
         <li>
-          <strong>Yellow fever certificate:</strong> mandatory &mdash; you must be
+          <strong>Yellow fever certificate:</strong>{" "}mandatory &mdash; you must be
           vaccinated at least 10 days before arrival and carry the certificate.
         </li>
         <li>
@@ -159,7 +183,7 @@ export default function Post() {
       <p>
         Uganda can be done on a range of budgets, but it&rsquo;s worth knowing
         where the money goes. The one fixed, unavoidable cost on a gorilla trip is
-        the permit &mdash; <strong>USD $800</strong> per person in peak season,
+        the permit &mdash; <strong>USD $800</strong>{" "}per person in peak season,
         set by the government. Beyond that, your total depends on trip length,
         the standard of lodges, and whether you drive or fly between parks. Rather
         than quote package prices here, we&rsquo;ll build a trip to your budget
@@ -189,30 +213,7 @@ export default function Post() {
         <Link href="/blog/african-safari-animals">African safari animals</Link>.
       </p>
 
-      <h2>Planning a Uganda Trip FAQ</h2>
-
-      <p>
-        <strong>How many days do you need in Uganda?</strong> Around 7&ndash;10
-        days is ideal for gorillas plus a savanna park and chimps; a focused
-        gorilla trip can be done in 3&ndash;4.
-      </p>
-
-      <p>
-        <strong>Do I need a visa for Uganda?</strong> Most visitors do &mdash; a
-        single-entry tourist e-visa (USD $50) applied for online, or the East
-        Africa Tourist Visa if combining countries.
-      </p>
-
-      <p>
-        <strong>Is a yellow fever certificate required?</strong> Yes &mdash;
-        it&rsquo;s mandatory, and must date from at least 10 days before arrival.
-      </p>
-
-      <p>
-        <strong>Is Uganda safe for tourists?</strong> Uganda is a popular,
-        welcoming safari destination; travel with a reputable operator, use normal
-        precautions, and follow your guide&rsquo;s advice around wildlife.
-      </p>
+      <PostFaq title="Planning a Uganda Trip FAQ" items={faq} />
 
       <h2>Start Planning</h2>
 
@@ -221,7 +222,7 @@ export default function Post() {
         template. Tell us your dates, how long you have, and what you most want to
         see, and we&rsquo;ll turn it into a{" "}
         <Link href="/safaris">tailor-made Uganda safari</Link> &mdash;{" "}
-        <Link href="/contact">get in touch</Link> and we&rsquo;ll take it from
+        <Link href="/contact">get in touch</Link>{" "}and we&rsquo;ll take it from
         there.
       </p>
     </BlogPostLayout>

@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("christmas-in-africa")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is Christmas a big holiday in Uganda?",
+    a: "Yes — Uganda is predominantly Christian, and Christmas is one of the country’s most widely celebrated holidays, marked by church services, family gatherings, and festive meals.",
+  },
+  {
+    q: "What’s the weather like in Uganda in December?",
+    a: "Warm and increasingly dry as the short dry season begins, typically running from December into February.",
+  },
+  {
+    q: "Do parks and lodges stay open over Christmas?",
+    a: "Yes — national parks, gorilla trekking, and lodges operate as normal through the holiday period.",
+  },
+  {
+    q: "Do I need to book earlier for a Christmas safari?",
+    a: "Yes — December is peak season, so gorilla permits and popular lodges should be booked several months in advance.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -67,12 +91,12 @@ export default function Post() {
           long, joyful, and heavily attended
         </li>
         <li>
-          <strong>Family and food:</strong> extended families travel
+          <strong>Family and food:</strong>{" "}extended families travel
           &ldquo;upcountry&rdquo; to home villages to celebrate together,
           much like the Western tradition of heading home for the holidays
         </li>
         <li>
-          <strong>A proper feast:</strong> roasted or stewed goat and
+          <strong>A proper feast:</strong>{" "}roasted or stewed goat and
           chicken, pilau rice, matoke, and other special dishes well beyond
           the everyday spread &mdash; see our{" "}
           <Link href="/blog/ugandan-food-guide">Ugandan food guide</Link>{" "}
@@ -84,7 +108,7 @@ export default function Post() {
           noticeably busier in the run-up
         </li>
         <li>
-          <strong>Music and dance:</strong> live music, dancing, and
+          <strong>Music and dance:</strong>{" "}live music, dancing, and
           gatherings run well into Boxing Day and beyond &mdash; a good
           companion read is{" "}
           <Link href="/blog/traditional-music-dance-uganda">
@@ -150,32 +174,7 @@ export default function Post() {
         pace especially well for a multi-generational holiday trip.
       </p>
 
-      <h2>Christmas in Africa FAQ</h2>
-
-      <p>
-        <strong>Is Christmas a big holiday in Uganda?</strong> Yes &mdash;
-        Uganda is predominantly Christian, and Christmas is one of the
-        country&rsquo;s most widely celebrated holidays, marked by church
-        services, family gatherings, and festive meals.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the weather like in Uganda in December?</strong>{" "}
-        Warm and increasingly dry as the short dry season begins, typically
-        running from December into February.
-      </p>
-
-      <p>
-        <strong>Do parks and lodges stay open over Christmas?</strong> Yes
-        &mdash; national parks, gorilla trekking, and lodges operate as
-        normal through the holiday period.
-      </p>
-
-      <p>
-        <strong>Do I need to book earlier for a Christmas safari?</strong>{" "}
-        Yes &mdash; December is peak season, so gorilla permits and popular
-        lodges should be booked several months in advance.
-      </p>
+      <PostFaq title="Christmas in Africa FAQ" items={faq} />
 
       <h2>Plan a Festive-Season Safari</h2>
 

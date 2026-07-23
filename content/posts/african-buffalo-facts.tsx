@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("african-buffalo-facts")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is the buffalo considered so dangerous?",
+    a: "It attacks with little warning, uses its weight and horns with real aggression, and herd members will defend a threatened animal — a combination that makes it one of Africa’s most unpredictable large animals.",
+  },
+  {
+    q: "What is a “dagga boy”?",
+    a: "An old bull buffalo that has left the main herd, often considered the most dangerous individual buffalo to encounter.",
+  },
+  {
+    q: "How big are buffalo herds?",
+    a: "From a few dozen animals to well over a thousand where grazing is abundant.",
+  },
+  {
+    q: "Are buffalo easy to see on safari?",
+    a: "Yes — they’re among the most commonly seen Big Five animals across Uganda’s savanna parks.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -68,7 +92,7 @@ export default function Post() {
           thousand animals
         </li>
         <li>
-          <strong>Fused horns:</strong> males develop a hard &ldquo;boss&rdquo;
+          <strong>Fused horns:</strong>{" "}males develop a hard &ldquo;boss&rdquo;
           where the horns meet across the forehead
         </li>
         <li>
@@ -142,31 +166,7 @@ export default function Post() {
         a game drive.
       </p>
 
-      <h2>African Buffalo FAQ</h2>
-
-      <p>
-        <strong>Why is the buffalo considered so dangerous?</strong> It attacks
-        with little warning, uses its weight and horns with real aggression, and
-        herd members will defend a threatened animal &mdash; a combination that
-        makes it one of Africa&rsquo;s most unpredictable large animals.
-      </p>
-
-      <p>
-        <strong>What is a &ldquo;dagga boy&rdquo;?</strong> An old bull buffalo
-        that has left the main herd, often considered the most dangerous
-        individual buffalo to encounter.
-      </p>
-
-      <p>
-        <strong>How big are buffalo herds?</strong> From a few dozen animals to
-        well over a thousand where grazing is abundant.
-      </p>
-
-      <p>
-        <strong>Are buffalo easy to see on safari?</strong> Yes &mdash; they&rsquo;re
-        among the most commonly seen Big Five animals across Uganda&rsquo;s
-        savanna parks.
-      </p>
+      <PostFaq title="African Buffalo FAQ" items={faq} />
 
       <h2>See the Big Five in Uganda</h2>
 

@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("safari-photography-tips")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Do I need an expensive camera?",
+    a: "No — a modern phone or a mid-range camera with decent zoom can produce excellent results if you get the light and timing right.",
+  },
+  {
+    q: "What’s the single best tip?",
+    a: "Shoot during the early morning and late afternoon golden hours, when both light and wildlife activity are at their best.",
+  },
+  {
+    q: "Can I use flash on a gorilla trek?",
+    a: "No — flash photography isn’t permitted this close to the gorillas; plan to shoot in natural, often low, forest light.",
+  },
+  {
+    q: "What lens length is ideal for safari?",
+    a: "Something in the 200–400mm equivalent range balances reach with flexibility for both distant and closer sightings.",
+  },
+];
 
 export default function Post() {
   return (
@@ -134,31 +158,7 @@ export default function Post() {
         photographs better anyway.
       </p>
 
-      <h2>Safari Photography FAQ</h2>
-
-      <p>
-        <strong>Do I need an expensive camera?</strong> No &mdash; a modern
-        phone or a mid-range camera with decent zoom can produce excellent
-        results if you get the light and timing right.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the single best tip?</strong> Shoot during the
-        early morning and late afternoon golden hours, when both light and
-        wildlife activity are at their best.
-      </p>
-
-      <p>
-        <strong>Can I use flash on a gorilla trek?</strong> No &mdash; flash
-        photography isn&rsquo;t permitted this close to the gorillas; plan to
-        shoot in natural, often low, forest light.
-      </p>
-
-      <p>
-        <strong>What lens length is ideal for safari?</strong> Something in the
-        200&ndash;400mm equivalent range balances reach with flexibility for
-        both distant and closer sightings.
-      </p>
+      <PostFaq title="Safari Photography FAQ" items={faq} />
 
       <h2>Bring Home the Shot of a Lifetime</h2>
 

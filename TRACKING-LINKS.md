@@ -40,6 +40,7 @@ separate.
 | YouTube channel link | `https://wildsafarisuganda.com?utm_source=youtube&utm_medium=social&utm_campaign=channel` |
 | WhatsApp Business profile | `https://wildsafarisuganda.com?utm_source=whatsapp&utm_medium=social&utm_campaign=profile` |
 | Email signature | `https://wildsafarisuganda.com?utm_source=email&utm_medium=email&utm_campaign=signature` |
+Linkedin | `https://wildsafarisuganda.com?utm_source=linkedin&utm_medium=social&utm_campaign=companypage`
 
 ## Reading the numbers in PostHog
 

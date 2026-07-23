@@ -7,7 +7,9 @@
 // ─────────────────────────────────────────────────────────────
 
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,6 +42,31 @@ function PostImage({
 
 const meta = getPostMeta("gorilla-trekking-tips")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text only.
+export const faq: FaqItem[] = [
+  {
+    q: "How fit do I need to be for gorilla trekking?",
+    a: "Reasonably fit. A trek can be anywhere from one to six hours of steep, muddy hiking each way at altitude, so some hill or stamina training in the months beforehand helps. Porters are available to carry your bag and give a hand on tough sections.",
+  },
+  {
+    q: "What should I wear for gorilla trekking?",
+    a: "Long sleeves and trousers in neutral colours, sturdy waterproof boots with ankle support, gaiters, gardening gloves for grabbing vegetation, and a waterproof jacket. Tuck your trousers into your socks to keep biting ants out.",
+  },
+  {
+    q: "How do I get a gorilla permit?",
+    a: "Permits are issued by the Uganda Wildlife Authority and sell out in peak season, so book months ahead. We secure and confirm your permit and date as part of the itinerary.",
+  },
+  {
+    q: "How close do you get to the gorillas?",
+    a: "Visitors are asked to stay about 7 metres from the gorillas, though the gorillas don't always follow the rule and may pass closer. Once the family is found, you get exactly one hour with them.",
+  },
+  {
+    q: "Is gorilla trekking worth the cost?",
+    a: "For most travellers, yes. An hour a few metres from a wild mountain gorilla family is a genuine once-in-a-lifetime encounter, and the permit fee directly funds the conservation that keeps the gorillas alive.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -68,7 +95,7 @@ export default function Post() {
 
       <p>
         Uganda has two gorilla trekking destinations. <strong>Bwindi Impenetrable
-        Forest</strong> is the main event — it holds about half the world&apos;s
+        Forest</strong>{" "}is the main event — it holds about half the world&apos;s
         mountain gorilla population across four sectors (Buhoma, Ruhija,
         Nkuringo, and Rushaga), with more than a dozen habituated families
         between them. <strong>Mgahinga Gorilla National Park</strong> is smaller,
@@ -105,13 +132,13 @@ export default function Post() {
           travellers toward Uganda.
         </li>
         <li>
-          <strong>Access:</strong> Rwanda&apos;s Volcanoes National Park is about
+          <strong>Access:</strong>{" "}Rwanda&apos;s Volcanoes National Park is about
           a 2.5-hour drive from Kigali airport, making it faster for a short
           trip. Bwindi is more remote — a scenic domestic flight or a long drive
           from Entebbe.
         </li>
         <li>
-          <strong>The trek itself:</strong> Bwindi is dense, steep rainforest;
+          <strong>The trek itself:</strong>{" "}Bwindi is dense, steep rainforest;
           Rwanda&apos;s terrain is more open volcanic slopes, often with shorter
           hikes. Neither is &quot;easy,&quot; but Rwanda can be gentler.
         </li>
@@ -398,6 +425,7 @@ export default function Post() {
         secure your permit and build the trip around it.
       </p>
 
+      <PostFaq title="Gorilla Trekking Tips FAQ" items={faq} />
     </BlogPostLayout>
   );
 }

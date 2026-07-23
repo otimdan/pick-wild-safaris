@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { safariTypes, getSafariType } from "@/content/safari-types/index";
 import SafariTypeLayout from "@/app/components/SafariTypeLayout";
 import JsonLd from "@/app/components/JsonLd";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
@@ -32,6 +33,7 @@ export async function generateMetadata({
       title: safariType.title,
       description: safariType.excerpt,
       siteName: "Pick Wild Safaris",
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",

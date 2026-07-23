@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("road-safari-vs-fly-in-safari-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is flying between parks worth the extra cost?",
+    a: "For shorter trips or remote parks like Kidepo, yes — it can save a full day or more of driving each way.",
+  },
+  {
+    q: "How long are Uganda’s longest road transfers?",
+    a: "The drive to Kidepo Valley can take around 8–10 hours; most other park-to-park transfers are considerably shorter.",
+  },
+  {
+    q: "Can I mix road and fly-in on one trip?",
+    a: "Yes — it’s a common and effective approach, driving shorter, scenic legs and flying the longer or more remote ones.",
+  },
+  {
+    q: "Do all parks have airstrips?",
+    a: "Most major parks (Kidepo, Murchison Falls, Queen Elizabeth, Bwindi) have nearby airstrips served by scheduled domestic flights.",
+  },
+];
 
 export default function Post() {
   return (
@@ -112,41 +136,17 @@ export default function Post() {
           days
         </li>
         <li>
-          <strong>Choose fly-in</strong> if your trip is a week or less,
+          <strong>Choose fly-in</strong>{" "}if your trip is a week or less,
           you&rsquo;re prioritising time in the parks over the journey between
           them, or Kidepo is on your list with limited days to spare
         </li>
         <li>
-          <strong>Choose a hybrid</strong> for the best of both &mdash; the
+          <strong>Choose a hybrid</strong>{" "}for the best of both &mdash; the
           approach most of our longer itineraries use
         </li>
       </ul>
 
-      <h2>Road vs Fly-In FAQ</h2>
-
-      <p>
-        <strong>Is flying between parks worth the extra cost?</strong> For
-        shorter trips or remote parks like Kidepo, yes &mdash; it can save a
-        full day or more of driving each way.
-      </p>
-
-      <p>
-        <strong>How long are Uganda&rsquo;s longest road transfers?</strong>{" "}
-        The drive to Kidepo Valley can take around 8&ndash;10 hours; most other
-        park-to-park transfers are considerably shorter.
-      </p>
-
-      <p>
-        <strong>Can I mix road and fly-in on one trip?</strong> Yes &mdash;
-        it&rsquo;s a common and effective approach, driving shorter, scenic
-        legs and flying the longer or more remote ones.
-      </p>
-
-      <p>
-        <strong>Do all parks have airstrips?</strong> Most major parks
-        (Kidepo, Murchison Falls, Queen Elizabeth, Bwindi) have nearby
-        airstrips served by scheduled domestic flights.
-      </p>
+      <PostFaq title="Road vs Fly-In FAQ" items={faq} />
 
       <h2>Plan the Right Route for You</h2>
 

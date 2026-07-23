@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("gorilla-vs-chimpanzee")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Which is stronger, a gorilla or a chimpanzee?",
+    a: "A gorilla, by a wide margin on raw size and power. But chimps are far more agile and, for their size, remarkably strong.",
+  },
+  {
+    q: "Which is more closely related to humans?",
+    a: "The chimpanzee — it’s our closest living relative, closer to us than it is to a gorilla.",
+  },
+  {
+    q: "Are gorillas more dangerous than chimps?",
+    a: "Counter-intuitively, no. Gorillas are generally gentle; chimpanzees are more excitable and account for more aggressive incidents despite their smaller size.",
+  },
+  {
+    q: "Can you see both on one trip?",
+    a: "Yes — Uganda is one of the best places in the world to trek gorillas and chimpanzees on a single itinerary.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -61,7 +85,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Size:</strong> gorillas are far bigger &mdash; a silverback can
+          <strong>Size:</strong>{" "}gorillas are far bigger &mdash; a silverback can
           exceed 200 kg; a chimp weighs around 40&ndash;60 kg
         </li>
         <li>
@@ -77,11 +101,11 @@ export default function Post() {
           by one silverback; chimps live in large, shifting communities
         </li>
         <li>
-          <strong>Closest to humans:</strong> chimpanzees &mdash; our single
+          <strong>Closest to humans:</strong>{" "}chimpanzees &mdash; our single
           closest living relative
         </li>
         <li>
-          <strong>Where in Uganda:</strong> gorillas in Bwindi &amp; Mgahinga;
+          <strong>Where in Uganda:</strong>{" "}gorillas in Bwindi &amp; Mgahinga;
           chimps in Kibale, Kyambura, Budongo and Kalinzu
         </li>
       </ul>
@@ -152,7 +176,7 @@ export default function Post() {
         Chimpanzees (along with bonobos) are humanity&rsquo;s nearest living
         relatives, sharing very roughly 98.8% of our DNA, while gorillas sit a
         little further out on the family tree. In other words, a chimpanzee is
-        more closely related to <em>you</em> than it is to a gorilla. It&rsquo;s a
+        more closely related to <em>you</em>{" "}than it is to a gorilla. It&rsquo;s a
         big part of why time spent watching chimps can feel so uncannily familiar.
       </p>
 
@@ -209,31 +233,7 @@ export default function Post() {
         <Link href="/blog/gorilla-trekking-tips">gorilla trekking tips</Link>.
       </p>
 
-      <h2>Gorilla vs Chimpanzee FAQ</h2>
-
-      <p>
-        <strong>Which is stronger, a gorilla or a chimpanzee?</strong> A gorilla,
-        by a wide margin on raw size and power. But chimps are far more agile and,
-        for their size, remarkably strong.
-      </p>
-
-      <p>
-        <strong>Which is more closely related to humans?</strong> The chimpanzee
-        &mdash; it&rsquo;s our closest living relative, closer to us than it is to
-        a gorilla.
-      </p>
-
-      <p>
-        <strong>Are gorillas more dangerous than chimps?</strong> Counter-intuitively,
-        no. Gorillas are generally gentle; chimpanzees are more excitable and
-        account for more aggressive incidents despite their smaller size.
-      </p>
-
-      <p>
-        <strong>Can you see both on one trip?</strong> Yes &mdash; Uganda is one of
-        the best places in the world to trek gorillas and chimpanzees on a single
-        itinerary.
-      </p>
+      <PostFaq title="Gorilla vs Chimpanzee FAQ" items={faq} />
 
       <h2>See Both in One Trip</h2>
 

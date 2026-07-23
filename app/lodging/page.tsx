@@ -1,12 +1,13 @@
 // app/lodging/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import Link from "next/link";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Lodging & Accommodation | Pick Wild Safaris",
+  title: "Lodging & Accommodation",
   description:
     "The lodges and camps we use across Uganda — hand-picked by region, from simple community-run stays to high-end lodges, matched to your budget and route.",
   alternates: { canonical: `${BASE_URL}/lodging` },
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     description:
       "The lodges and camps we use across Uganda, hand-picked by region and matched to your budget.",
     siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

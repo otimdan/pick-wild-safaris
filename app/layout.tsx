@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
 import JsonLd from "./components/JsonLd";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -25,6 +26,10 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Pick Wild Safaris",
     locale: "en_US",
+    // Default share image. Pages that set their own openGraph replace this
+    // wholesale (metadata is shallow-merged), so they add images themselves;
+    // this covers pages that define no openGraph of their own.
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",

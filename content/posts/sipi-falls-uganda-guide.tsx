@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("sipi-falls-uganda-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "How many waterfalls are there at Sipi?",
+    a: "Three, linked by a half-day hiking trail; the largest drops around 100 metres.",
+  },
+  {
+    q: "Is the Sipi Falls hike difficult?",
+    a: "Moderately — some steep and muddy sections, but manageable with reasonable fitness. Shorter options exist.",
+  },
+  {
+    q: "Is the coffee tour worth it?",
+    a: "Very — it’s hands-on, authentic, and supports local farmers directly. A highlight for many visitors.",
+  },
+  {
+    q: "How far is Sipi from Kampala?",
+    a: "It’s a scenic drive east toward the Kenyan border. <span style={{ opacity: 0.75 }}> [VERIFY: add the drive time / distance you quote clients — commonly cited as roughly 7–8 hours from Kampala.] </span>",
+  },
+];
 
 export default function Post() {
   return (
@@ -119,7 +143,7 @@ export default function Post() {
           <strong>Caving</strong> and viewpoint hikes on the Elgon foothills
         </li>
         <li>
-          <strong>Mount Elgon trekking</strong> for those wanting a bigger
+          <strong>Mount Elgon trekking</strong>{" "}for those wanting a bigger
           multi-day climb to Wagagai, the caldera&rsquo;s high point
         </li>
       </ul>
@@ -153,33 +177,7 @@ export default function Post() {
         return visit.
       </p>
 
-      <h2>Sipi Falls FAQ</h2>
-
-      <p>
-        <strong>How many waterfalls are there at Sipi?</strong> Three, linked by a
-        half-day hiking trail; the largest drops around 100 metres.
-      </p>
-
-      <p>
-        <strong>Is the Sipi Falls hike difficult?</strong> Moderately &mdash; some
-        steep and muddy sections, but manageable with reasonable fitness. Shorter
-        options exist.
-      </p>
-
-      <p>
-        <strong>Is the coffee tour worth it?</strong> Very &mdash; it&rsquo;s
-        hands-on, authentic, and supports local farmers directly. A highlight for
-        many visitors.
-      </p>
-
-      <p>
-        <strong>How far is Sipi from Kampala?</strong> It&rsquo;s a scenic drive
-        east toward the Kenyan border.{" "}
-        <span style={{ opacity: 0.75 }}>
-          [VERIFY: add the drive time / distance you quote clients &mdash; commonly
-          cited as roughly 7&ndash;8 hours from Kampala.]
-        </span>
-      </p>
+      <PostFaq title="Sipi Falls FAQ" items={faq} />
 
       <h2>Add Sipi to Your Journey</h2>
 

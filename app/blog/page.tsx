@@ -1,6 +1,8 @@
 // app/blog/page.tsx
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Link from "next/link";
+import { allPosts } from "@/content/posts/index";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BlogFeatured from "./BlogFeatured";
@@ -13,7 +15,7 @@ import JsonLd from "@/app/components/JsonLd";
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Safari Travel Blog | Uganda & East Africa Tips, Stories & Guides",
+  title: "Uganda & East Africa Safari Blog",
   description:
     "Expert safari advice, gorilla trekking tips, packing lists, and destination guides for Uganda and East Africa. Written by the team at Pick Wild Safaris.",
   alternates: {
@@ -100,6 +102,23 @@ export default function BlogPage() {
         </div>
       </section>
       <BlogNewsletter />
+      {/* Server-rendered index of every article. The grid above is a client
+          component with client-side pagination, so only the first page's links
+          exist in the crawlable HTML — without this, later posts have no
+          incoming internal link and read as orphan pages. Grouped by category
+          for readers, and future posts are included automatically. */}
+      <nav className="blog-archive" aria-label="All articles">
+        <div className="blog-archive-inner">
+          <h2>Browse All Articles</h2>
+          <ul className="blog-archive-list">
+            {allPosts.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
       <Footer />
     </>
   );

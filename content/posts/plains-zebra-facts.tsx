@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("plains-zebra-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why do zebras have stripes?",
+    a: "The leading theories are predator confusion, deterring biting flies, and temperature regulation — likely some combination of all three.",
+  },
+  {
+    q: "Is every zebra’s stripe pattern different?",
+    a: "Yes — as unique as a human fingerprint, and used by zebras to recognise one another.",
+  },
+  {
+    q: "Where can I see zebra in Uganda?",
+    a: "Only in Lake Mburo National Park and Kidepo Valley National Park.",
+  },
+  {
+    q: "What is a zebra family group called?",
+    a: "A harem — one stallion, several mares, and their young, staying together within larger herds.",
+  },
+];
 
 export default function Post() {
   return (
@@ -146,30 +170,7 @@ export default function Post() {
         </li>
       </ul>
 
-      <h2>Plains Zebra FAQ</h2>
-
-      <p>
-        <strong>Why do zebras have stripes?</strong> The leading theories are
-        predator confusion, deterring biting flies, and temperature regulation
-        &mdash; likely some combination of all three.
-      </p>
-
-      <p>
-        <strong>Is every zebra&rsquo;s stripe pattern different?</strong> Yes
-        &mdash; as unique as a human fingerprint, and used by zebras to
-        recognise one another.
-      </p>
-
-      <p>
-        <strong>Where can I see zebra in Uganda?</strong> Only in Lake Mburo
-        National Park and Kidepo Valley National Park.
-      </p>
-
-      <p>
-        <strong>What is a zebra family group called?</strong> A harem &mdash;
-        one stallion, several mares, and their young, staying together within
-        larger herds.
-      </p>
+      <PostFaq title="Plains Zebra FAQ" items={faq} />
 
       <h2>See Them on Safari</h2>
 

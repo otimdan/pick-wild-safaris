@@ -117,7 +117,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>A flexible spine</strong> that coils and springs like a bow,
+          <strong>A flexible spine</strong>{" "}that coils and springs like a bow,
           hugely extending each stride &mdash; a cheetah can cover seven metres or
           more in a single bound
         </li>
@@ -126,7 +126,7 @@ export default function Post() {
           steer through tight, high-speed turns after jinking prey
         </li>
         <li>
-          <strong>Semi-retractable claws</strong> that grip the ground like the
+          <strong>Semi-retractable claws</strong>{" "}that grip the ground like the
           spikes on a sprinter&rsquo;s shoes &mdash; unusual among cats
         </li>
         <li>

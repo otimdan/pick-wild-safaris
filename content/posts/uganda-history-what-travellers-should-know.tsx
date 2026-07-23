@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("uganda-history-what-travellers-should-know")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "When did Uganda gain independence?",
+    a: "On 9 October 1962, from British colonial rule.",
+  },
+  {
+    q: "Who was Idi Amin?",
+    a: "A military ruler who seized power in 1971 and governed Uganda until 1979, a period widely regarded as one of the most violent in the country’s modern history.",
+  },
+  {
+    q: "Is this history visible to visitors today?",
+    a: "Mostly through museums, historical sites in Kampala, and conversations with guides — day-to-day travel in Uganda's tourist areas is unaffected by this history.",
+  },
+  {
+    q: "Where can I learn more during my trip?",
+    a: "The Uganda Museum in Kampala offers a good starting point — see our Kampala city guide.",
+  },
+];
 
 export default function Post() {
   return (
@@ -119,31 +143,7 @@ export default function Post() {
         chapter adds context that&rsquo;s easy to miss on a first visit.
       </p>
 
-      <h2>Uganda History FAQ</h2>
-
-      <p>
-        <strong>When did Uganda gain independence?</strong> On 9 October 1962,
-        from British colonial rule.
-      </p>
-
-      <p>
-        <strong>Who was Idi Amin?</strong> A military ruler who seized power in
-        1971 and governed Uganda until 1979, a period widely regarded as one of
-        the most violent in the country&rsquo;s modern history.
-      </p>
-
-      <p>
-        <strong>Is this history visible to visitors today?</strong> Mostly
-        through museums, historical sites in Kampala, and conversations with
-        guides — day-to-day travel in Uganda's tourist areas is unaffected by
-        this history.
-      </p>
-
-      <p>
-        <strong>Where can I learn more during my trip?</strong> The Uganda
-        Museum in Kampala offers a good starting point — see our{" "}
-        <Link href="/blog/kampala-city-guide">Kampala city guide</Link>.
-      </p>
+      <PostFaq title="Uganda History FAQ" items={faq} />
 
       <h2>Travel With Context</h2>
 

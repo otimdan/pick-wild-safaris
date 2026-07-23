@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -41,6 +43,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("kingdoms-of-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Does Uganda still have kings?",
+    a: "Yes — several traditional kingdoms were restored in 1993 as cultural institutions, with reigning monarchs today.",
+  },
+  {
+    q: "Do the kings have political power?",
+    a: "No — Uganda’s constitution explicitly limits them to cultural and ceremonial roles, not government or legislative authority.",
+  },
+  {
+    q: "What is the largest kingdom?",
+    a: "Buganda, centred on Kampala, is Uganda’s largest and most prominent traditional kingdom.",
+  },
+  {
+    q: "Why were the kingdoms abolished?",
+    a: "The post-independence government abolished them in 1967, viewing them as a threat to national unity; they were restored in 1993.",
+  },
+];
 
 export default function Post() {
   return (
@@ -83,7 +107,7 @@ export default function Post() {
         Uganda&rsquo;s traditional kingdoms were officially <strong>abolished
         in 1967</strong> by the post-independence government, which saw them
         as a threat to national unity. They remained abolished for over two
-        decades before being <strong>restored in 1993</strong> as cultural
+        decades before being <strong>restored in 1993</strong>{" "}as cultural
         institutions under Uganda&rsquo;s constitution. Crucially, the
         restored kingdoms are purely cultural and ceremonial &mdash; the
         1995 Constitution explicitly bars them from political power or
@@ -144,31 +168,7 @@ export default function Post() {
         directly on a trip.
       </p>
 
-      <h2>Kingdoms of Uganda FAQ</h2>
-
-      <p>
-        <strong>Does Uganda still have kings?</strong> Yes &mdash; several
-        traditional kingdoms were restored in 1993 as cultural institutions,
-        with reigning monarchs today.
-      </p>
-
-      <p>
-        <strong>Do the kings have political power?</strong> No &mdash; Uganda&rsquo;s
-        constitution explicitly limits them to cultural and ceremonial roles,
-        not government or legislative authority.
-      </p>
-
-      <p>
-        <strong>What is the largest kingdom?</strong> Buganda, centred on
-        Kampala, is Uganda&rsquo;s largest and most prominent traditional
-        kingdom.
-      </p>
-
-      <p>
-        <strong>Why were the kingdoms abolished?</strong> The post-independence
-        government abolished them in 1967, viewing them as a threat to
-        national unity; they were restored in 1993.
-      </p>
+      <PostFaq title="Kingdoms of Uganda FAQ" items={faq} />
 
       <h2>Explore Uganda&rsquo;s Royal Heritage</h2>
 

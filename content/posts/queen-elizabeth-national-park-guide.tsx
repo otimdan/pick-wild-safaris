@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("queen-elizabeth-national-park-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What makes Queen Elizabeth special?",
+    a: "Its landscape diversity — savanna, wetland, crater lakes, and forest in one park — supports over 95 mammal species, among the highest of any African park.",
+  },
+  {
+    q: "Is the Kazinga Channel boat safari worth it?",
+    a: "Yes — it’s widely considered one of the best wildlife boat trips in Africa, for hippo and elephant sightings alone.",
+  },
+  {
+    q: "Can I see the tree-climbing lions here?",
+    a: "Yes — in the remote Ishasha sector in the park’s south.",
+  },
+  {
+    q: "How long should I spend in Queen Elizabeth?",
+    a: "Two to three nights allows a game drive, the Kazinga Channel boat safari, and either Ishasha or Kyambura Gorge.",
+  },
+];
 
 export default function Post() {
   return (
@@ -112,7 +136,7 @@ export default function Post() {
       <h2>Game Drives &amp; the Kasenyi Plains</h2>
 
       <p>
-        The <strong>Kasenyi</strong> area in the park&rsquo;s north is the classic
+        The <strong>Kasenyi</strong>{" "}area in the park&rsquo;s north is the classic
         game-drive ground &mdash; open plains thick with Uganda kob (Uganda&rsquo;s
         national antelope), and the lions that hunt them, plus regular sightings
         of elephant, buffalo, and hyena. Birders will find the crater lakes and
@@ -148,31 +172,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Queen Elizabeth National Park FAQ</h2>
-
-      <p>
-        <strong>What makes Queen Elizabeth special?</strong> Its landscape
-        diversity &mdash; savanna, wetland, crater lakes, and forest in one park
-        &mdash; supports over 95 mammal species, among the highest of any African
-        park.
-      </p>
-
-      <p>
-        <strong>Is the Kazinga Channel boat safari worth it?</strong> Yes &mdash;
-        it&rsquo;s widely considered one of the best wildlife boat trips in
-        Africa, for hippo and elephant sightings alone.
-      </p>
-
-      <p>
-        <strong>Can I see the tree-climbing lions here?</strong> Yes &mdash; in
-        the remote Ishasha sector in the park&rsquo;s south.
-      </p>
-
-      <p>
-        <strong>How long should I spend in Queen Elizabeth?</strong> Two to three
-        nights allows a game drive, the Kazinga Channel boat safari, and either
-        Ishasha or Kyambura Gorge.
-      </p>
+      <PostFaq title="Queen Elizabeth National Park FAQ" items={faq} />
 
       <h2>Plan Your Queen Elizabeth Safari</h2>
 

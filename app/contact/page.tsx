@@ -1,5 +1,6 @@
 // app/contact/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import ContactForm from "@/app/components/ContactForm";
@@ -7,10 +8,19 @@ import ContactForm from "@/app/components/ContactForm";
 const BASE_URL = "https://wildsafarisuganda.com";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Pick Wild Safaris",
+  title: "Contact Us",
   description:
     "Speak with a Pick Wild Safaris planner. Tell us about your dream safari and we'll craft a private, tailored itinerary just for you.",
   alternates: { canonical: `${BASE_URL}/contact` },
+  openGraph: {
+    type: "website",
+    url: `${BASE_URL}/contact`,
+    title: "Contact Pick Wild Safaris",
+    description:
+      "Speak with a Pick Wild Safaris planner and we'll craft a private, tailored safari just for you.",
+    siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function ContactPage() {

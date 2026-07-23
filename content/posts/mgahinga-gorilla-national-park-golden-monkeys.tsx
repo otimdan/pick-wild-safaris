@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -38,6 +40,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("mgahinga-gorilla-national-park-golden-monkeys")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What is Mgahinga famous for?",
+    a: "Golden monkey trekking — it’s the only place in Uganda where it’s offered — and its three climbable Virunga volcanoes.",
+  },
+  {
+    q: "Can you trek gorillas at Mgahinga?",
+    a: "Yes, though with far fewer permits and habituated families than Bwindi, and the resident family sometimes crosses into Rwanda or Congo.",
+  },
+  {
+    q: "Is golden monkey trekking easier than gorilla trekking?",
+    a: "Generally yes — shorter and less physically demanding, making it a good option for less time or fitness.",
+  },
+  {
+    q: "Can I climb the volcanoes?",
+    a: "Yes — Muhavura, Sabinyo, and Gahinga are all climbable as full-day, strenuous hikes.",
+  },
+];
 
 export default function Post() {
   return (
@@ -76,7 +100,7 @@ export default function Post() {
       <h2>Golden Monkey Trekking</h2>
 
       <p>
-        Mgahinga is <strong>the only place in Uganda</strong> to trek the golden
+        Mgahinga is <strong>the only place in Uganda</strong>{" "}to trek the golden
         monkey &mdash; a small, endangered, and genuinely gorgeous primate with
         a bright orange-gold body and black limbs, found only in the bamboo zones
         of the Virunga volcanoes (shared with Rwanda&rsquo;s population; nowhere
@@ -129,30 +153,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Mgahinga FAQ</h2>
-
-      <p>
-        <strong>What is Mgahinga famous for?</strong> Golden monkey trekking
-        &mdash; it&rsquo;s the only place in Uganda where it&rsquo;s offered
-        &mdash; and its three climbable Virunga volcanoes.
-      </p>
-
-      <p>
-        <strong>Can you trek gorillas at Mgahinga?</strong> Yes, though with far
-        fewer permits and habituated families than Bwindi, and the resident
-        family sometimes crosses into Rwanda or Congo.
-      </p>
-
-      <p>
-        <strong>Is golden monkey trekking easier than gorilla trekking?</strong>{" "}
-        Generally yes &mdash; shorter and less physically demanding, making it a
-        good option for less time or fitness.
-      </p>
-
-      <p>
-        <strong>Can I climb the volcanoes?</strong> Yes &mdash; Muhavura,
-        Sabinyo, and Gahinga are all climbable as full-day, strenuous hikes.
-      </p>
+      <PostFaq title="Mgahinga FAQ" items={faq} />
 
       <h2>Add Golden Monkeys to Your Trip</h2>
 

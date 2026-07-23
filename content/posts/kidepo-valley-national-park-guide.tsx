@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("kidepo-valley-national-park-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Is Kidepo worth the journey?",
+    a: "For travellers with the time (and a taste for true wilderness), yes — it’s widely regarded as Uganda’s most spectacular park.",
+  },
+  {
+    q: "Can you see cheetahs in Kidepo?",
+    a: "Yes — it’s the most reliable place in Uganda for them, along with the country’s only ostriches.",
+  },
+  {
+    q: "How do I get to Kidepo?",
+    a: "Fly from Entebbe (about 2 hours) or drive via Gulu/Kitgum (around 10 hours), often split over two days.",
+  },
+  {
+    q: "How many days do I need?",
+    a: "At least two full days to justify the journey — three if flying, to properly explore the Narus Valley.",
+  },
+];
 
 export default function Post() {
   return (
@@ -111,7 +135,7 @@ export default function Post() {
       <h2>The Narus Valley</h2>
 
       <p>
-        Most game drives concentrate in the <strong>Narus Valley</strong> in the
+        Most game drives concentrate in the <strong>Narus Valley</strong>{" "}in the
         south of the park, where a permanent water source keeps wildlife
         concentrated even in the dry season &mdash; consistently good sightings
         in a small area, despite the park&rsquo;s overall size and remoteness.
@@ -171,30 +195,7 @@ export default function Post() {
         of the whole trip.
       </p>
 
-      <h2>Kidepo Valley FAQ</h2>
-
-      <p>
-        <strong>Is Kidepo worth the journey?</strong> For travellers with the time
-        (and a taste for true wilderness), yes &mdash; it&rsquo;s widely regarded
-        as Uganda&rsquo;s most spectacular park.
-      </p>
-
-      <p>
-        <strong>Can you see cheetahs in Kidepo?</strong> Yes &mdash; it&rsquo;s
-        the most reliable place in Uganda for them, along with the country&rsquo;s
-        only ostriches.
-      </p>
-
-      <p>
-        <strong>How do I get to Kidepo?</strong> Fly from Entebbe (about 2 hours)
-        or drive via Gulu/Kitgum (around 10 hours), often split over two days.
-      </p>
-
-      <p>
-        <strong>How many days do I need?</strong> At least two full days to
-        justify the journey — three if flying, to properly explore the Narus
-        Valley.
-      </p>
+      <PostFaq title="Kidepo Valley FAQ" items={faq} />
 
       <h2>Go Off the Beaten Track</h2>
 

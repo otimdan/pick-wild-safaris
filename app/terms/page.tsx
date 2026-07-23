@@ -1,16 +1,26 @@
 // app/terms/page.tsx
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import LegalPageLayout from "@/app/components/LegalPageLayout";
 
 const BASE_URL = "https://wildsafarisuganda.com";
 const UPDATED = "5 July 2026";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Pick Wild Safaris",
+  title: "Terms & Conditions",
   description:
     "The booking terms and conditions for safaris and trekking experiences arranged by Pick Wild Safaris — deposits, payment, cancellation, insurance, and liability.",
   alternates: { canonical: `${BASE_URL}/terms` },
   robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${BASE_URL}/terms`,
+    title: "Terms & Conditions",
+    description:
+      "The booking terms and conditions for safaris and trekking experiences arranged by Pick Wild Safaris.",
+    siteName: "Pick Wild Safaris",
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function TermsPage() {

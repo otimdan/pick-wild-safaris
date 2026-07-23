@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("money-in-uganda-currency-tipping-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Can I use US dollars in Uganda?",
+    a: "Yes, widely — but only notes from 2013 or later, in clean, undamaged condition.",
+  },
+  {
+    q: "Should I tip in dollars or shillings?",
+    a: "Larger tips (driver-guides) work well in dollars; smaller tips (porters, casual staff) are often easier for recipients in local shillings.",
+  },
+  {
+    q: "Are ATMs available in the parks?",
+    a: "No — withdraw what you need in Kampala or Entebbe before travelling upcountry.",
+  },
+  {
+    q: "How much should I budget for tips?",
+    a: "As a rough guide, $10–$20 per day for your driver-guide, plus smaller amounts for porters and trekking staff.",
+  },
+];
 
 export default function Post() {
   return (
@@ -106,11 +130,11 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Driver-guide:</strong> around USD $10&ndash;$20 per person,
+          <strong>Driver-guide:</strong>{" "}around USD $10&ndash;$20 per person,
           per day
         </li>
         <li>
-          <strong>Gorilla/chimp trekking porters:</strong> around USD
+          <strong>Gorilla/chimp trekking porters:</strong>{" "}around USD
           $5&ndash;$10 per porter
         </li>
         <li>
@@ -118,7 +142,7 @@ export default function Post() {
           pooled among the group
         </li>
         <li>
-          <strong>Lodge staff:</strong> many lodges keep a shared staff tip box
+          <strong>Lodge staff:</strong>{" "}many lodges keep a shared staff tip box
           &mdash; ask at check-out if unsure
         </li>
       </ul>
@@ -148,29 +172,7 @@ export default function Post() {
         <li>Keep a stash of tip money separate and easily accessible</li>
       </ul>
 
-      <h2>Money in Uganda FAQ</h2>
-
-      <p>
-        <strong>Can I use US dollars in Uganda?</strong> Yes, widely &mdash;
-        but only notes from 2013 or later, in clean, undamaged condition.
-      </p>
-
-      <p>
-        <strong>Should I tip in dollars or shillings?</strong> Larger tips
-        (driver-guides) work well in dollars; smaller tips (porters, casual
-        staff) are often easier for recipients in local shillings.
-      </p>
-
-      <p>
-        <strong>Are ATMs available in the parks?</strong> No &mdash; withdraw
-        what you need in Kampala or Entebbe before travelling upcountry.
-      </p>
-
-      <p>
-        <strong>How much should I budget for tips?</strong> As a rough guide,
-        $10&ndash;$20 per day for your driver-guide, plus smaller amounts for
-        porters and trekking staff.
-      </p>
+      <PostFaq title="Money in Uganda FAQ" items={faq} />
 
       <h2>Travel Prepared</h2>
 

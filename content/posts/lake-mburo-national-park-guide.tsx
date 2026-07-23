@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("lake-mburo-national-park-guide")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What makes Lake Mburo different?",
+    a: "It’s the only Ugandan park with impala, one of the few with zebra, and one of the only ones where walking and horseback safaris are offered thanks to the absence of lions.",
+  },
+  {
+    q: "Is Lake Mburo worth visiting on its own?",
+    a: "It’s best used as a scenic stop on the road to or from Bwindi rather than a stand-alone destination, though its activities are genuinely distinctive.",
+  },
+  {
+    q: "Can you walk among the animals?",
+    a: "Yes — guided walking, cycling, and horseback safaris are all available, unusual for a Ugandan savanna park.",
+  },
+  {
+    q: "How long should I stay?",
+    a: "One or two nights is typically enough to enjoy a game drive, the boat cruise, and one of the walking or horseback activities.",
+  },
+];
 
 export default function Post() {
   return (
@@ -134,32 +158,7 @@ export default function Post() {
         stopover.
       </p>
 
-      <h2>Lake Mburo FAQ</h2>
-
-      <p>
-        <strong>What makes Lake Mburo different?</strong> It&rsquo;s the only
-        Ugandan park with impala, one of the few with zebra, and one of the only
-        ones where walking and horseback safaris are offered thanks to the
-        absence of lions.
-      </p>
-
-      <p>
-        <strong>Is Lake Mburo worth visiting on its own?</strong> It&rsquo;s best
-        used as a scenic stop on the road to or from Bwindi rather than a
-        stand-alone destination, though its activities are genuinely distinctive.
-      </p>
-
-      <p>
-        <strong>Can you walk among the animals?</strong> Yes &mdash; guided
-        walking, cycling, and horseback safaris are all available, unusual for a
-        Ugandan savanna park.
-      </p>
-
-      <p>
-        <strong>How long should I stay?</strong> One or two nights is typically
-        enough to enjoy a game drive, the boat cruise, and one of the walking or
-        horseback activities.
-      </p>
+      <PostFaq title="Lake Mburo FAQ" items={faq} />
 
       <h2>Add It to Your Route</h2>
 

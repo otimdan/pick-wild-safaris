@@ -21,7 +21,7 @@ export default function TripChooser() {
           Visit our trip chooser to explore your options and find inspiration
           for your perfect African adventure.
         </p>
-        <Link href="/trip-chooser" className="trip-chooser-btn">
+        <Link href="/safaris" className="trip-chooser-btn">
           Inspire Me
         </Link>
       </div>

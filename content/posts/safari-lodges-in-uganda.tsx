@@ -9,7 +9,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -42,6 +44,28 @@ function ImagePlaceholder({
 
 const meta = getPostMeta("safari-lodges-in-uganda")!;
 
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What are safari lodges like in Uganda?",
+    a: "They range from simple, friendly guesthouses and bandas to comfortable midrange lodges and world-class luxury properties — most with en-suite rooms and good food.",
+  },
+  {
+    q: "What’s the difference between a lodge and a tented camp?",
+    a: "Lodges are permanent buildings; tented camps use large, comfortable safari tents on platforms, usually with real beds and en-suite bathrooms.",
+  },
+  {
+    q: "Do I book lodges myself?",
+    a: "No — your safari operator arranges accommodation as part of the trip, matched to your budget and route.",
+  },
+  {
+    q: "Are there luxury lodges near the gorillas?",
+    a: "Yes — Bwindi has everything from community-run lodges to high-end properties, some very close to the trailheads.",
+  },
+];
+
 export default function Post() {
   return (
     <BlogPostLayout meta={meta}>
@@ -64,17 +88,17 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Budget:</strong> clean, comfortable, and unfussy &mdash;
+          <strong>Budget:</strong>{" "}clean, comfortable, and unfussy &mdash;
           guesthouses, bandas (simple cabins), and basic lodges with the
           essentials done well. Often the friendliest, most local option.
         </li>
         <li>
-          <strong>Midrange:</strong> the sweet spot for many travellers &mdash;
+          <strong>Midrange:</strong>{" "}the sweet spot for many travellers &mdash;
           comfortable en-suite rooms or tented cottages, good food, pools at some
           properties, and lovely settings, without the top-tier price.
         </li>
         <li>
-          <strong>Luxury:</strong> beautiful design, superb food, private decks,
+          <strong>Luxury:</strong>{" "}beautiful design, superb food, private decks,
           and prime locations right on the park boundary &mdash; the kind of place
           that becomes part of the memory of the trip.
         </li>
@@ -93,12 +117,12 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Lodges</strong> are permanent buildings &mdash; rooms or
+          <strong>Lodges</strong>{" "}are permanent buildings &mdash; rooms or
           cottages, a main dining and lounge area, often a pool. The most common
           safari stay.
         </li>
         <li>
-          <strong>Tented camps</strong> use large, semi-permanent safari tents on
+          <strong>Tented camps</strong>{" "}use large, semi-permanent safari tents on
           raised platforms &mdash; usually with proper beds and en-suite
           bathrooms inside. Far more comfortable than &ldquo;camping&rdquo; sounds,
           and wonderfully close to nature.
@@ -118,7 +142,7 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Bwindi (gorillas):</strong> lodges perched on forest edges and
+          <strong>Bwindi (gorillas):</strong>{" "}lodges perched on forest edges and
           ridgelines, from community-run to high-end &mdash; some within walking
           distance of a trailhead
         </li>
@@ -143,7 +167,7 @@ export default function Post() {
           )
         </li>
         <li>
-          <strong>Kidepo Valley:</strong> a small number of remote, characterful
+          <strong>Kidepo Valley:</strong>{" "}a small number of remote, characterful
           lodges in one of Africa&rsquo;s wildest settings
         </li>
       </ul>
@@ -179,32 +203,7 @@ export default function Post() {
         </span>
       </p>
 
-      <h2>Safari Lodges in Uganda FAQ</h2>
-
-      <p>
-        <strong>What are safari lodges like in Uganda?</strong> They range from
-        simple, friendly guesthouses and bandas to comfortable midrange lodges and
-        world-class luxury properties &mdash; most with en-suite rooms and good
-        food.
-      </p>
-
-      <p>
-        <strong>What&rsquo;s the difference between a lodge and a tented camp?</strong>{" "}
-        Lodges are permanent buildings; tented camps use large, comfortable safari
-        tents on platforms, usually with real beds and en-suite bathrooms.
-      </p>
-
-      <p>
-        <strong>Do I book lodges myself?</strong> No &mdash; your safari operator
-        arranges accommodation as part of the trip, matched to your budget and
-        route.
-      </p>
-
-      <p>
-        <strong>Are there luxury lodges near the gorillas?</strong> Yes &mdash;
-        Bwindi has everything from community-run lodges to high-end properties, some
-        very close to the trailheads.
-      </p>
+      <PostFaq title="Safari Lodges in Uganda FAQ" items={faq} />
 
       <h2>Find the Right Stay</h2>
 
@@ -212,7 +211,7 @@ export default function Post() {
         Whether you want simple and authentic or a special-occasion splurge,
         we&rsquo;ll match the lodges to the trip you have in mind. Browse our{" "}
         <Link href="/safaris">Uganda safaris</Link> for the routes, then{" "}
-        <Link href="/contact">tell us your budget and style</Link> and we&rsquo;ll
+        <Link href="/contact">tell us your budget and style</Link>{" "}and we&rsquo;ll
         put together the perfect run of places to stay. It also helps to know{" "}
         <Link href="/blog/best-time-to-visit-uganda">
           the best time to visit Uganda

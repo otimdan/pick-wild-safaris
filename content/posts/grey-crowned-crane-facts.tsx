@@ -7,7 +7,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -39,6 +41,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("grey-crowned-crane-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is the crane on Uganda’s flag?",
+    a: "It was chosen as the national bird, shown with one leg raised to symbolise the country’s forward progress.",
+  },
+  {
+    q: "Is the grey crowned crane endangered?",
+    a: "Yes — the global population is declining, with an estimated 17,700–23,300 birds remaining.",
+  },
+  {
+    q: "What is the crane’s dancing display for?",
+    a: "Mainly courtship, though it’s also used to relieve tension or strengthen social bonds within a group.",
+  },
+  {
+    q: "Where can I see one in Uganda?",
+    a: "Wetlands and grassland across the country, including around Lake Mburo and the Mabamba wetlands.",
+  },
+];
 
 export default function Post() {
   return (
@@ -143,31 +167,7 @@ export default function Post() {
         .
       </p>
 
-      <h2>Grey Crowned Crane FAQ</h2>
-
-      <p>
-        <strong>Why is the crane on Uganda&rsquo;s flag?</strong> It was chosen
-        as the national bird, shown with one leg raised to symbolise the
-        country&rsquo;s forward progress.
-      </p>
-
-      <p>
-        <strong>Is the grey crowned crane endangered?</strong> Yes &mdash; the
-        global population is declining, with an estimated 17,700&ndash;23,300
-        birds remaining.
-      </p>
-
-      <p>
-        <strong>What is the crane&rsquo;s dancing display for?</strong> Mainly
-        courtship, though it&rsquo;s also used to relieve tension or strengthen
-        social bonds within a group.
-      </p>
-
-      <p>
-        <strong>Where can I see one in Uganda?</strong> Wetlands and grassland
-        across the country, including around Lake Mburo and the Mabamba
-        wetlands.
-      </p>
+      <PostFaq title="Grey Crowned Crane FAQ" items={faq} />
 
       <h2>Spot Uganda&rsquo;s National Bird</h2>
 

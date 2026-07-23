@@ -8,7 +8,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 
 function ImagePlaceholder({
   gradient,
@@ -40,6 +42,28 @@ function ImagePlaceholder({
 }
 
 const meta = getPostMeta("what-language-is-spoken-in-uganda")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "What is the main language spoken in Uganda?",
+    a: "English is the primary official language and is used everywhere in tourism; Luganda is the most widely spoken indigenous language, especially around Kampala.",
+  },
+  {
+    q: "Is English widely spoken in Uganda?",
+    a: "Yes — it’s an official language and the common language of government, business, and travel. You can get by entirely in English.",
+  },
+  {
+    q: "How many languages are spoken in Uganda?",
+    a: "More than 40 indigenous languages, with total estimates of 70 or more, across four broad language families.",
+  },
+  {
+    q: "Is Swahili spoken in Uganda?",
+    a: "It’s an official language and understood in many areas, though less dominant in daily life than in Kenya or Tanzania. It’s handy across the wider region.",
+  },
+];
 
 export default function Post() {
   return (
@@ -125,12 +149,12 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Bantu languages</strong> dominate the centre, south, and west
+          <strong>Bantu languages</strong>{" "}dominate the centre, south, and west
           &mdash; Luganda, Runyankole, Rukiga, Runyoro, Rutooro, Lusoga, Lumasaba
           and more
         </li>
         <li>
-          <strong>Nilotic languages</strong> are spoken across the north and east
+          <strong>Nilotic languages</strong>{" "}are spoken across the north and east
           &mdash; Acholi, Lango, Alur, Ateso, and Karamojong among them
         </li>
         <li>
@@ -162,11 +186,11 @@ export default function Post() {
 
       <ul>
         <li>
-          <strong>Kampala &amp; Entebbe (arrival):</strong> Luganda &mdash; the
+          <strong>Kampala &amp; Entebbe (arrival):</strong>{" "}Luganda &mdash; the
           language of the Baganda
         </li>
         <li>
-          <strong>Jinja &amp; the Source of the Nile:</strong> Lusoga &mdash; the
+          <strong>Jinja &amp; the Source of the Nile:</strong>{" "}Lusoga &mdash; the
           language of the Basoga
         </li>
         <li>
@@ -186,7 +210,7 @@ export default function Post() {
           Rukiga of the Bakiga (closely related to Runyankole)
         </li>
         <li>
-          <strong>Murchison Falls &amp; the north:</strong> Luo languages &mdash;
+          <strong>Murchison Falls &amp; the north:</strong>{" "}Luo languages &mdash;
           Acholi, Lango, and Alur &mdash; and Lugbara further into the West Nile
         </li>
         <li>
@@ -278,31 +302,7 @@ export default function Post() {
         simplest ways to travel a little more kindly.
       </p>
 
-      <h2>Uganda Language FAQ</h2>
-
-      <p>
-        <strong>What is the main language spoken in Uganda?</strong> English is the
-        primary official language and is used everywhere in tourism; Luganda is the
-        most widely spoken indigenous language, especially around Kampala.
-      </p>
-
-      <p>
-        <strong>Is English widely spoken in Uganda?</strong> Yes &mdash; it&rsquo;s
-        an official language and the common language of government, business, and
-        travel. You can get by entirely in English.
-      </p>
-
-      <p>
-        <strong>How many languages are spoken in Uganda?</strong> More than 40
-        indigenous languages, with total estimates of 70 or more, across four
-        broad language families.
-      </p>
-
-      <p>
-        <strong>Is Swahili spoken in Uganda?</strong> It&rsquo;s an official
-        language and understood in many areas, though less dominant in daily life
-        than in Kenya or Tanzania. It&rsquo;s handy across the wider region.
-      </p>
+      <PostFaq title="Uganda Language FAQ" items={faq} />
 
       <h2>Travel Deeper Into Uganda</h2>
 

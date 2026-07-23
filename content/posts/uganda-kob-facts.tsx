@@ -6,7 +6,9 @@
 
 import Link from "next/link";
 import BlogPostLayout from "@/app/components/BlogPostLayout";
+import PostFaq from "@/app/components/PostFaq";
 import { getPostMeta } from "@/content/posts/index";
+import type { FaqItem } from "@/content/types";
 import Image from "next/image";
 
 // A tiny helper for inline images — matches the pattern used in
@@ -38,6 +40,28 @@ function PostImage({
 }
 
 const meta = getPostMeta("uganda-kob-facts")!;
+
+// FAQ data — drives the rendered <PostFaq> section and the FAQPage
+// JSON-LD in app/blog/[slug]/page.tsx. Plain text (answer engines quote
+// it verbatim), so any inline links were flattened to their text.
+export const faq: FaqItem[] = [
+  {
+    q: "Why is the kob Uganda’s national animal?",
+    a: "It symbolises the country’s abundant wildlife and features on the national coat of arms alongside the grey crowned crane.",
+  },
+  {
+    q: "What is a “lek”?",
+    a: "A traditional breeding ground where male kob gather in small, tightly packed territories to compete for mates — unusual, structured behaviour among African antelope.",
+  },
+  {
+    q: "How is a kob different from an impala?",
+    a: "Kob are more heavily built and reddish-brown; impala are more slender with a paler coat and distinctive black rump markings.",
+  },
+  {
+    q: "Where are Uganda kob most common?",
+    a: "Queen Elizabeth National Park and Murchison Falls, both with huge resident herds.",
+  },
+];
 
 export default function Post() {
   return (
@@ -138,31 +162,7 @@ export default function Post() {
         distant pride is a classic piece of savanna drama.
       </p>
 
-      <h2>Uganda Kob FAQ</h2>
-
-      <p>
-        <strong>Why is the kob Uganda&rsquo;s national animal?</strong> It
-        symbolises the country&rsquo;s abundant wildlife and features on the
-        national coat of arms alongside the grey crowned crane.
-      </p>
-
-      <p>
-        <strong>What is a &ldquo;lek&rdquo;?</strong> A traditional breeding
-        ground where male kob gather in small, tightly packed territories to
-        compete for mates &mdash; unusual, structured behaviour among African
-        antelope.
-      </p>
-
-      <p>
-        <strong>How is a kob different from an impala?</strong> Kob are more
-        heavily built and reddish-brown; impala are more slender with a paler
-        coat and distinctive black rump markings.
-      </p>
-
-      <p>
-        <strong>Where are Uganda kob most common?</strong> Queen Elizabeth
-        National Park and Murchison Falls, both with huge resident herds.
-      </p>
+      <PostFaq title="Uganda Kob FAQ" items={faq} />
 
       <h2>See Uganda&rsquo;s National Animal</h2>
 
